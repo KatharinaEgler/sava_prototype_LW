@@ -1,0 +1,17 @@
+<h1>Overview of circles</h1>
+
+<ul>
+  <% @circles.each do |circle| %>
+    <li>
+      <%= circle.name %>
+      <ul>
+        <% circle.circle_members.each do |circle_member| %>
+          <li><%= circle_member.first_name %></li>
+        <% end %>
+      </ul>
+    </li>
+
+  <% end %>
+</ul>
+
+<%= link_to "New Circle", new_circle_path %>

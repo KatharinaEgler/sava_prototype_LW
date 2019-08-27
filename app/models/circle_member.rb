@@ -1,6 +1,14 @@
 class CircleMember < ApplicationRecord
-  belongs_to :status_user
+  attr_accessor :email
+
+  belongs_to :user
   belongs_to :circle
 
-  validates_presence_of :circle_id, :user_id
+  before_validation :find_user_by_email
+
+  private
+
+  def find_user_by_email
+    self.user = User.find_by(email: self.email)
+  end
 end
