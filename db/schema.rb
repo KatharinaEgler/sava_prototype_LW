@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_220114) do
+ActiveRecord::Schema.define(version: 2019_08_27_152518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,14 +77,14 @@ ActiveRecord::Schema.define(version: 2019_08_26_220114) do
     t.index ["user_id"], name: "index_slots_on_user_id"
   end
 
-  create_table "updates", force: :cascade do |t|
+  create_table "status_updates", force: :cascade do |t|
     t.string "title"
     t.string "content"
     t.string "photo"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_updates_on_user_id"
+    t.index ["user_id"], name: "index_status_updates_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_220114) do
   add_foreign_key "circle_members", "circles"
   add_foreign_key "circle_members", "users"
   add_foreign_key "circle_updates", "circles"
-  add_foreign_key "circle_updates", "updates"
+  add_foreign_key "circle_updates", "status_updates", column: "update_id"
   add_foreign_key "circles", "users"
   add_foreign_key "conversation_members", "conversations"
   add_foreign_key "conversation_members", "users"
@@ -113,5 +113,5 @@ ActiveRecord::Schema.define(version: 2019_08_26_220114) do
   add_foreign_key "messages", "users"
   add_foreign_key "slots", "users"
   add_foreign_key "slots", "users", column: "booker_id"
-  add_foreign_key "updates", "users"
+  add_foreign_key "status_updates", "users"
 end

@@ -1,4 +1,4 @@
 class CircleMember < ApplicationRecord
-  belongs_to :user
+  belongs_to :status_user
   belongs_to :circle
 end

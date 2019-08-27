@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :circles, only: [:index, :new, :create]
 
-  resources :updates, only: [:index, :new, :create]
+  resources :status_updates, only: [:index, :new, :create]
 
   resources :slots, only: [:index, :new, :create, :update]
 
