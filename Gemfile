@@ -1,6 +1,14 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+# new GEMS KE added
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
+gem 'pundit'
+gem 'dotenv-rails', groups: [:development, :test]
+
+# new GEMS end
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
