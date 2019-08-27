@@ -11,4 +11,10 @@ class User < ApplicationRecord
   has_many :circle_members
   has_many :conversation_members
   has_many :messages
+
+  mount_uploader :photo, PhotoUploader
+
+  validates :email, presence: true, uniqueness: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
