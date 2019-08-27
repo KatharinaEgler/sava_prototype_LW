@@ -1,0 +1,2 @@
+class CircleMembersController < ApplicationController
+end
