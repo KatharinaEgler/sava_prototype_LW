@@ -1,2 +1,0 @@
-class CircleMembersController < ApplicationController
-end

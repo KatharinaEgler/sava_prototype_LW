@@ -1,2 +1,0 @@
-class ConversationMembersController < ApplicationController
-end

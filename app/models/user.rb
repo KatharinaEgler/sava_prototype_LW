@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :circle_members
   has_many :conversation_members
   has_many :messages
+  has_many :converations, through: :conversation_members
 
   mount_uploader :photo, PhotoUploader
 
