@@ -1,0 +1,17 @@
+<h1>Overview of conversations</h1>
+
+<ul>
+  <% @conversations.each do |conversation| %>
+    <li>
+      <%= conversation.name %>
+      <ul>
+        <% conversation.conversation_members.each do |conversation_member| %>
+          <li><%= conversation_member.user.first_name %></li>
+        <% end %>
+      </ul>
+    </li>
+
+  <% end %>
+</ul>
+
+<%= link_to "New Conversation", new_conversation_path %>

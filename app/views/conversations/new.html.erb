@@ -1,0 +1,12 @@
+<%= simple_form_for(@conversation) do |f| %>
+  <%= f.input :name, label: "Conversation Name" %>
+  <div id="conversation-members">
+    <%= f.simple_fields_for :conversation_members do |conversation_member|  %>
+      <%= render 'conversation_member_fields', f: conversation_member  %>
+      <div class="links">
+        <%= link_to_add_association 'add conversation member', f, :conversation_members  %>
+      </div>
+    <% end %>
+  </div>
+  <%= f.submit %>
+<% end %>
