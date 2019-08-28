@@ -1,0 +1,13 @@
+<h1><%= @conversation.name %></h1>
+
+<ul>
+  <% @conversation.messages.each do |message| %>
+  <li><%= message.user.first_name %> <%= message.content %></li>
+  <% end %>
+</ul>
+
+<%= simple_form_for [@conversation, @message] do |f| %>
+<%= f.input :content %>
+<%= f.submit "Send" %>
+<% end %>
+
