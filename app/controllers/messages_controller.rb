@@ -6,11 +6,13 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.conversation = @conversation
     @message.user = current_user
-    if @message.save
-      redirect_to conversation_path(@conversation)
-    else
-      render "conversations/show"
-    end
+    @message.save
+
+    # if @message.save
+      # redirect_to conversation_path(@conversation)
+    # else
+      # render "conversations/show"
+    # end
   end
 
   private
