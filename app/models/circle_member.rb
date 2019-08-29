@@ -4,7 +4,7 @@ class CircleMember < ApplicationRecord
   belongs_to :user
   belongs_to :circle
 
-  before_validation :find_user_by_email
+  #before_validation :find_user_by_email
 
   private
 

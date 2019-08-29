@@ -58,14 +58,24 @@ conversation_1.save!
 conversation_2 = Conversation.new(name: "Conversation between Chloe & Denise")
 conversation_2.save!
 
-conversation_3 = Conversation.new(name: "Conversation between Chloe & Tom")
+# Group message
+
+conversation_3 = Conversation.new(name: "Conversation between Chloe & Family")
 conversation_3.save!
 
-conversation_4 = Conversation.new(name: "Conversation between Chloe & Philippe")
+# ----
+
+conversation_4 = Conversation.new(name: "Conversation between Chloe & Tom")
 conversation_4.save!
 
-conversation_5 = Conversation.new(name: "Conversation between Chloe & Marta")
+conversation_5 = Conversation.new(name: "Conversation between Chloe & Philippe")
 conversation_5.save!
+
+conversation_6 = Conversation.new(name: "Conversation between Chloe & Marta")
+conversation_6.save!
+
+conversation_7 = Conversation.new(name: "Conversation between Chloe & Sophie")
+conversation_7.save!
 
 
 message_1 = Message.new(content: "It was so great seeing you. I want to see you as soon as possible again. I'll book a slot with sava then. The application is great.", user_id: sandra.id, conversation_id: conversation_1.id)
@@ -78,6 +88,8 @@ message_3.save!
 message_4 = Message.new(content: "We miss you at work. We are thinking about you a lot.", user_id: denise.id, conversation_id: conversation_2.id)
 message_4.save!
 
+message_5 = Message.new(content: "Dear family, thanks again for your visit and your kind works. I'm so lucky to have you in my life.", user_id: chloe.id, conversation_id: conversation_3.id)
+message_5.save!
 
 
 conversation_member_1 = ConversationMember.new(conversation_id: conversation_1.id, user_id: chloe.id)
@@ -89,13 +101,31 @@ conversation_member_3.save!
 conversation_member_4 = ConversationMember.new(conversation_id: conversation_2.id, user_id: denise.id)
 conversation_member_4.save!
 
+# group message
+
+conversation_member_5 = ConversationMember.new(conversation_id: conversation_3.id, user_id: chloe.id)
+conversation_member_5.save!
+conversation_member_6 = ConversationMember.new(conversation_id: conversation_3.id, user_id: marta.id)
+conversation_member_6.save!
+conversation_member_7 = ConversationMember.new(conversation_id: conversation_3.id, user_id: louise.id)
+conversation_member_7.save!
+conversation_member_8 = ConversationMember.new(conversation_id: conversation_3.id, user_id: simon.id)
+conversation_member_8.save!
+conversation_member_9 = ConversationMember.new(conversation_id: conversation_3.id, user_id: charles.id)
+conversation_member_9.save!
+conversation_member_10 = ConversationMember.new(conversation_id: conversation_3.id, user_id: manuel.id)
+conversation_member_10.save!
+
+# ----
+
+
 statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg")
 statusupdate_1.save!
 statusupdate_2 = StatusUpdate.new(user_id: chloe.id, title: "I broke my shoulder", content: "My x-rays look weird. In my last boost, I tripped, fell and hurt myself on the shoulder - really bad! Fortuneately, it hurts less that expected.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567049628/sava/harlie-raethel-ouyjDk-KdfY-unsplash_jxc9b9.jpg")
 statusupdate_2.save!
 
 
-slot_1 = Slot.new(date: "09.09.2019", hour: 9, booked: true, user_id: chloe.id, booker_id: michaela.id )
+slot_1 = Slot.new(date: "09.09.2019", hour: 9, booked: true, user_id: chloe.id, booker_id: michaela.id)
 slot_1.save!
 slot_2 = Slot.new(date: "09.09.2019", hour: 11, booked: false, user_id: chloe.id)
 slot_2.save!
@@ -116,6 +146,8 @@ friends = Circle.new(user_id: chloe.id, name: "Friends")
 friends.save!
 colleagues = Circle.new(user_id: chloe.id, name: "Colleagues")
 colleagues.save!
+
+#binding.pry
 
 family_member_1 = CircleMember.new(circle_id: family.id, user_id: louise.id)
 family_member_1.save!
