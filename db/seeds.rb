@@ -149,35 +149,35 @@ colleagues.save!
 
 #binding.pry
 
-family_member_1 = CircleMember.new(circle_id: family.id, user_id: louise.id)
+family_member_1 = CircleMember.new(circle_id: family.id, email: louise.email)
 family_member_1.save!
-family_member_2 = CircleMember.new(circle_id: family.id, user_id: philippe.id)
+family_member_2 = CircleMember.new(circle_id: family.id, email: philippe.email)
 family_member_2.save!
-family_member_3 = CircleMember.new(circle_id: family.id, user_id: charles.id)
+family_member_3 = CircleMember.new(circle_id: family.id, email: charles.email)
 family_member_3.save!
-family_member_4 = CircleMember.new(circle_id: family.id, user_id: marta.id)
+family_member_4 = CircleMember.new(circle_id: family.id, email: marta.email)
 family_member_4.save!
-family_member_5 = CircleMember.new(circle_id: family.id, user_id: michaela.id)
+family_member_5 = CircleMember.new(circle_id: family.id, email: michaela.email)
 family_member_5.save!
-family_member_6 = CircleMember.new(circle_id: family.id, user_id: tom.id)
+family_member_6 = CircleMember.new(circle_id: family.id, email: tom.email)
 family_member_6.save!
 
-friends_member_1 = CircleMember.new(circle_id: friends.id, user_id: leonie.id)
+friends_member_1 = CircleMember.new(circle_id: friends.id, email: leonie.email)
 friends_member_1.save!
-friends_member_2 = CircleMember.new(circle_id: friends.id, user_id: paula.id)
+friends_member_2 = CircleMember.new(circle_id: friends.id, email: paula.email)
 friends_member_2.save!
-friends_member_3 = CircleMember.new(circle_id: friends.id, user_id: manuel.id)
+friends_member_3 = CircleMember.new(circle_id: friends.id, email: manuel.email)
 friends_member_3.save!
-friends_member_4 = CircleMember.new(circle_id: friends.id, user_id: sandra.id)
+friends_member_4 = CircleMember.new(circle_id: friends.id, email: sandra.email)
 friends_member_4.save!
-friends_member_5 = CircleMember.new(circle_id: friends.id, user_id: rita.id)
+friends_member_5 = CircleMember.new(circle_id: friends.id, email: rita.email)
 friends_member_5.save!
-friends_member_6 = CircleMember.new(circle_id: friends.id, user_id: sophie.id)
+friends_member_6 = CircleMember.new(circle_id: friends.id, email: sophie.email)
 friends_member_6.save!
 
-colleagues_member_1 = CircleMember.new(circle_id: colleagues.id, user_id: denise.id)
+colleagues_member_1 = CircleMember.new(circle_id: colleagues.id, email: denise.email)
 colleagues_member_1.save!
-colleagues_member_2 = CircleMember.new(circle_id: colleagues.id, user_id: simon.id)
+colleagues_member_2 = CircleMember.new(circle_id: colleagues.id, email: simon.email)
 colleagues_member_2.save!
 
 
