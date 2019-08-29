@@ -13,7 +13,8 @@ StatusUpdate.destroy_all
 Message.destroy_all
 Conversation.destroy_all
 Slot.destroy_all
-CircleMember.destroy.all
+CircleMember.destroy_all
+ConversationMember.destroy_all
 
 # Main character
 chloe = User.new(first_name: "Chloe", last_name: "Leroux", email: "chloe@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567020979/sava/edward-cisneros-_H6wpor9mjs-unsplash_w0qgaa.jpg")
@@ -51,31 +52,48 @@ rita.save!
 sophie = User.new(first_name: "Sophie", last_name: "McSimons", email: "sophie@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567037701/sava/marcelo-matarazzo-WKxWQg7tZoU-unsplash_ugi0am.jpg")
 sophie.save!
 
-
-
-message_1 = Message.new(content: "It was so great seeing you. I want to see you as soon as possible again. I'll book a slot with sava then. The application is great.", user_id: sandra.id)
-message_1.save!
-message_2 = Message.new(content: "They are really taking a long time with the test results.", user_id: chloe.id)
-message_2.save!
-message_3 = Message.new(content: "Yes, the doctor is still waiting for the test results. Maybe I'll arrive an update this afternoon. I will post an update to the family group as soon as possible.", user_id: sandra.id)
-message_3.save!
-
-message_4 = Message.new(content: "We miss you at work. We are thinking about you a lot.", user_id: denise.id)
-message_4.save!
-
-conversation_1 = Conversation.new
+conversation_1 = Conversation.new(name: "Conversation between Chloe & Sandra")
 conversation_1.save!
 
-conversation_2 = Conversation.new
+conversation_2 = Conversation.new(name: "Conversation between Chloe & Denise")
 conversation_2.save!
 
+conversation_3 = Conversation.new(name: "Conversation between Chloe & Tom")
+conversation_3.save!
+
+conversation_4 = Conversation.new(name: "Conversation between Chloe & Philippe")
+conversation_4.save!
+
+conversation_5 = Conversation.new(name: "Conversation between Chloe & Marta")
+conversation_5.save!
+
+
+message_1 = Message.new(content: "It was so great seeing you. I want to see you as soon as possible again. I'll book a slot with sava then. The application is great.", user_id: sandra.id, conversation_id: conversation_1.id)
+message_1.save!
+message_2 = Message.new(content: "They are really taking a long time with the test results.", user_id: chloe.id, conversation_id: conversation_1.id)
+message_2.save!
+message_3 = Message.new(content: "Yes, the doctor is still waiting for the test results. Maybe I'll arrive an update this afternoon. I will post an update to the family group as soon as possible.", user_id: sandra.id, conversation_id: conversation_1.id)
+message_3.save!
+
+message_4 = Message.new(content: "We miss you at work. We are thinking about you a lot.", user_id: denise.id, conversation_id: conversation_2.id)
+message_4.save!
+
+
+
 conversation_member_1 = ConversationMember.new(conversation_id: conversation_1.id, user_id: chloe.id)
+conversation_member_1.save!
 conversation_member_2 = ConversationMember.new(conversation_id: conversation_1.id, user_id: sandra.id)
-
+conversation_member_2.save!
 conversation_member_3 = ConversationMember.new(conversation_id: conversation_2.id, user_id: chloe.id)
+conversation_member_3.save!
 conversation_member_4 = ConversationMember.new(conversation_id: conversation_2.id, user_id: denise.id)
+conversation_member_4.save!
 
-statusupdate_1 = StatusUpdate.new(title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg")
+statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg")
+statusupdate_1.save!
+statusupdate_2 = StatusUpdate.new(user_id: chloe.id, title: "I broke my shoulder", content: "My x-rays look weird. In my last boost, I tripped, fell and hurt myself on the shoulder - really bad! Fortuneately, it hurts less that expected.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567049628/sava/harlie-raethel-ouyjDk-KdfY-unsplash_jxc9b9.jpg")
+statusupdate_2.save!
+
 
 slot_1 = Slot.new(date: "09.09.2019", hour: 9, booked: true, user_id: chloe.id, booker_id: michaela.id )
 slot_1.save!
