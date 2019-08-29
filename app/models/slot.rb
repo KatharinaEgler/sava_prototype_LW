@@ -5,5 +5,5 @@ class Slot < ApplicationRecord
   validates :date, presence: true
   validates :hour, presence: true
   validates :booked, presence: true
-  validates_presence_of :booker_id, :user_id
+  validates_presence_of :user_id
 end
