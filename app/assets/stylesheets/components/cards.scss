@@ -91,33 +91,42 @@
   justify-content: center;
   flex-direction: column;
   padding: 16px;
-  height: 90vh;
   justify-content: flex-start;
   align-items: center;
   background-color: white;
-  border: 1px solid black;
+
 }
 
 .homepage-banner {
   width: 90%;
   display: flex;
   justify-content: flex-start;
-  border: 1px solid black;
+
 }
 
 .homepage-card {
-  border: 1px solid black;
   width: 90%;
 }
 
 .homepage-card-details {
-  border: 1px solid black;
+  border: 1px solid #adb5bd;
 
 }
 
 .homepage-appointment {
   display: flex;
+  margin-bottom: 10px;
+  border: 1px solid #adb5bd;
+  border-radius: 8px;
   justify-content: space-between;
   align-items: center;
-
+  padding: 10px 16px;
+  img{
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+.appointment-avatar{
+  border-radius: 50%;
+  object-fit: cover;
+}
 }

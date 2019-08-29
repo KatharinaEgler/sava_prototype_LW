@@ -3,7 +3,7 @@
 <div class="homepage-container">
   <div class="homepage-banner">
     <div>
-      <h1>Hi NAME</h1>
+      <h1>Hi <%= current_user.first_name %></h1>
       <p>how are you feeling?</p>
     </div>
   </div>
@@ -14,10 +14,14 @@
     <h2>Today's Appointment</h2>
       <% @slots.each do |slot|%>
         <div class="homepage-appointment">
-          <%= image_tag("icon-clock.svg") %>
-          <p><%=slot.hour%></p>
-           <%= image_tag("icon-clock.svg") %>
-           <p><%=User.find(slot.user_id).first_name%></p>
+          <div class="d-flex">
+            <%= image_tag("icon-clock.svg") %>
+            <span> <%=slot.hour%></span>
+          </div>
+         <div class="d-flex">
+            <%= cl_image_tag(User.find(slot.user_id).photo,width: 20, height:20, class:"appointment-avatar") %>
+            <span><%=User.find(slot.user_id).first_name%></span>
+          </div>
         </div>
       <% end %>
   </div>
