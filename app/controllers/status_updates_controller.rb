@@ -6,7 +6,7 @@ class StatusUpdatesController < ApplicationController
   end
 
   def new
-    @status_updates = StatusUpdates.new
+    @status_updates = StatusUpdate.new
   end
 
   def create

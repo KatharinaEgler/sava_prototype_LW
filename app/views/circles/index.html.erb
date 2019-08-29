@@ -6,7 +6,7 @@
       <%= circle.name %>
       <ul>
         <% circle.circle_members.each do |circle_member| %>
-          <li><%= circle_member.user.first_name %></li>
+          <li><%= cl_image_tag circle_member.user.photo, class: "avatar dropdown-toggle" %> <%= circle_member.user.fullname %></li>
         <% end %>
       </ul>
     </li>

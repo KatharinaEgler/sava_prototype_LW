@@ -6,7 +6,8 @@
       <%= conversation.name %>
       <ul>
         <% conversation.conversation_members.each do |conversation_member| %>
-          <li><%= link_to conversation_member.user.first_name, conversation_path(conversation)%> <%=conversation_member.user.last_name %></li>
+          <% next if conversation_member.user == current_user  %>
+          <li> <%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %> <%= link_to conversation_member.user.first_name, conversation_path(conversation)%> <%=conversation_member.user.last_name %></li>
         <% end %>
       </ul>
     </li>
