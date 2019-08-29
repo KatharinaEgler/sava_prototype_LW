@@ -80,16 +80,19 @@ conversation_7.save!
 
 message_1 = Message.new(content: "It was so great seeing you. I want to see you as soon as possible again. I'll book a slot with sava then. The application is great.", user_id: sandra.id, conversation_id: conversation_1.id)
 message_1.save!
-message_2 = Message.new(content: "They are really taking a long time with the test results.", user_id: chloe.id, conversation_id: conversation_1.id)
+message_2 = Message.new(content: "They are really taking a long time with the test results.", user_id: sandra.id, conversation_id: conversation_1.id)
 message_2.save!
-message_3 = Message.new(content: "Yes, the doctor is still waiting for the test results. Maybe I'll arrive an update this afternoon. I will post an update to the family group as soon as possible.", user_id: sandra.id, conversation_id: conversation_1.id)
+message_3 = Message.new(content: "Yes, the doctor is still waiting for the test results. Maybe I'll arrive an update this afternoon. I will post an update to my family and friends as soon as possible.", user_id: chloe.id, conversation_id: conversation_1.id)
 message_3.save!
 
-message_4 = Message.new(content: "We miss you at work. We are thinking about you a lot.", user_id: denise.id, conversation_id: conversation_2.id)
+message_4 = Message.new(content: "Hey, I was just wondering. I will have quite some free time next week. I guess I can easily visit you again? That would be so great.", user_id: sandra.id, conversation_id: conversation_1.id)
 message_4.save!
 
-message_5 = Message.new(content: "Dear family, thanks again for your visit and your kind works. I'm so lucky to have you in my life.", user_id: chloe.id, conversation_id: conversation_3.id)
+message_5 = Message.new(content: "We miss you at work. We are thinking about you a lot.", user_id: denise.id, conversation_id: conversation_2.id)
 message_5.save!
+
+message_6 = Message.new(content: "Dear family, thanks again for your visit and your kind works. I'm so lucky to have you in my life.", user_id: chloe.id, conversation_id: conversation_3.id)
+message_6.save!
 
 
 conversation_member_1 = ConversationMember.new(conversation_id: conversation_1.id, user_id: chloe.id)
@@ -123,22 +126,35 @@ statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hos
 statusupdate_1.save!
 statusupdate_2 = StatusUpdate.new(user_id: chloe.id, title: "I broke my shoulder", content: "My x-rays look weird. In my last boost, I tripped, fell and hurt myself on the shoulder - really bad! Fortuneately, it hurts less that expected.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567049628/sava/harlie-raethel-ouyjDk-KdfY-unsplash_jxc9b9.jpg")
 statusupdate_2.save!
+statusupdate_3 = StatusUpdate.new(user_id: chloe.id, title: "Big day!", content: "So, yes - big day! I start my new meds today. There's an exhaustive list of side effects including flushing, abdominal pain, diarrhea, vomiting, rashing, nausea and the list goes on. Reading about it is so different than living the side effects, so far nothing yet in the past hour. Keep your fingers crossed. ", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567118763/sava/anastasiia-ostapovych-YgeTHz0wspk-unsplash_tuykps.jpg")
+statusupdate_3.save!
+statusupdate_4 = StatusUpdate.new(user_id: chloe.id, title: "My arm hurts", content: " I got rid of the tube in my arm today. I hurt all the time. They will set me a new tube tomorrow, so one day of freedom.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image2-2_jnoycf.jpg")
+statusupdate_4.save!
+statusupdate_5 = StatusUpdate.new(user_id: chloe.id, title: "Hospital food", content: "A bunch of you have been asking what the food is like. Well, it is actually not that bad.", remote_photo_url: "hhttps://res.cloudinary.com/dd9qabk1u/image/upload/v1567120097/sava/image1-1_zeqezv.jpg")
+statusupdate_5.save!
+statusupdate_6 = StatusUpdate.new(user_id: chloe.id, title: "Daily life", content: "Hello everyone, I just wanted to give you an update of how I am. Days are really just doctors' appointments and waiting. I feel helpless. Doctors and nurses are nice though. I will go into more details very soon. Check out one of our treatments rooms, nothing special. They all look the same.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image1-2_a9oews.jpg")
+statusupdate_6.save!
 
 
-slot_1 = Slot.new(date: "09.09.2019", hour: 9, booked: true, user_id: chloe.id, booker_id: michaela.id)
+slot_1 = Slot.new(date: "09.09.2019", hour: 9, booked: true, user_id: chloe.id, booker_id: michaela.id, location: "3801 Rue Université, Montréal")
 slot_1.save!
-slot_2 = Slot.new(date: "09.09.2019", hour: 11, booked: false, user_id: chloe.id)
+slot_2 = Slot.new(date: "09.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_2.save!
-slot_3 = Slot.new(date: "09.09.2019", hour: 15, booked: false, user_id: chloe.id)
+slot_3 = Slot.new(date: "09.09.2019", hour: 15, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_3.save!
-slot_4 = Slot.new(date: "10.09.2019", hour: 10, booked: false, user_id: chloe.id)
+slot_4 = Slot.new(date: "10.09.2019", hour: 10, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_4.save!
-slot_5 = Slot.new(date: "10.09.2019", hour: 11, booked: false, user_id: chloe.id)
+slot_5 = Slot.new(date: "10.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_5.save!
-slot_6 = Slot.new(date: "11.09.2019", hour: 11, booked: false, user_id: chloe.id)
+slot_6 = Slot.new(date: "11.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_6.save!
-slot_7 = Slot.new(date: "11.09.2019", hour: 17, booked: false, user_id: chloe.id)
+slot_7 = Slot.new(date: "11.09.2019", hour: 17, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_7.save!
+slot_8 = Slot.new(date: "12.09.2019", hour: 15, booked: true, user_id: chloe.id, booker_id: marta.id, location: "3801 Rue Université, Montréal")
+slot_8.save!
+slot_9 = Slot.new(date: "12.09.2019", hour: 16, booked: true, user_id: chloe.id, booker_id: philippe.id, location: "3801 Rue Université, Montréal")
+slot_9.save!
+
 
 family = Circle.new(user_id: chloe.id, name: "Family")
 family.save!
