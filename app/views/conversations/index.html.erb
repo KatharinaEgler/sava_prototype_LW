@@ -11,9 +11,8 @@
       <%= conversation.name %>
       <ul>
         <% conversation.conversation_members.each do |conversation_member| %>
-          <div><%= conversation_member.user.first_name %></div>
-          <div><%= conversation_member.user.first_name %></div>
-          <hr>
+          <% next if conversation_member.user == current_user  %>
+          <li> <%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %> <%= link_to conversation_member.user.first_name, conversation_path(conversation)%> <%=conversation_member.user.last_name %></li>
         <% end %>
       </ul>
     </li>
@@ -24,4 +23,7 @@
   </div>
    </div>
 
-<%= link_to "New Conversation", new_conversation_path %>
+<p> <%= link_to "New Conversation", new_conversation_path %> </p>
+
+<p> <%= link_to "Home", root_path %> </p>
+

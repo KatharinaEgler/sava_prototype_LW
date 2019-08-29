@@ -1,0 +1,9 @@
+<h1>Add your new timeslot here </h1>
+
+
+<%= simple_form_for @slots do |f| %>
+  <%= f.input :date %>
+  <%= f.input :hour %>
+
+  <%= f.button :submit, value: "Post timeslot", class: 'btn btn-lg btn-primary big-btn-form' %>
+<% end %>
