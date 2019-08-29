@@ -1,7 +1,31 @@
-<h1>Coming soon</h1>
 
+<div class="homepage-container">
+  <div class="homepage-banner">
+    <div>
+      <h1>Hi NAME</h1>
+      <p>how are you feeling?</p>
+    </div>
+  </div>
+  <div class="homepage-card">
+    <div class="homepage-card-details">
 
-<%= link_to "Updates", status_updates_path %>
-<%= link_to "Conversations", conversations_path %>
-<%= link_to "Slots", slots_path %>
-<%= link_to "Circles", circles_path %>
+    </div>
+    <h2>Today's Appointment</h2>
+      <% @slots.each do |slot|%>
+        <div class="homepage-appointment">
+          <%= image_tag("icon-clock.svg") %>
+          <p><%=slot.hour%></p>
+           <%= image_tag("icon-clock.svg") %>
+           <p><%=User.find(slot.user_id).first_name%></p>
+        </div>
+      <% end %>
+  </div>
+
+<div>
+  <%= link_to "Updates", status_updates_path %>
+  <%= link_to "Conversations", conversations_path %>
+  <%= link_to "Slots", slots_path %>
+  <%= link_to "Circles", circles_path %>
+</div>
+
+</div>

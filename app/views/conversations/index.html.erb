@@ -1,17 +1,27 @@
-<h1>Overview of conversations</h1>
 
+
+<h1>Overview of conversations</h1>
+<div class="screen-container">
+
+  <div class="conversation-cards">
+    <div class="conversation-column">
 <ul>
   <% @conversations.each do |conversation| %>
-    <li>
+    <div>
       <%= conversation.name %>
       <ul>
         <% conversation.conversation_members.each do |conversation_member| %>
-          <li><%= conversation_member.user.first_name %></li>
+          <div><%= conversation_member.user.first_name %></div>
+          <div><%= conversation_member.user.first_name %></div>
+          <hr>
         <% end %>
       </ul>
     </li>
 
   <% end %>
 </ul>
+  </div>
+  </div>
+   </div>
 
 <%= link_to "New Conversation", new_conversation_path %>

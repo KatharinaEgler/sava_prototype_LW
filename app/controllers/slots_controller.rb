@@ -13,4 +13,8 @@ class SlotsController < ApplicationController
   def update
   end
 
+  def home
+
+  end
+
 end
