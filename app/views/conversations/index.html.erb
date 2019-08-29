@@ -6,7 +6,7 @@
       <%= conversation.name %>
       <ul>
         <% conversation.conversation_members.each do |conversation_member| %>
-          <li><%= conversation_member.user.first_name %></li>
+          <li><%= link_to conversation_member.user.first_name, conversation_path(conversation)%> <%=conversation_member.user.last_name %></li>
         <% end %>
       </ul>
     </li>
@@ -14,4 +14,7 @@
   <% end %>
 </ul>
 
-<%= link_to "New Conversation", new_conversation_path %>
+<p> <%= link_to "New Conversation", new_conversation_path %> </p>
+
+<p> <%= link_to "Home", root_path %> </p>
+
