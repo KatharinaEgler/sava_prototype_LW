@@ -6,7 +6,7 @@
       <%= circle.name %>
       <ul>
         <% circle.circle_members.each do |circle_member| %>
-          <li><%= circle_member.first_name %></li>
+          <li><%= circle_member.user.first_name %></li>
         <% end %>
       </ul>
     </li>
