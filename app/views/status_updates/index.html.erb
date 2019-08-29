@@ -1,1 +1,14 @@
 <h1>Updates</h1>
+
+
+
+<ul>
+  <% @status_updates.each do |update| %>
+    <li> Title: <%= update.title %> </li>
+    <li> Content: <%= update.content %> </li>
+    <li> Photo: <%= cl_image_tag update.photo, height: 150, width: 150, crop: :fill %> </li>
+  <% end %>
+</ul>
+
+<p> <%= link_to "Home", root_path %> </p>
+<p> <%= link_to "New Update",new_status_update_path %> </p>

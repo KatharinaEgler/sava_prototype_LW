@@ -1,3 +1,14 @@
 <h1>Slots</h1>
 
-<%= link_to "Home", home_path %>
+<ul>
+  <% @slots.each do |slot| %>
+    <li> Date: <%= slot.date %> </li>
+    <li> Hour: <%= slot.hour %> </li>
+    <li> Booked: <%= slot.booked %> </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Home", root_path %></p>
+<p> <%= link_to "New Slot", new_slot_path %> </p>
+
+
