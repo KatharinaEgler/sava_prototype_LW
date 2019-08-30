@@ -128,12 +128,14 @@ statusupdate_2 = StatusUpdate.new(user_id: chloe.id, title: "I broke my shoulder
 statusupdate_2.save!
 statusupdate_3 = StatusUpdate.new(user_id: chloe.id, title: "Big day!", content: "So, yes - big day! I start my new meds today. There's an exhaustive list of side effects including flushing, abdominal pain, diarrhea, vomiting, rashing, nausea and the list goes on. Reading about it is so different than living the side effects, so far nothing yet in the past hour. Keep your fingers crossed. ", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567118763/sava/anastasiia-ostapovych-YgeTHz0wspk-unsplash_tuykps.jpg")
 statusupdate_3.save!
-statusupdate_4 = StatusUpdate.new(user_id: chloe.id, title: "My arm hurts", content: " I got rid of the tube in my arm today. I hurt all the time. They will set me a new tube tomorrow, so one day of freedom.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image2-2_jnoycf.jpg")
+statusupdate_4 = StatusUpdate.new(user_id: chloe.id, title: "My arm hurts", content: " I got rid of the tube in my arm today. It hurts all the time. They will set me a new tube tomorrow, so one day/night of freedom.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image2-2_jnoycf.jpg")
 statusupdate_4.save!
-statusupdate_5 = StatusUpdate.new(user_id: chloe.id, title: "Hospital food", content: "A bunch of you have been asking what the food is like. Well, it is actually not that bad.", remote_photo_url: "hhttps://res.cloudinary.com/dd9qabk1u/image/upload/v1567120097/sava/image1-1_zeqezv.jpg")
+statusupdate_5 = StatusUpdate.new(user_id: chloe.id, title: "Hospital food", content: "A bunch of you have been asking what the food is like. Well, it is actually not that bad.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120097/sava/image1-1_zeqezv.jpg")
 statusupdate_5.save!
 statusupdate_6 = StatusUpdate.new(user_id: chloe.id, title: "Daily life", content: "Hello everyone, I just wanted to give you an update of how I am. Days are really just doctors' appointments and waiting. I feel helpless. Doctors and nurses are nice though. I will go into more details very soon. Check out one of our treatments rooms, nothing special. They all look the same.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image1-2_a9oews.jpg")
 statusupdate_6.save!
+statusupdate_7 = StatusUpdate.new(user_id: chloe.id, title: "Hospital roomie", content: "Quick update. I have a new hospital roomie now. She is nice. The doctors made a really tough procedure on her today. The PRP is injected into the damaged tissue or joint. It takes about 60 to 90 minutes to make and inject PRP. For tendon or ligament conditions, in addition to the PRP injection, the needle may be used to break up scar tissue and adhesions. This is called a tenotomy or fasciotomy.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120092/sava/image2-1_d54ti2.jpg")
+statusupdate_7.save!
 
 
 slot_1 = Slot.new(date: "09.09.2019", hour: 9, booked: true, user_id: chloe.id, booker_id: michaela.id, location: "3801 Rue Université, Montréal")
