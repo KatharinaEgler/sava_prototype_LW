@@ -52,6 +52,9 @@ rita.save!
 sophie = User.new(first_name: "Sophie", last_name: "McSimons", email: "sophie@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567037701/sava/marcelo-matarazzo-WKxWQg7tZoU-unsplash_ugi0am.jpg")
 sophie.save!
 
+grandma = User.new(first_name: "Grandma", last_name: "Leroux", email: "grandma@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567193591/sava/tiago-muraro-pwMds57bapI-unsplash_q8k9wq.jpg")
+grandma.save!
+
 conversation_1 = Conversation.new(name: "Conversation between Chloe & Sandra")
 conversation_1.save!
 
@@ -77,6 +80,9 @@ conversation_6.save!
 conversation_7 = Conversation.new(name: "Conversation between Chloe & Sophie")
 conversation_7.save!
 
+conversation_8 = Conversation.new(name: "Conversation between Chloe & Grandma")
+conversation_8.save!
+
 
 message_1 = Message.new(content: "It was so great seeing you. I want to see you as soon as possible again. I'll book a slot with sava then. The application is great.", user_id: sandra.id, conversation_id: conversation_1.id)
 message_1.save!
@@ -93,6 +99,9 @@ message_5.save!
 
 message_6 = Message.new(content: "Dear family, thanks again for your visit and your kind works. I'm so lucky to have you in my life.", user_id: chloe.id, conversation_id: conversation_3.id)
 message_6.save!
+
+message_7 = Message.new(content: "Love you, sweety. <3 <3 <3", user_id: grandma.id, conversation_id: conversation_8.id)
+message_7.save!
 
 
 conversation_member_1 = ConversationMember.new(conversation_id: conversation_1.id, user_id: chloe.id)
@@ -120,6 +129,11 @@ conversation_member_10 = ConversationMember.new(conversation_id: conversation_3.
 conversation_member_10.save!
 
 # ----
+
+conversation_member_11 = ConversationMember.new(conversation_id: conversation_8.id, user_id: chloe.id)
+conversation_member_11.save!
+conversation_member_12 = ConversationMember.new(conversation_id: conversation_8.id, user_id: grandma.id)
+conversation_member_12.save!
 
 
 statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg")
