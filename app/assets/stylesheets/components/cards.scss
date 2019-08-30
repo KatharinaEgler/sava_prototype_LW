@@ -125,8 +125,28 @@
     margin-right: 5px;
     border-radius: 50%;
   }
+}
 .appointment-avatar{
   border-radius: 50%;
   object-fit: cover;
 }
+
+.slots-card {
+ width: 90%;
 }
+
+.slot-appointment {
+  display: flex;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.slot-card-details {
+
+  width: 90%;
+
+}
+
