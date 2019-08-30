@@ -82,8 +82,6 @@
   width: 100%;
 }
 
-
-
 // cards for homepage
 
 .homepage-container {
@@ -125,8 +123,20 @@
     margin-right: 5px;
     border-radius: 50%;
   }
+
 .appointment-avatar{
   border-radius: 50%;
-  object-fit: cover;
+ object-fit: cover;
+}
+
+.slots-container {
+ display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
 }
 }
+
