@@ -14,8 +14,8 @@
             <span><%= User.find(slot.user_id).first_name%></span>
           </div>
         <% else %>
-          <div class='time-slot d-flex''>
-             <p class='slot-time d-flex''><%= slot.hour %> - <%= slot.hour + 1 %></p>
+          <div class='time-slot d-flex'>
+             <p class='slot-time d-flex'><%= slot.hour %> - <%= slot.hour + 1 %></p>
              <label class="slot-label">Available</label>
           </div>
         <% end %>
