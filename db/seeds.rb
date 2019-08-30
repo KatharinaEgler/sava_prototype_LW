@@ -167,6 +167,25 @@ friends.save!
 colleagues = Circle.new(user_id: chloe.id, name: "Colleagues")
 colleagues.save!
 
+circleupdate_1 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_1.id)
+circleupdate_1.save!
+circleupdate_2 = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_1.id)
+circleupdate_2.save!
+circleupdate_3 = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_2.id)
+circleupdate_3.save!
+circleupdate_4 = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_3.id)
+circleupdate_4.save!
+circleupdate_5 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_4.id)
+circleupdate_5.save!
+circleupdate_6 = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_5.id)
+circleupdate_6.save!
+circleupdate_7 = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_6.id)
+circleupdate_7.save!
+circleupdate_8 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_7.id)
+circleupdate_8.save!
+circleupdate_9 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_8.id)
+circleupdate_9.save!
+
 #binding.pry
 
 family_member_1 = CircleMember.new(circle_id: family.id, email: louise.email)

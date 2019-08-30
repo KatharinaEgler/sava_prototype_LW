@@ -1,14 +1,18 @@
 <h1>Updates</h1>
 
 
-
-<ul>
-  <% @status_updates.each do |update| %>
-    <li> Title: <%= update.title %> </li>
-    <li> Content: <%= update.content %> </li>
-    <li> Photo: <%= cl_image_tag update.photo, height: 150, width: 150, crop: :fill %> </li>
-  <% end %>
-</ul>
+<% @status_updates.each do |update| %>
+  <div class="card-update">
+    <div class="card update card-update-info">
+      <h2><%= link_to update.title, status_update_path(update) %></h2>
+    </div>
+    <div class="card-update-content">
+      <p> Circle: <%= update.circles.pluck(:name).join(", ") %></p>
+      <p> <%= update.content %> </p>
+      <p> <%= cl_image_tag update.photo, height: 150, width: 150, crop: :fill %></p>
+    </div>
+  </div>
+<% end %>
 
 <p> <%= link_to "Home", root_path %> </p>
 <p> <%= link_to "New Update",new_status_update_path %> </p>
