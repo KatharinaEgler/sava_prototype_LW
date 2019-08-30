@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :circles, only: [:index, :new, :create]
+  resources :circles, only: [:index, :show, :new, :create] do
+    resources :circle_members, only: [:create]
+  end
 
   resources :status_updates, only: [:index, :new, :create]
 
