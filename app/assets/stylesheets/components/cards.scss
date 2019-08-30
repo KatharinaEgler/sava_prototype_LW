@@ -140,3 +140,29 @@
 }
 }
 
+.card-update {
+  background: white;
+  border: 1px solid #adb5bd;
+  border-radius: 8px;
+  margin: 8px;
+
+}
+
+.card-update-info {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.card-update-content {
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.card-update-info img{
+  width: 100%;
+}
