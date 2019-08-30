@@ -1,14 +1,19 @@
 <h1>Slots</h1>
-
-<ul>
+<div class="slots-container">
+ <div class="slots-appointment">
+          <div class="d-flex">
+            <%= image_tag("icon-clock.svg") %>
   <% @slots.each do |slot| %>
+  <!-- need to confirm the loop for this item if booked = false-->
     <li> Date: <%= slot.date %> </li>
     <li> Hour: <%= slot.hour %> </li>
-    <li> Booked: <%= slot.booked %> </li>
+    <!-- <li> Booked: <%= slot.booked %> </li> -->
+    <hr>
   <% end %>
 </ul>
 
 <p><%= link_to "Home", root_path %></p>
 <p> <%= link_to "New Slot", new_slot_path %> </p>
-
-
+</div>
+</div>
+</div>
