@@ -3,6 +3,11 @@ class CirclesController < ApplicationController
     @circles = Circle.all
   end
 
+  def show
+    @circle = Circle.find(params[:id])
+    @circle_member = CircleMember.new
+  end
+
   def new
     @circle = Circle.new
     @circle.circle_members.build
@@ -18,6 +23,7 @@ class CirclesController < ApplicationController
       render :new
     end
   end
+
 
   private
 
