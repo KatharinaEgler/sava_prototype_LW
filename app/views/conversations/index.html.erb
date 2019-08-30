@@ -1,18 +1,24 @@
 
 
-<h1>Overview of conversations</h1>
+<h1 style="padding-left: 16px;">Overview of conversations</h1>
 <div class="screen-container">
 
   <div class="conversation-cards">
     <div class="conversation-column">
-<ul>
+<ul class='conversation-list'>
   <% @conversations.each do |conversation| %>
     <div>
-      <%= conversation.name %>
-      <ul>
+      <p style='padding-bottom: 10px;'><%= conversation.name %></p>
+
+      <ul class="conversation-list">
         <% conversation.conversation_members.each do |conversation_member| %>
           <% next if conversation_member.user == current_user  %>
-          <li> <%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %> <%= link_to conversation_member.user.first_name, conversation_path(conversation)%> <%=conversation_member.user.last_name %></li>
+          <li class='conversation-item'>
+            <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
+            <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span><br>
+            <span> <%= conversation.messages.last.content[0,20] + '...' %></span>
+            <hr>
+          </li>
         <% end %>
       </ul>
     </li>

@@ -1,7 +1,7 @@
 <div class="homepage-container">
   <div class="homepage-banner">
     <div>
-      <h1>Hi <%= current_user.first_name %></h1>
+      <h1 style="padding-left: 0px;"> Hi <%= current_user.first_name %></h1>
       <p>how are you feeling?</p>
     </div>
   </div>
@@ -10,6 +10,8 @@
 
     </div>
     <h2>Today's Appointment</h2>
+    <div>
+      <div>
       <% @slots.each do |slot|%>
         <div class="homepage-appointment">
           <div class="d-flex">
