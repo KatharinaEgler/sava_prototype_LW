@@ -9,22 +9,45 @@
     <div class="homepage-card-details">
 
     </div>
-    <h2>Today's Appointment</h2>
+
+    <h3>Milestones of <%=User.find(@slots.first.user_id).first_name%></h3>
+    <p>Diagnosis: XX, in treatment for 7 days</p>
+    <p>Next milestone: intense chemo in 5 days </p>
+<br>
+    <h3>Your next appointments</h3>
     <div>
       <div>
       <% @slots.each do |slot|%>
-        <div class="homepage-appointment">
+        <% if slot.booked == true %>
+        <div class="homepage-appointment homepage-appointment-img">
           <div class="d-flex">
             <%= image_tag("icon-clock.svg") %>
-            <span> <%=slot.hour%></span>
+            <span> <%=slot.date%> a </span>
+            <span>t <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
           </div>
-         <div class="d-flex">
-            <%= cl_image_tag(User.find(slot.user_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-            <span><%=User.find(slot.user_id).first_name%></span>
-          </div>
+            <div class="d-flex">
+             <%= cl_image_tag(User.find(slot.booker_id).photo,width: 25, height:25, class:"appointment-avatar") %>
+            <span><%=User.find(slot.booker_id).first_name%></span>
+            </div>
         </div>
+        <% end %>
       <% end %>
+<br>
+      <h3>Latest update</h3>
+      <div>
+        <div>
+          <div class="homepage-appointment">
+            <div class="d-flex">
+              <span> <%=StatusUpdate.last.title%></span>
+            </div>
+              <div class="d-flex">
+              <span> <%= StatusUpdate.last.content[0,200] + '...' %></span>
+              <span><%=cl_image_tag(StatusUpdate.last.photo, height: 150, width: 120, crop: :fill)%></span>
+              </div>
+          </div>
   </div>
+
+
 
 <div>
   <%= link_to "Updates", status_updates_path %>
