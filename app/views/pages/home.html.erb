@@ -23,30 +23,32 @@
         <div>
         <% @slots.each do |slot|%>
           <% if slot.booked == true %>
-          <div class="homepage-appointment homepage-appointment-img">
-            <div class="d-flex">
-              <%= image_tag("icon-clock.svg") %>
-              <span> <%=slot.date.strftime("%d.%m.%y")%> at </span>
-              <span> <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
+            <div class="homepage-appointment homepage-appointment-img">
+              <div class="d-flex">
+                <%= image_tag("icon-clock.svg") %>
+                <span> <%=slot.date.strftime("%d.%m.%y")%> at </span>
+                <span> <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
+              </div>
+              <div class="d-flex">
+                <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
+                <span><%=User.find(slot.booker_id).first_name%></span>
+              </div>
             </div>
-            <div class="d-flex">
-              <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-              <span><%=User.find(slot.booker_id).first_name%></span>
-            </div>
-          </div>
           <% end %>
         <% end %>
-        <br>
-          <h3>Latest update</h3>
+        </div>
+      <br>
+      <h3>Latest update</h3>
+        <div>
           <div>
             <p>
             <span> <%=StatusUpdate.last.title%></span>
             </p>
-            <div class="homepage-appointment">
-                <div class="d-flex">
-                  <span> <%= StatusUpdate.last.content[0,200] + '...' %></span>
-                  <span><%=cl_image_tag(StatusUpdate.last.photo, height: 150, width: 120, crop: :fill)%></span>
-                </div>
+          </div>
+          <div class="homepage-appointment">
+            <div class="d-flex">
+              <span> <%= StatusUpdate.last.content[0,200] + '...' %></span>
+              <span><%=cl_image_tag(StatusUpdate.last.photo, height: 150, width: 120, crop: :fill)%></span>
             </div>
           </div>
         </div>
