@@ -5,7 +5,7 @@
     <div class="conversation-column">
       <ul class='conversation-list'>
         <% @conversations.each do |conversation| %>
-          
+
           <div>
 
             <% if conversation.notifications.where(user: current_user).count > 0 %>
@@ -13,15 +13,15 @@
 
               <ul class="conversation-list unread-conversation">
                 <% conversation.conversation_members.each do |conversation_member| %>
-                  
+
                   <% next if conversation_member.user == current_user  %>
                     <li class='conversation-item'>
                       <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
                       <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span><br>
-                      <span class="unread-conversation"> <%= conversation.messages.last.content[0,20] + '...' %></span>
+                      <span class="unread-conversation"> <%= conversation.messages.last.content[0,40] + '...' %></span>
                       <hr>
                     </li>
-                <% end %> 
+                <% end %>
               </ul>
 
             <% else %>
