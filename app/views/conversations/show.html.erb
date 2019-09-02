@@ -1,11 +1,15 @@
-<h1><%= @conversation.conversation_members[1].user.first_name %></h1>
+<p></p>
+<p></p>
+<%= link_to "Conversations", conversations_path %>
+<p></p>
+<h1 class="page-header">Messages/<%= @conversation.conversation_members[1].user.first_name %></h1>
 
-<ul class="messages">
+<div>
   <% @conversation.messages.each do |message| %>
   <%= render 'messages/card', message: message  %>
   <% Notification.where(user: current_user, conversation: @conversation).destroy_all %>
   <% end %>
-</ul>
+</div>
 
 <div class="messages-new">
   <%= render 'messages/form', message: @message, conversation: @conversation %>

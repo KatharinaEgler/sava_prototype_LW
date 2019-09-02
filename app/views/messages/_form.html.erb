@@ -1,4 +1,4 @@
 <%= simple_form_for([conversation, message], remote: true) do |f| %>
-<%= f.input :content %>
-<%= f.submit "Send" %>
+<%= f.input :content, input_html: { class: "message-form" } %>
+<%= f.submit "Send", { class: "message-button" }  %>
 <% end %>
