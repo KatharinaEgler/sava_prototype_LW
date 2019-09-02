@@ -33,7 +33,7 @@
                     <li class='conversation-item'>
                       <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
                       <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span><br>
-                      <span> <%= conversation.messages.last.content[0,20] + '...' %></span>
+                      <span> <%= conversation.messages.last.content[0,40] + '...' %></span>
                       <hr>
                     </li>
                 <% end %>
