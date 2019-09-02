@@ -68,18 +68,10 @@
 }
 
 
-.conversation-cards {
-  width: 100%;
-  border: 1px solid #6c757d;
-  border-radius: 8px;
-  justify-content: space-around;
-  align-items: center;
-  background-size: cover;
-}
 
-.conversation-column {
-  flex-shrink: 0;
-  width: 100%;
+// card for unread messages
+.unread-conversation {
+  font-weight: 800;
 }
 
 // cards for homepage
@@ -146,32 +138,6 @@
  object-fit: cover;
 }
 
-.slots-container {
- display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 16px;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: white;
-}
-
-.slots-card {
- width: 90%;
-}
-
-.slot-appointment {
-  display: flex;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 16px;
-}
-
-.slot-card-details {
-  width: 90%;
-}
 
 .card-update {
   background: white;

@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :status_updates, dependent: :destroy
   has_many :circles, dependent: :destroy
   has_many :circle_members, dependent: :destroy
+  has_many :notifications, dependent: :destroy
   has_many :conversation_members, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :conversations, through: :conversation_members

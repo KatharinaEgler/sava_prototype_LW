@@ -1,9 +1,16 @@
 .conversation-list {
   padding-inline-start: 5px !important;
   padding: 5px;
+
 }
 
 .conversation-item {
   list-style: none;
+  justify-content: space-between;
+  img{
+    margin-right: 5px;
+    border-radius: 50%;
+
+  }
 }
 

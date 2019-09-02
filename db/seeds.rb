@@ -15,6 +15,7 @@ Conversation.destroy_all
 Slot.destroy_all
 CircleMember.destroy_all
 ConversationMember.destroy_all
+Notification.destroy_all
 
 # Main character
 chloe = User.new(first_name: "Chloe", last_name: "Leroux", email: "chloe@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567020979/sava/edward-cisneros-_H6wpor9mjs-unsplash_w0qgaa.jpg")
@@ -100,8 +101,14 @@ message_5.save!
 message_6 = Message.new(content: "Dear family, thanks again for your visit and your kind works. I'm so lucky to have you in my life.", user_id: chloe.id, conversation_id: conversation_3.id)
 message_6.save!
 
-message_7 = Message.new(content: "Love you, sweety. <3 <3 <3", user_id: grandma.id, conversation_id: conversation_8.id)
+message_7 = Message.new(content: "🤗 have you met any handsome doctors yet? 😍 love you sweety 😍😍😍 🤕🤕🤕", user_id: grandma.id, conversation_id: conversation_8.id)
 message_7.save!
+
+message_8 = Message.new(content: "Thanks you so much for the nice presents! 🤗 ", user_id: chloe.id, conversation_id: conversation_4.id)
+message_8.save!
+
+message_8 = Message.new(content: "Your last update is so intense. I wish, I could have been there for you.", user_id: sophie.id, conversation_id: conversation_7.id)
+message_8.save!
 
 
 conversation_member_1 = ConversationMember.new(conversation_id: conversation_1.id, user_id: chloe.id)
@@ -134,6 +141,21 @@ conversation_member_11 = ConversationMember.new(conversation_id: conversation_8.
 conversation_member_11.save!
 conversation_member_12 = ConversationMember.new(conversation_id: conversation_8.id, user_id: grandma.id)
 conversation_member_12.save!
+
+conversation_member_13 = ConversationMember.new(conversation_id: conversation_4.id, user_id: chloe.id)
+conversation_member_13.save!
+conversation_member_14 = ConversationMember.new(conversation_id: conversation_4.id, user_id: tom.id)
+conversation_member_14.save!
+
+conversation_member_13 = ConversationMember.new(conversation_id: conversation_7.id, user_id: chloe.id)
+conversation_member_13.save!
+conversation_member_14 = ConversationMember.new(conversation_id: conversation_7.id, user_id: sophie.id)
+conversation_member_14.save!
+
+notification_1 = Notification.new(conversation_id: conversation_8.id, user_id: chloe.id)
+notification_1.save!
+notification_2 = Notification.new(conversation_id: conversation_1.id, user_id: chloe.id)
+notification_2.save!
 
 
 statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg")
