@@ -2,8 +2,7 @@
 <p></p>
 <%= link_to "Conversations", conversations_path %>
 <p></p>
-<h1 class="page-header">Messages/<%= @conversation.name %></h1>
-
+<h1 class="page-header">Messages/<%= @conversation.conversation_members[1].user.first_name %></h1>
 
 <div>
   <% @conversation.messages.each do |message| %>
