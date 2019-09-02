@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
     # else
       # render "conversations/show"
     # end
+    @conversation.users.where.not(user: current_user) # added this as basis for the notifications table
   end
 
   private
