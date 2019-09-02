@@ -1,0 +1,65 @@
+.footer {
+  justify-content: space-between;
+  background: white;
+  border-top: 0.02em solid $grey;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.footer-icons {
+  display: flex;
+  flex-grow: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding-inline-start: 0px;
+}
+
+.footer-icons li {
+  list-style-type: none;
+  text-align: center;
+}
+
+.footer-icons img {
+  text-align: center;
+  padding-top: 3px;
+}
+
+.footer-item {
+  width: 70px;
+  font-size: 9px;
+  margin-bottom: 3px;
+}
+
+.footer-item :hover {
+  text-decoration: none;
+}
+
+.footer-item :visited {
+  text-decoration: none;
+}
+
+.footer-item p {
+  text-decoration: none;
+  margin-bottom: 0px;
+}
+
+.footer-link-on {
+  border-top: 3px solid $red;
+}
+
+.footer-link-off {
+  border-top: 3px solid rgba(0, 0, 0, 0);
+}
+
+.footer-link-on p {
+  color: $red;
+}
+
+.footer-link-off p {
+  color: $dark-grey;
+}

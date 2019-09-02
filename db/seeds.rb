@@ -101,8 +101,14 @@ message_5.save!
 message_6 = Message.new(content: "Dear family, thanks again for your visit and your kind works. I'm so lucky to have you in my life.", user_id: chloe.id, conversation_id: conversation_3.id)
 message_6.save!
 
-message_7 = Message.new(content: "🤗🤗 love you sweety 😍😍😍😍 🤕🤕🤕", user_id: grandma.id, conversation_id: conversation_8.id)
+message_7 = Message.new(content: "🤗 have you met any handsome doctors yet? 😍 love you sweety 😍😍😍 🤕🤕🤕", user_id: grandma.id, conversation_id: conversation_8.id)
 message_7.save!
+
+message_8 = Message.new(content: "Thanks you so much for the nice presents! 🤗 ", user_id: chloe.id, conversation_id: conversation_4.id)
+message_8.save!
+
+message_8 = Message.new(content: "Your last update is so intense. I wish, I could have been there for you.", user_id: sophie.id, conversation_id: conversation_7.id)
+message_8.save!
 
 
 conversation_member_1 = ConversationMember.new(conversation_id: conversation_1.id, user_id: chloe.id)
@@ -136,6 +142,15 @@ conversation_member_11.save!
 conversation_member_12 = ConversationMember.new(conversation_id: conversation_8.id, user_id: grandma.id)
 conversation_member_12.save!
 
+conversation_member_13 = ConversationMember.new(conversation_id: conversation_4.id, user_id: chloe.id)
+conversation_member_13.save!
+conversation_member_14 = ConversationMember.new(conversation_id: conversation_4.id, user_id: tom.id)
+conversation_member_14.save!
+
+conversation_member_13 = ConversationMember.new(conversation_id: conversation_7.id, user_id: chloe.id)
+conversation_member_13.save!
+conversation_member_14 = ConversationMember.new(conversation_id: conversation_7.id, user_id: sophie.id)
+conversation_member_14.save!
 
 notification_1 = Notification.new(conversation_id: conversation_8.id, user_id: chloe.id)
 notification_1.save!
