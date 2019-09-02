@@ -127,6 +127,19 @@
     border-radius: 50%;
   }
 
+.intro-container {
+    width: 303px;
+    height: 74px;
+    // left: 35px;
+    top: 103px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+}
 
 .appointment-avatar{
   border-radius: 50%;

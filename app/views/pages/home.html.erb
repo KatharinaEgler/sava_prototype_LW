@@ -1,18 +1,23 @@
 <div class="homepage-container">
   <div class="homepage-banner">
-    <div>
-      <h1 style="padding-left: 0px;"> Hi <%= current_user.first_name %></h1>
-      <p>how are you feeling?</p>
+    <div class="intro-container">
+      <div>
+        <h1 style="padding-left: 0px;"> Hi <%= current_user.first_name %> </h1>
+        <p>how are you feeling?</p>
+      </div>
+      <div class="d-flex">
+        <%= image_tag("smile.svg", width: 35, height: 35) %>
+      </div>
     </div>
   </div>
   <div class="homepage-card">
     <div class="homepage-card-details">
 
     </div>
-
+<br>
     <h3>Milestones of <%=User.find(@slots.first.user_id).first_name%></h3>
-    <p>Diagnosis: XX, in treatment for 7 days</p>
-    <p>Next milestone: intense chemo in 5 days </p>
+    <p>Diagnosis: leukemia, in treatment for 7 days</p>
+    <p>Next milestone: chemo in 3 days </p>
 <br>
     <h3>Your next appointments</h3>
     <div>
@@ -22,11 +27,11 @@
         <div class="homepage-appointment homepage-appointment-img">
           <div class="d-flex">
             <%= image_tag("icon-clock.svg") %>
-            <span> <%=slot.date%> a </span>
-            <span>t <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
+            <span> <%=slot.date%> at </span>
+            <span> <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
           </div>
             <div class="d-flex">
-             <%= cl_image_tag(User.find(slot.booker_id).photo,width: 25, height:25, class:"appointment-avatar") %>
+             <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
             <span><%=User.find(slot.booker_id).first_name%></span>
             </div>
         </div>
@@ -36,9 +41,11 @@
       <h3>Latest update</h3>
       <div>
         <div>
+          <p>
+          <span> <%=StatusUpdate.last.title%></span>
+          </p>
           <div class="homepage-appointment">
             <div class="d-flex">
-              <span> <%=StatusUpdate.last.title%></span>
             </div>
               <div class="d-flex">
               <span> <%= StatusUpdate.last.content[0,200] + '...' %></span>
