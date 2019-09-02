@@ -14,3 +14,25 @@
   }
 }
 
+.name-time{
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+
+.message-content{
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.message-form {
+  styling: none
+}
+
+.message-button{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #23B498;
+
+}
+
