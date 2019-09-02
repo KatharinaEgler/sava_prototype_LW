@@ -6,7 +6,7 @@
       <%= link_to circle.name, circle_path(circle)%>
       <ul>
         <% circle.circle_members.each do |circle_member| %>
-          <li><%= cl_image_tag circle_member.user.photo, class: "avatar dropdown-toggle" %> <%= circle_member.user.fullname %></li>
+          <li><%= cl_image_tag circle_member.user.photo, width: 250, crop: "scale", class: "avatar dropdown-toggle" %> <%= circle_member.user.fullname %></li>
         <% end %>
       </ul>
     </li>

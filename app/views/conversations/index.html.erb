@@ -13,7 +13,7 @@
                   <% conversation.conversation_members.each do |conversation_member| %>
                     <% next if conversation_member.user == current_user  %>
                     <div>
-                      <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
+                      <span><%= cl_image_tag conversation_member.user.photo, width: 250, crop: "scale", class: "avatar dropdown-toggle" %></span>
                       <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span>
                       <span class="unread-conversation"> <%= conversation.messages.last.content[0,40] + '...' %></span>
                       <span> <%= conversation.updated_at.strftime("%d.%m.%y") %> </span>
@@ -30,7 +30,7 @@
                 <% conversation.conversation_members.each do |conversation_member| %>
                   <% next if conversation_member.user == current_user  %>
                   <div>
-                    <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
+                    <span><%= cl_image_tag conversation_member.user.photo, width: 250, crop: "scale", class: "avatar dropdown-toggle" %></span>
                     <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span>
                     <span> <%= conversation.messages.last.content[0,40] + '...' %></span>
                     <span> <%= conversation.updated_at.strftime("%d.%m.%y") %> </span>
