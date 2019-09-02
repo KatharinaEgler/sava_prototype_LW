@@ -1,66 +1,57 @@
-<div class="homepage-container">
-  <div class="homepage-banner">
-    <div class="intro-container">
-      <div class="d-flex">
-        <h1 style="padding-left: 0px;"> Hi <%= current_user.first_name %> </h1>
-        <p>how are you feeling?</p>
-      </div>
-      <div class="d-flex">
-        <%= image_tag("smile.svg", width: 35, height: 35) %>
-      </div>
-    </div>
-  </div>
-  <div class="homepage-card">
-    <div class="homepage-card-details">
+<div class="main-container">
 
-    </div>
-<br>
-    <h3>Milestones of <%=User.find(@slots.first.user_id).first_name%></h3>
-    <p>Diagnosis: leukemia, in treatment for 7 days</p>
-    <p>Next milestone: chemo in 3 days </p>
-<br>
-    <h3>Your next appointments</h3>
-    <div>
-      <div>
-      <% @slots.each do |slot|%>
-        <% if slot.booked == true %>
-        <div class="homepage-appointment homepage-appointment-img">
-          <div class="d-flex">
-            <%= image_tag("icon-clock.svg") %>
-            <span> <%=slot.date.strftime("%d.%m.%y")%> at </span>
-            <span> <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
-          </div>
-            <div class="d-flex">
-             <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-            <span><%=User.find(slot.booker_id).first_name%></span>
-            </div>
+  <div class="homepage-container">
+    <div class="homepage-banner">
+      <div class="intro-container">
+        <div class="d-flex">
+          <h1 style="padding-left: 0px;"> Hi <%= current_user.first_name %> </h1>
+          <p>how are you feeling?</p>
         </div>
-        <% end %>
-      <% end %>
-<br>
-      <h3>Latest update</h3>
+        <div class="d-flex">
+          <%= image_tag("smile.svg", width: 35, height: 35) %>
+        </div>
+      </div>
+    </div>
+    <div class="homepage-card">
+      <br>
+        <h3>Milestones of <%=User.find(@slots.first.user_id).first_name%></h3>
+        <p>Diagnosis: leukemia, in treatment for 7 days</p>
+        <p>Next milestone: chemo in 3 days </p>
+      <br>
+        <h3>Your next appointments</h3>
       <div>
         <div>
-          <p>
-          <span> <%=StatusUpdate.last.title%></span>
-          </p>
-          <div class="homepage-appointment">
+        <% @slots.each do |slot|%>
+          <% if slot.booked == true %>
+          <div class="homepage-appointment homepage-appointment-img">
             <div class="d-flex">
+              <%= image_tag("icon-clock.svg") %>
+              <span> <%=slot.date.strftime("%d.%m.%y")%> at </span>
+              <span> <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
             </div>
-              <div class="d-flex">
-              <span> <%= StatusUpdate.last.content[0,200] + '...' %></span>
-              <span><%=cl_image_tag(StatusUpdate.last.photo, height: 150, width: 120, crop: :fill)%></span>
-              </div>
+            <div class="d-flex">
+              <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
+              <span><%=User.find(slot.booker_id).first_name%></span>
+            </div>
           </div>
+          <% end %>
+        <% end %>
+        <br>
+          <h3>Latest update</h3>
+          <div>
+            <p>
+            <span> <%=StatusUpdate.last.title%></span>
+            </p>
+            <div class="homepage-appointment">
+                <div class="d-flex">
+                  <span> <%= StatusUpdate.last.content[0,200] + '...' %></span>
+                  <span><%=cl_image_tag(StatusUpdate.last.photo, height: 150, width: 120, crop: :fill)%></span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-
-<div>
-  <%= link_to "Updates", status_updates_path %>
-  <%= link_to "Conversations", conversations_path %>
-  <%= link_to "Calendar", slots_path %>
-  <%= link_to "Circles", circles_path %>
-</div>
 
 </div>
