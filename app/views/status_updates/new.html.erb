@@ -1,11 +1,18 @@
 <h1>Add your update here</h1>
 
-
 <%= simple_form_for @status_updates do |f| %>
   <%= f.input :title, wrapper_html: {class: "xxx"}  %>
   <%= f.input :content, wrapper_html: {class: "xxx"} %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
+  <%= f.input :circles, as: :select, collection: @circles %>
 
   <%= f.button :submit, value: "Post update", class: 'btn btn-lg btn-primary big-btn-form' %>
 <% end %>
+
+<div>
+  <%= link_to "Updates", status_updates_path %>
+  <%= link_to "Conversations", conversations_path %>
+  <%= link_to "Calendar", slots_path %>
+  <%= link_to "Circles", circles_path %>
+</div>

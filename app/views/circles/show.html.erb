@@ -1,0 +1,29 @@
+<h1>Details of circles</h1>
+
+<ul>
+  <% @circle.circle_members.each do |circle_member| %>
+    <li>
+      <%= cl_image_tag circle_member.user.photo, class: "avatar dropdown-toggle" %>
+      <%= circle_member.user.fullname %>
+      </li>
+  <% end %>
+</ul>
+
+<p id="edit-circle-button"> <%= link_to "Plus", circle_path(@circle) %> </p>
+<p> <%= link_to "Home", root_path %> </p>
+
+<div class="add-members-form">
+  <%= simple_form_for([@circle, @circle_member]) do |f| %>
+    <%= f.input :email %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
+
+<div>
+  <%= link_to "Updates", status_updates_path %>
+  <%= link_to "Conversations", conversations_path %>
+  <%= link_to "Calendar", slots_path %>
+  <%= link_to "Circles", circles_path %>
+</div>
+

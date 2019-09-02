@@ -15,6 +15,7 @@ Conversation.destroy_all
 Slot.destroy_all
 CircleMember.destroy_all
 ConversationMember.destroy_all
+Notification.destroy_all
 
 # Main character
 chloe = User.new(first_name: "Chloe", last_name: "Leroux", email: "chloe@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567020979/sava/edward-cisneros-_H6wpor9mjs-unsplash_w0qgaa.jpg")
@@ -52,6 +53,9 @@ rita.save!
 sophie = User.new(first_name: "Sophie", last_name: "McSimons", email: "sophie@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567037701/sava/marcelo-matarazzo-WKxWQg7tZoU-unsplash_ugi0am.jpg")
 sophie.save!
 
+grandma = User.new(first_name: "Grandma", last_name: "Leroux", email: "grandma@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567193591/sava/tiago-muraro-pwMds57bapI-unsplash_q8k9wq.jpg")
+grandma.save!
+
 conversation_1 = Conversation.new(name: "Conversation between Chloe & Sandra")
 conversation_1.save!
 
@@ -77,6 +81,9 @@ conversation_6.save!
 conversation_7 = Conversation.new(name: "Conversation between Chloe & Sophie")
 conversation_7.save!
 
+conversation_8 = Conversation.new(name: "Conversation between Chloe & Grandma")
+conversation_8.save!
+
 
 message_1 = Message.new(content: "It was so great seeing you. I want to see you as soon as possible again. I'll book a slot with sava then. The application is great.", user_id: sandra.id, conversation_id: conversation_1.id)
 message_1.save!
@@ -93,6 +100,9 @@ message_5.save!
 
 message_6 = Message.new(content: "Dear family, thanks again for your visit and your kind works. I'm so lucky to have you in my life.", user_id: chloe.id, conversation_id: conversation_3.id)
 message_6.save!
+
+message_7 = Message.new(content: "🤗🤗 love you sweety 😍😍😍😍 🤕🤕🤕", user_id: grandma.id, conversation_id: conversation_8.id)
+message_7.save!
 
 
 conversation_member_1 = ConversationMember.new(conversation_id: conversation_1.id, user_id: chloe.id)
@@ -120,6 +130,17 @@ conversation_member_10 = ConversationMember.new(conversation_id: conversation_3.
 conversation_member_10.save!
 
 # ----
+
+conversation_member_11 = ConversationMember.new(conversation_id: conversation_8.id, user_id: chloe.id)
+conversation_member_11.save!
+conversation_member_12 = ConversationMember.new(conversation_id: conversation_8.id, user_id: grandma.id)
+conversation_member_12.save!
+
+
+notification_1 = Notification.new(conversation_id: conversation_8.id, user_id: chloe.id)
+notification_1.save!
+notification_2 = Notification.new(conversation_id: conversation_1.id, user_id: chloe.id)
+notification_2.save!
 
 
 statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg")
@@ -166,6 +187,25 @@ friends = Circle.new(user_id: chloe.id, name: "Friends")
 friends.save!
 colleagues = Circle.new(user_id: chloe.id, name: "Colleagues")
 colleagues.save!
+
+circleupdate_1 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_1.id)
+circleupdate_1.save!
+circleupdate_2 = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_1.id)
+circleupdate_2.save!
+circleupdate_3 = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_2.id)
+circleupdate_3.save!
+circleupdate_4 = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_3.id)
+circleupdate_4.save!
+circleupdate_5 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_4.id)
+circleupdate_5.save!
+circleupdate_6 = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_5.id)
+circleupdate_6.save!
+circleupdate_7 = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_6.id)
+circleupdate_7.save!
+circleupdate_8 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_7.id)
+circleupdate_8.save!
+circleupdate_9 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_8.id)
+circleupdate_9.save!
 
 #binding.pry
 

@@ -82,6 +82,11 @@
   width: 100%;
 }
 
+// card for unread messages
+.unread-conversation {
+  font-weight: 800;
+}
+
 // cards for homepage
 
 .homepage-container {
@@ -119,11 +124,27 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 16px;
+    }
+
+.homepage-appointment-img
   img{
     margin-right: 5px;
     border-radius: 50%;
   }
-    }
+
+.intro-container {
+    width: 303px;
+    height: 74px;
+    // left: 35px;
+    top: 103px;
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+}
 
 .appointment-avatar{
   border-radius: 50%;
@@ -131,3 +152,29 @@
 }
 
 
+.card-update {
+  background: white;
+  border: 1px solid #adb5bd;
+  border-radius: 8px;
+  margin: 8px;
+
+}
+
+.card-update-info {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.card-update-content {
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.card-update-info img{
+  width: 100%;
+}

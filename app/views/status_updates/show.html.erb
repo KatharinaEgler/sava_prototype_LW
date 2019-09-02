@@ -1,0 +1,22 @@
+<h1>Update</h1>
+
+<div class="card-update">
+  <div class="card-update-info">
+    <p> <%= @circles.pluck(:name).join(", ") %></p>
+  </div>
+  <div class="card-update-content">
+    <h2><%= @status_update.title %></h2>
+    <p><%= @status_update.content %></p>
+    <p><%= cl_image_tag @status_update.photo, height: 150, width: 150, crop: :fill %></p>
+  </div>
+</div>
+
+<p> <%= link_to "Home", root_path %> </p>
+<p> <%= link_to "Go back to Updates", status_updates_path %> </p>
+
+<div>
+  <%= link_to "Updates", status_updates_path %>
+  <%= link_to "Conversations", conversations_path %>
+  <%= link_to "Calender", slots_path %>
+  <%= link_to "Circles", circles_path %>
+</div>

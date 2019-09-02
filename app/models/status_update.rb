@@ -1,6 +1,7 @@
 class StatusUpdate < ApplicationRecord
   belongs_to :user
-  has_many :circle_updates
+  has_many :circle_updates, dependent: :destroy
+  has_many :circles, through: :circle_updates
 
   mount_uploader :photo, PhotoUploader
 
