@@ -1,4 +1,4 @@
-<h1><%= @conversation.name %></h1>
+<h1><%= @conversation.conversation_members[1].user.first_name %></h1>
 
 <ul class="messages">
   <% @conversation.messages.each do |message| %>
