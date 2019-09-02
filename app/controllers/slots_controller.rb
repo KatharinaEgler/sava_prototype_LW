@@ -12,7 +12,7 @@ class SlotsController < ApplicationController
   def create
     if @slot.save!
       redirect_to slot_path(@slot)
-    els
+    else
       render :new
     end
   end
