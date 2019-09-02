@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_170015) do
+ActiveRecord::Schema.define(version: 2019_09_02_143830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,15 @@ ActiveRecord::Schema.define(version: 2019_08_30_170015) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "conversation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_notifications_on_conversation_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "slots", force: :cascade do |t|
     t.date "date"
     t.integer "hour"
@@ -113,6 +122,8 @@ ActiveRecord::Schema.define(version: 2019_08_30_170015) do
   add_foreign_key "conversation_members", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "notifications", "conversations"
+  add_foreign_key "notifications", "users"
   add_foreign_key "slots", "users"
   add_foreign_key "slots", "users", column: "booker_id"
   add_foreign_key "status_updates", "users"

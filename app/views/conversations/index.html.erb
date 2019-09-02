@@ -7,19 +7,35 @@
 <ul class='conversation-list'>
   <% @conversations.each do |conversation| %>
     <div>
-      <p style='padding-bottom: 10px;'><%= conversation.name %></p>
+      <% if conversation.notifications.where(user: current_user).count > 0 %>
+        <p class="unread-conversation" style='padding-bottom: 10px;'><%= conversation.name %></p>
 
-      <ul class="conversation-list">
-        <% conversation.conversation_members.each do |conversation_member| %>
-          <% next if conversation_member.user == current_user  %>
-          <li class='conversation-item'>
-            <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
-            <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span><br>
-            <span> <%= conversation.messages.last.content[0,20] + '...' %></span>
-            <hr>
-          </li>
+          <ul class="conversation-list unread-conversation">
+            <% conversation.conversation_members.each do |conversation_member| %>
+              <% next if conversation_member.user == current_user  %>
+              <li class='conversation-item'>
+                <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
+                <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span><br>
+                <span class="unread-conversation"> <%= conversation.messages.last.content[0,20] + '...' %></span>
+                <hr>
+              </li>
+            <% end %>
+
+      <% else %>
+        <p style='padding-bottom: 10px;'><%= conversation.name %></p>
+
+        <ul class="conversation-list">
+          <% conversation.conversation_members.each do |conversation_member| %>
+            <% next if conversation_member.user == current_user  %>
+            <li class='conversation-item'>
+              <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
+              <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span><br>
+              <span> <%= conversation.messages.last.content[0,20] + '...' %></span>
+              <hr>
+            </li>
         <% end %>
-      </ul>
+    <% end %>
+    </ul>
     </li>
 
   <% end %>

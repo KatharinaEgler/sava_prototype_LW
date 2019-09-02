@@ -3,6 +3,7 @@
 <ul class="messages">
   <% @conversation.messages.each do |message| %>
   <%= render 'messages/card', message: message  %>
+  <% Notification.where(user: current_user, conversation: @conversation).destroy_all %>
   <% end %>
 </ul>
 

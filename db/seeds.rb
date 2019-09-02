@@ -15,6 +15,7 @@ Conversation.destroy_all
 Slot.destroy_all
 CircleMember.destroy_all
 ConversationMember.destroy_all
+Notification.destroy_all
 
 # Main character
 chloe = User.new(first_name: "Chloe", last_name: "Leroux", email: "chloe@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567020979/sava/edward-cisneros-_H6wpor9mjs-unsplash_w0qgaa.jpg")
@@ -134,6 +135,12 @@ conversation_member_11 = ConversationMember.new(conversation_id: conversation_8.
 conversation_member_11.save!
 conversation_member_12 = ConversationMember.new(conversation_id: conversation_8.id, user_id: grandma.id)
 conversation_member_12.save!
+
+
+notification_1 = Notification.new(conversation_id: conversation_8.id, user_id: chloe.id)
+notification_1.save!
+notification_2 = Notification.new(conversation_id: conversation_1.id, user_id: chloe.id)
+notification_2.save!
 
 
 statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg")
