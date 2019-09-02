@@ -68,19 +68,6 @@
 }
 
 
-.conversation-cards {
-  width: 100%;
-  border: 1px solid #6c757d;
-  border-radius: 8px;
-  justify-content: space-around;
-  align-items: center;
-  background-size: cover;
-}
-
-.conversation-column {
-  flex-shrink: 0;
-  width: 100%;
-}
 
 // card for unread messages
 .unread-conversation {
