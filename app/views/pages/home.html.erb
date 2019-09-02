@@ -27,7 +27,7 @@
         <div class="homepage-appointment homepage-appointment-img">
           <div class="d-flex">
             <%= image_tag("icon-clock.svg") %>
-            <span> <%=slot.date%> at </span>
+            <span> <%=slot.date.strftime("%d.%m.%y")%> at </span>
             <span> <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
           </div>
             <div class="d-flex">

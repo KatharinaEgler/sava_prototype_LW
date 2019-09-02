@@ -1,48 +1,49 @@
 
 <h1 style="padding-left: 16px;">Overview of conversations</h1>
-<div class="screen-container">
 
-  <div class="conversation-cards">
-    <div class="conversation-column">
-<ul class='conversation-list'>
-  <% @conversations.each do |conversation| %>
-    <div>
-      <% if conversation.notifications.where(user: current_user).count > 0 %>
-        <p class="unread-conversation" style='padding-bottom: 10px;'><%= conversation.name %></p>
+  <div class="conversation">
+        <% @conversations.each do |conversation| %>
 
-          <ul class="conversation-list unread-conversation">
-            <% conversation.conversation_members.each do |conversation_member| %>
-              <% next if conversation_member.user == current_user  %>
-              <li class='conversation-item'>
-                <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
-                <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span><br>
-                <span class="unread-conversation"> <%= conversation.messages.last.content[0,20] + '...' %></span>
-                <hr>
-              </li>
-            <% end %>
+          <div>
 
-      <% else %>
-        <p style='padding-bottom: 10px;'><%= conversation.name %></p>
+            <% if conversation.notifications.where(user: current_user).count > 0 %>
+              <div class="conversation-cards">
 
-        <ul class="conversation-list">
-          <% conversation.conversation_members.each do |conversation_member| %>
-            <% next if conversation_member.user == current_user  %>
-            <li class='conversation-item'>
-              <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
-              <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span><br>
-              <span> <%= conversation.messages.last.content[0,20] + '...' %></span>
-              <hr>
-            </li>
-        <% end %>
+                <div class="unread-conversation">
+                  <% conversation.conversation_members.each do |conversation_member| %>
+                    <% next if conversation_member.user == current_user  %>
+                    <div>
+                      <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
+                      <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span>
+                      <span class="unread-conversation"> <%= conversation.messages.last.content[0,40] + '...' %></span>
+                      <span> <%= conversation.updated_at.strftime("%d.%m.%y") %> </span>
+                      <span> <%= image_tag("delete.svg") %> </span>
+                    </div>
+                  <% end %>
+
+              </div>
+
+
+
+            <% else %>
+              <div class="conversation-cards">
+                <% conversation.conversation_members.each do |conversation_member| %>
+                  <% next if conversation_member.user == current_user  %>
+                  <div>
+                    <span><%= cl_image_tag conversation_member.user.photo, class: "avatar dropdown-toggle" %></span>
+                    <span><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></span>
+                    <span> <%= conversation.messages.last.content[0,40] + '...' %></span>
+                    <span> <%= conversation.updated_at.strftime("%d.%m.%y") %> </span>
+                    <span> <%= image_tag("delete.svg") %> </span>
+                  </div>
+              <% end %>
+
+          <% end %>
+
+      </div>
+      </div>
     <% end %>
-    </ul>
-    </li>
-
-  <% end %>
-</ul>
   </div>
-  </div>
-   </div>
 
 <p> <%= link_to "New Conversation", new_conversation_path %> </p>
 

@@ -101,7 +101,7 @@ message_5.save!
 message_6 = Message.new(content: "Dear family, thanks again for your visit and your kind works. I'm so lucky to have you in my life.", user_id: chloe.id, conversation_id: conversation_3.id)
 message_6.save!
 
-message_7 = Message.new(content: "🤗🤗 love you sweety 😍😍😍😍 🤕🤕🤕", user_id: grandma.id, conversation_id: conversation_8.id)
+message_7 = Message.new(content: "🤗 have you met any handsome doctors yet? 😍 love you sweety 😍😍😍 🤕🤕🤕", user_id: grandma.id, conversation_id: conversation_8.id)
 message_7.save!
 
 
