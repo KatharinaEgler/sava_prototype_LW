@@ -32,29 +32,20 @@
     </div>
   </div>
 
-  <div class="add-button-green" id="edit-circle-button">
-    <a href= <%= circle_path(@circle) %> >
-      <p> + </p>
+  <div class="add-button-green" id="edit-circle-button"><p>+</p>
+  </div>
+  <div class="popup animated fadeInUp" id="popup-create-member" style="display: none;">
+
+    <div class= "cancel-button" id="cancel-popup-create-member">Cancel</div>
+
+      <h2 class= "popup-title">Add a member to <%= @circle.name %> </h2>
+
+    <div class="add-members-form">
+
+      <%= simple_form_for([@circle, @circle_member]) do |f| %></div>
+        <div class="form"><%= f.input :email, label: 'Email address', placeholder: 'sava@email.com', error: 'Username is mandatory, please specify one' %></div>
+        <div class="add-button"><%= f.submit 'Add' %></div>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
-<div class="popup">
-
-  <div class= "cancel-button"><%= link_to "Cancel", circle_path(@circle) %></div>
-
-    <h2 class= "popup-title">Add a member to <%= @circle.name %> </h2>
-
-  <div class="add-members-form">
-
-    <%= simple_form_for([@circle, @circle_member]) do |f| %></div>
-      <div class="form"><%= f.input :email, label: 'Email address', placeholder: 'sava@email.com', error: 'Username is mandatory, please specify one' %></div>
-      <div class="add-button"><%= f.submit 'Add' %></div>
-    <% end %>
-  </div>
-</div>
-
-
-
-
-

@@ -1,8 +1,12 @@
 .popup {
+  position: absolute;
+  bottom: -52px;
   padding: 24px 16px;
   margin-bottom: 50px;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   background: white;
+  width: 100%;
+  z-index: 5;
 }
 
 .form-control-label {
