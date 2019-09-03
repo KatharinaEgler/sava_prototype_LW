@@ -6,7 +6,7 @@
 
       <!-- for each conversation, we check if it's a new conversation -->
       <!-- and we add different classes -->
-      <div class="conversation-card <%= conversation.notifications.where(user: current_user).count > 0 ? 'unread-conversation' : 'old-conversation' %>">
+      <div class="conversation-card drop-shadow <%= conversation.notifications.where(user: current_user).count > 0 ? 'unread-conversation' : 'old-conversation' %>">
         <!-- we need to check the number of people in the convo to display one or more avatars -->
           <% if conversation.conversation_members.count <= 2 %>
             <div class="images-conversation single-avatar">

@@ -11,12 +11,17 @@
             <%= image_tag "notifications.svg" %>
           <% end %>
         </li>
-        <li class="navbar-item">
+        <li class="navbar-item messages">
           <%= link_to conversations_path, class: "navbar-messages-link" do %>
             <% if params[:controller] == "conversations" %>
               <%= image_tag "messages-on.svg" %>
              <% else %>
               <%= image_tag "messages.svg" %>
+              <% @counter = 0 %>
+              <% Conversation.all.each do |conversation| %>
+              <% conversation.notifications.any? ? @counter += conversation.notifications.count : ""  %>
+              <% end %>
+              <div class="notification"> <%= @counter %></div>
             <% end %>
           <% end %>
         </li>

@@ -3,6 +3,7 @@
   background: white;
   border-bottom: 0.001em solid $grey;
   position: fixed;
+  z-index: 99999999999;
   top: 0;
   width: 100%;
   height: 50px;
@@ -11,6 +12,12 @@
 
 .navbar-brand img{
   width: 80px;
+}
+
+.navbar-item {
+  &.messages {
+  position: relative;
+  }
 }
 
 .navbar-items {
