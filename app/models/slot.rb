@@ -6,4 +6,13 @@ class Slot < ApplicationRecord
   validates :hour, presence: true
   # validates :booked, presence: true
   validates_presence_of :user_id
+
+  def get_start_time
+    return self.date + self.hour.hours
+  end
+
+  def get_end_time
+    return get_start_time + 1.hour
+  end
+
 end

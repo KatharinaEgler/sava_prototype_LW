@@ -3,23 +3,28 @@
   <h1 class="page-header">Your Appointments</h1>
   <div class="slot-appointment">
     <div class="slot-card-details">
+      <% @slots_by_day.each do |date, slots| %>
+        <h2><%= Date::DAYNAMES[date.wday] %></h2>
+        <% slots.each do |slot| %>
+          <% if slot.date = Date.today %>
+            <% if slot.booked && current_user.sick_status == true %>
+              <div class='time-slot d-flex'>
+                <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
+                <span>
+                <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
+                <%= User.find(slot.booker_id).first_name%></span>
+              </div>
+            <% else %>
+              <div class='time-slot d-flex'>
+                <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
+                <% if current_user.sick_status == true %>
+                  <label class="slot-label book-button">Available</label>
+                <% else %>
+                  <label class="slot-label book-button"> <%= link_to "Book", slot_path(slot) %></label>
+                <% end %>
 
-      <h1><%=  Date::DAYNAMES[Date.today.wday]  %></h1>
-
-      <% @slots.each do |slot| %>
-        <% if slot.date = Date.today %>
-          <% if slot.booked %>
-            <div class='time-slot d-flex'>
-              <p class='slot-time d-flex'><%= slot.hour %> - <%= slot.hour + 1 %></p>
-              <span>
-              <%= cl_image_tag(User.find(slot.user_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-              <%= User.find(slot.user_id).first_name%></span>
-            </div>
-          <% else %>
-            <div class='time-slot d-flex'>
-               <p class='slot-time d-flex'><%= slot.hour %> - <%= slot.hour + 1 %></p>
-               <label class="slot-label">Available</label>
-            </div>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>

@@ -2,7 +2,12 @@ class SlotsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @slots = Slot.all
+    @slots_by_day = Slot.order(:hour).to_a.group_by { |slot| slot.date }
+
+    # {
+    #   monday: [..., ...],
+    #   tuesday: [..., ..., ...]
+    # }
   end
 
   def new
@@ -22,4 +27,8 @@ class SlotsController < ApplicationController
     @slot.update(booked: params[:booked])
     redirect_to slots_path
   end
+
+  def show
+    @slot = Slot.find(params[:id])
+end
 end
