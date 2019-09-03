@@ -15,7 +15,7 @@
       </div>
       <div class="updates-card-content">
         <h3><%= link_to update.title, status_update_path(update) %></h3>
-        <p> <%= update.content[0,200] %> ... </p>
+        <p> <%= update.content[0,150] %> ... </p>
         <div class="updates-link-show">
           <p> <%= link_to "...continue reading", status_update_path(update) %></p>
 

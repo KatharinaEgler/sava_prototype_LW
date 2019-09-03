@@ -1,18 +1,30 @@
 <div class="main-container">
 
-  <h1>Update</h1>
+  <h1> <%= link_to "Updates/", status_updates_path %>
+    <%= @status_update.title %>
+     </h1>
 
-  <div class="updates-card">
-    <div class="update-card-info">
-      <p> <%= @circles.pluck(:name).join(", ") %></p>
+
+    <div class="updates-card drop-shadow">
+      <div class="updates-card-header d-flex">
+        <p> <%=@status_update.updated_at.strftime("%B %d, %y")%> </p>
+        <div class="updates-circle">
+          <h3>
+            <%= image_tag("circles.svg") %> <%= @status_update.circles.pluck(:name).join(", ") %>
+          </h3>
+        </div>
+
+      </div>
+      <div class="updates-card-content">
+        <h3><%= @status_update.title %></h3>
+        <p> <%= @status_update.content %> </p>
+
+      </div>
+      <div class="updates-image-details">
+          <%= cl_image_tag @status_update.photo, crop: :fill %>
+      </div>
+      <div class="updates-card-footer">
+        <p>Update posted by Chloe</p>
+      </div>
     </div>
-    <div class="card-update-content">
-      <h2><%= @status_update.title %></h2>
-      <p><%= @status_update.content %></p>
-      <p><%= cl_image_tag @status_update.photo, height: 150, width: 150, crop: :fill %></p>
-    </div>
-  </div>
-
-  <p> <%= link_to "Go back to Updates", status_updates_path %> </p>
-
 </div>
