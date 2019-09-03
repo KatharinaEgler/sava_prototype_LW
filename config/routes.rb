@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :status_updates, only: [:index, :show, :new, :create]
 
-  resources :slots, only: [:index, :new, :create, :update]
+  resources :slots, only: [:index, :new, :create, :update, :show]
 
   #resources :wishlists, only: [:index, :new, :create, :update]
 

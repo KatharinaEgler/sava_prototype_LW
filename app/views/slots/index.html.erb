@@ -6,19 +6,20 @@
 
       <h1><%=  Date::DAYNAMES[Date.today.wday]  %></h1>
 
+
       <% @slots.each do |slot| %>
         <% if slot.date = Date.today %>
           <% if slot.booked %>
             <div class='time-slot d-flex'>
-              <p class='slot-time d-flex'><%= slot.hour %> - <%= slot.hour + 1 %></p>
+              <p class='slot-time d-flex'><%= slot.get_start_time %> - <%= slot.get_end_time %></p>
               <span>
               <%= cl_image_tag(User.find(slot.user_id).photo,width: 20, height:20, class:"appointment-avatar") %>
               <%= User.find(slot.user_id).first_name%></span>
             </div>
           <% else %>
             <div class='time-slot d-flex'>
-               <p class='slot-time d-flex'><%= slot.hour %> - <%= slot.hour + 1 %></p>
-               <label class="slot-label">Available</label>
+              <p class='slot-time d-flex'><%= slot.get_start_time %> - <%= slot.get_end_time %></p>
+               <label class="slot-label book-button"> <%= link_to "Book", slot_path(slot) %></label>
             </div>
           <% end %>
         <% end %>

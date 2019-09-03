@@ -22,4 +22,8 @@ class SlotsController < ApplicationController
     @slot.update(booked: params[:booked])
     redirect_to slots_path
   end
+
+  def show
+    @slot = Slot.find(params[:id])
+end
 end
