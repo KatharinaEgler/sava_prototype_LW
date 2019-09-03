@@ -1,3 +1,31 @@
 *{
   color: grey;
 }
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: $headers-font;
+  color: $dark-grey;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: $headers-font;
+  color: $dark-grey;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: regular;
+  font-family: $headers-font;
+  color: $dark-grey;
+}
+
+p {
+  font-size: 12px;
+  font-weight: regular;
+  font-family: $body-font;
+  color: $dark-grey;
+}

@@ -36,7 +36,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-
 .big-card-category {
   width: 100%;
   display: flex;
@@ -80,10 +79,9 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 16px;
   justify-content: flex-start;
   align-items: center;
-  background-color: white;
+  background-color: $light-grey;
 
 }
 
@@ -91,6 +89,7 @@
   width: 90%;
   display: flex;
   justify-content: flex-start;
+  margin-top: 16px;
 
 }
 
@@ -111,6 +110,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 16px;
+  background-color: white;
     }
 
 .homepage-appointment-img
