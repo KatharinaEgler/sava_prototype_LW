@@ -1,0 +1,45 @@
+.popup {
+  padding: 24px 16px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  background: white;
+}
+
+.form-control-label {
+  color: $dark-grey;
+}
+
+.form-control {
+  border-radius: 5px;
+  border-color: $dark-grey;
+}
+
+.form-control input {
+  color: $grey;
+  font-weight: lighter;
+}
+
+.popup-title {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.cancel-button {
+  color: $red;
+}
+
+.add-button {
+  width: 120px;
+  height: 40px;
+  background: $green;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 225px;
+}
+
+.add-button input {
+  color: white;
+  font-size: 16px;
+}
