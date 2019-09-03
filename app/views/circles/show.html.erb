@@ -1,11 +1,12 @@
+
 <div class="main-container">
 
-  <div class="circles-container">
-      <div class="circles-title">
-        <h2 class="circles-title-grey> <%= link_to "Circles / ", circles_path %></h2>
-        <h2> <%= link_to @circle.name, circles_path %></h2>
-      </div>
+  <div class="title">
+    <h2 class="circles-title-grey"><%= link_to "Circles", circles_path %></h2>
+    <h2> / <%= @circle.name %></h2>
+  </div>
 
+  <div class="circles-container">
     <div class="circle-members-cards">
       <ul>
         <% @circle.circle_members.each do |circle_member| %>
@@ -13,7 +14,7 @@
             <div class="circle-members-content">
               <li>
                 <div class="circle-members-avatar">
-                  <%= cl_image_tag circle_member.user.photo, width: 250, crop: "scale", class: "avatar" %>
+                  <%= cl_image_tag circle_member.user.photo, width: 250, crop: "scale" %>
                 </div>
               </li>
               <li>
@@ -31,17 +32,29 @@
     </div>
   </div>
 
-  <div class="add-button-green">
+  <div class="add-button-green" id="edit-circle-button">
     <a href= <%= circle_path(@circle) %> >
-    <p> + </p>
+      <p> + </p>
   </div>
-
-    <div class="add-members-form">
-      <%= simple_form_for([@circle, @circle_member]) do |f| %>
-        <%= f.input :email %>
-        <%= f.submit %>
-      <% end %>
-    </div>
-
 </div>
+
+
+<div class="popup">
+
+  <div class= "cancel-button"><%= link_to "Cancel", circle_path(@circle) %></div>
+
+    <h2 class= "popup-title">Add a member to <%= @circle.name %> </h2>
+
+  <div class="add-members-form">
+
+    <%= simple_form_for([@circle, @circle_member]) do |f| %></div>
+      <div class="form"><%= f.input :email, label: 'Email address', placeholder: 'sava@email.com', error: 'Username is mandatory, please specify one' %></div>
+      <div class="add-button"><%= f.submit 'Add' %></div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
 

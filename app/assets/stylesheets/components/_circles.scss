@@ -1,4 +1,5 @@
 .circles-container {
+  margin-top: 90px;
   padding: 8px 16px;
 }
 
@@ -32,11 +33,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 24px 16px;
+  margin-right: 16px;
+  margin-left: 16px;
+  margin-top: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0px 4px 2px rgba(157, 157, 157, 0.2);
 }
 
 .circles-card-round h3 {
-  color: $dark-grey;
+  font-size: 24px;
+  color: $red;
   font-weight: bold;
   font-variant: small-caps;
   list-style-type: none;
@@ -145,11 +151,11 @@
 }
 
 .circles-card-delete img {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  top: 5px;
-  right: 20px;
+  top: 30px;
+  right: -10px;
 }
 
 .circle-members-cards ul {
@@ -161,19 +167,43 @@
 }
 
 .circle-members-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle-members-content {
   background: white;
-  width: 275px;
-  height: 35px;
+  width: 290px;
+  height: 50px;
   text-align: center;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 16px;
+  box-shadow: 0px 4px 2px rgba(157, 157, 157, 0.2);
 }
 
-.circle-members-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.circle-members-fullname {
+  font-size: 16px;
+  text-align: left;
+  margin-left: 60px;
 }
+
+.circle-members-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 5px;
+  right: 240px;
+}
+
+.circle-members-card-delete img {
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+}
+
+
