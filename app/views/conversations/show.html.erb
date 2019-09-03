@@ -1,14 +1,22 @@
 <div class="main-container">
-  <p></p>
-  <p></p>
-  <%= link_to "Conversations", conversations_path %>
-  <p></p>
-  <h1 class="page-header">Messages/<%= @conversation.conversation_members[1].user.first_name %></h1>
+    <h1> <%= link_to "Messages/", conversations_path %>
+      <%= @conversation.conversation_members[1].user.first_name %>
+    </h1>
 
-  <div>
-    <% @conversation.messages.each do |message| %>
-    <%= render 'messages/card', message: message  %>
-    <% Notification.where(user: current_user, conversation: @conversation).destroy_all %>
+  <div class="conversations-container">
+    <% @conversation.messages.each_with_index do |message, index| %>
+    <div>
+      <% if @conversation.messages[index - 1].created_at.strftime("%B %d, %y") != message.created_at.strftime("%B %d, %y") %>
+        <div class="message-date">
+          <hr>
+          <p><span> <%= message.created_at.strftime("%B %d, %y") %> </span>
+            </p>
+        </div>
+
+
+      <% end %>
+      <%= render 'messages/card', message: message  %>
+    </div>
     <% end %>
   </div>
 
