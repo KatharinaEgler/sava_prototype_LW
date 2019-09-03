@@ -1,25 +1,20 @@
-<h1>Updates</h1>
+<div class="main-container">
 
+  <h1>Updates</h1>
 
-<% @status_updates.each do |update| %>
-  <div class="card-update">
-    <div class="card update card-update-info">
-      <h2><%= link_to update.title, status_update_path(update) %></h2>
+  <% @status_updates.each do |update| %>
+    <div class="card-update">
+      <div class="card update card-update-info">
+        <h2><%= link_to update.title, status_update_path(update) %></h2>
+      </div>
+      <div class="card-update-content">
+        <p> Circle: <%= update.circles.pluck(:name).join(", ") %></p>
+        <p> <%= update.content %> </p>
+        <p> <%= cl_image_tag update.photo, height: 150, width: 150, crop: :fill %></p>
+      </div>
     </div>
-    <div class="card-update-content">
-      <p> Circle: <%= update.circles.pluck(:name).join(", ") %></p>
-      <p> <%= update.content %> </p>
-      <p> <%= cl_image_tag update.photo, height: 150, width: 150, crop: :fill %></p>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 
-<p> <%= link_to "Home", root_path %> </p>
-<p> <%= link_to "New Update",new_status_update_path %> </p>
+  <p> <%= link_to "New Update",new_status_update_path %> </p>
 
-<div>
-  <%= link_to "Updates", status_updates_path %>
-  <%= link_to "Conversations", conversations_path %>
-  <%= link_to "Calendar", slots_path %>
-  <%= link_to "Circles", circles_path %>
 </div>
