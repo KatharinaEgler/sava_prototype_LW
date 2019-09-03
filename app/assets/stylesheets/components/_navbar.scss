@@ -13,6 +13,12 @@
   width: 80px;
 }
 
+.navbar-item {
+  &.messages {
+  position: relative;
+  }
+}
+
 .navbar-items {
   display: flex;
   flex-grow: 0;
