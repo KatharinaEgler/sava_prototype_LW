@@ -3,14 +3,23 @@
   <h1>Updates</h1>
 
   <% @status_updates.each do |update| %>
-    <div class="card-update">
-      <div class="card update card-update-info">
+    <div class="updates-card drop-shadow">
+      <div class="updates-card-info">
         <h2><%= link_to update.title, status_update_path(update) %></h2>
       </div>
-      <div class="card-update-content">
+      <div class="updates-card-content">
         <p> Circle: <%= update.circles.pluck(:name).join(", ") %></p>
-        <p> <%= update.content %> </p>
-        <p> <%= cl_image_tag update.photo, height: 150, width: 150, crop: :fill %></p>
+        <p> <%= update.content[0,200] %> ... </p>
+        <div>
+          <p> <%= link_to "...continue reading", status_update_path(update) %></p>
+
+        </div>
+      </div>
+      <div class="updates-image">
+          <%= cl_image_tag update.photo, crop: :fill %>
+      </div>
+      <div class="updates-card-footer">
+        <p>Update posted by Chloe</p>
       </div>
     </div>
   <% end %>
