@@ -20,16 +20,20 @@
 }
 
 .updates-card-content {
-  margin-bottom: 10px;
   justify-content: space-between;
   // align-items: center;
   padding: 10px 16px;
+  p {
+    margin-bottom: 0px;
+  }
 }
 
-.updates-card-content h3{
+.updates-card-content  h3 a {
     font-size: 16px;
     margin: 0;
-    color: #AC9D9D;
+    color: $dark-grey;
+    font-weight: 600;
+    margin-bottom: 0px;
 }
 
 .card-update-info img{
@@ -41,6 +45,10 @@
   display: flex;
   align-text: right;
   flex-direction: column;
+  p {
+    text-align: right;
+    margin-bottom: 0px;
+  }
 }
 
 .updates-circle {
@@ -63,15 +71,23 @@
   padding: 4px 12px;
   border-bottom: 1px solid grey;
   img {
-    width: 25px;
-    height: 25px;
-    top: 4px;
+    width: 22px;
+    height: 22px;
+    top: 0px;
+  }
+  p {
+    margin-top: 4px;
+    margin-bottom: 0px;
+    color: $grey;
   }
 }
 
-.updates-card-header > h3 {
+.updates-circle > h3 {
   color: $red;
-  font-size: 12px;
+  font-size: 14px;
+  margin-bottom: 0px;
+  font-weight: 650;
+
 }
 
 .updates-card-footer > p {
