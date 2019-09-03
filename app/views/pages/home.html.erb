@@ -22,19 +22,19 @@
       <div>
         <div>
         <% @slots.each do |slot|%>
-          <% if slot.booked == true %>
-            <div class="homepage-appointment homepage-appointment-img">
-              <div class="d-flex">
-                <%= image_tag("icon-clock.svg") %>
-                <span> <%=slot.date.strftime("%d.%m.%y")%> at </span>
-                <span> <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
-              </div>
-              <div class="d-flex">
+          <div class="homepage-appointment homepage-appointment-img">
+            <div class="d-flex">
+              <%= image_tag("icon-clock.svg") %>
+              <span> <%=slot.date.strftime("%d.%m.%y")%> at </span>
+              <span> <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
+            </div>
+            <div class="d-flex">
+              <% if current_user.sick_status == true %>
                 <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
                 <span><%=User.find(slot.booker_id).first_name%></span>
-              </div>
+              <% end %>
             </div>
-          <% end %>
+          </div>
         <% end %>
         </div>
       <br>
