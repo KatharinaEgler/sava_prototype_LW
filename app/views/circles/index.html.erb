@@ -1,27 +1,22 @@
-<h1>Overview of circles</h1>
+<div class="main-container">
 
-<ul>
-  <% @circles.each do |circle| %>
-    <li>
-      <%= link_to circle.name, circle_path(circle)%>
-      <ul>
-        <% circle.circle_members.each do |circle_member| %>
-          <li><%= cl_image_tag circle_member.user.photo, width: 250, crop: "scale", class: "avatar dropdown-toggle" %> <%= circle_member.user.fullname %></li>
-        <% end %>
-      </ul>
-    </li>
+  <h1>Overview of circles</h1>
 
-  <% end %>
-</ul>
+  <ul>
+    <% @circles.each do |circle| %>
+      <li>
+        <%= link_to circle.name, circle_path(circle)%>
+        <ul>
+          <% circle.circle_members.each do |circle_member| %>
+            <li><%= cl_image_tag circle_member.user.photo, width: 250, crop: "scale", class: "avatar dropdown-toggle" %> <%= circle_member.user.fullname %></li>
+          <% end %>
+        </ul>
+      </li>
 
-<p> <%= link_to "New Circle", new_circle_path %> </p>
-<p> <%= link_to "Home", root_path %> </p>
+    <% end %>
+  </ul>
 
-<div>
-  <%= link_to "Updates", status_updates_path %>
-  <%= link_to "Conversations", conversations_path %>
-  <%= link_to "Calendar", slots_path %>
-  <%= link_to "Circles", circles_path %>
+  <p> <%= link_to "New Circle", new_circle_path %> </p>
+
 </div>
-
 

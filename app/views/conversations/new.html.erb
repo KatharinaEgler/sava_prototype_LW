@@ -1,22 +1,19 @@
-<%= simple_form_for(@conversation) do |f| %>
-  <%= f.input :name, label: "Conversation Name" %>
-  <div id="conversation-members">
-    <%= f.simple_fields_for :conversation_members do |conversation_member|  %>
-      <%= render 'conversation_member_fields', f: conversation_member  %>
-      <div class="links">
-        <%= link_to_add_association 'add conversation member', f, :conversation_members  %>
-      </div>
-    <% end %>
-  </div>
-  <%= f.submit %>
-<% end %>
+<div class="main-container">
 
-<%= link_to "Start messaging", conversations_path(@conversation) %>
-<%= link_to "Go back to your conversations", conversations_path %>
+  <%= simple_form_for(@conversation) do |f| %>
+    <%= f.input :name, label: "Conversation Name" %>
+    <div id="conversation-members">
+      <%= f.simple_fields_for :conversation_members do |conversation_member|  %>
+        <%= render 'conversation_member_fields', f: conversation_member  %>
+        <div class="links">
+          <%= link_to_add_association 'add conversation member', f, :conversation_members  %>
+        </div>
+      <% end %>
+    </div>
+    <%= f.submit %>
+  <% end %>
 
-<div>
-  <%= link_to "Updates", status_updates_path %>
-  <%= link_to "Conversations", conversations_path %>
-  <%= link_to "Calendar", slots_path %>
-  <%= link_to "Circles", circles_path %>
+  <%= link_to "Start messaging", conversations_path(@conversation) %>
+  <%= link_to "Go back to your conversations", conversations_path %>
+
 </div>

@@ -1,21 +1,16 @@
-<%= simple_form_for(@circle) do |f| %>
-  <%= f.input :name, label: "Circle Name" %>
-  <div id="circle-members">
-    <%= f.simple_fields_for :circle_members do |circle_member|  %>
-      <%= render 'circle_member_fields', f: circle_member  %>
-      <div class="links">
-        <%= link_to_add_association 'add circle member', f, :circle_members  %>
-      </div>
-    <% end %>
-  </div>
-  <%= f.submit %>
-<% end %>
+<div class="main-container">
 
-<%= link_to "Home", root_path %>
+  <%= simple_form_for(@circle) do |f| %>
+    <%= f.input :name, label: "Circle Name" %>
+    <div id="circle-members">
+      <%= f.simple_fields_for :circle_members do |circle_member|  %>
+        <%= render 'circle_member_fields', f: circle_member  %>
+        <div class="links">
+          <%= link_to_add_association 'add circle member', f, :circle_members  %>
+        </div>
+      <% end %>
+    </div>
+    <%= f.submit %>
+  <% end %>
 
-<div>
-  <%= link_to "Updates", status_updates_path %>
-  <%= link_to "Conversations", conversations_path %>
-  <%= link_to "Calendar", slots_path %>
-  <%= link_to "Circles", circles_path %>
 </div>

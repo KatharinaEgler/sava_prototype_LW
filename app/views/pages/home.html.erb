@@ -1,22 +1,24 @@
-<div class="homepage-container">
-  <div class="homepage-banner">
-    <div class="intro-container">
-      <div class="d-flex">
-        <h1 style="padding-left: 0px;"> Hi <%= current_user.first_name %> </h1>
-        <p>how are you feeling?</p>
-      </div>
-      <div class="d-flex">
-        <%= image_tag("smile.svg", width: 35, height: 35) %>
+<div class="main-container">
+
+  <div class="homepage-container">
+    <div class="homepage-banner">
+      <div class="intro-container">
+        <div class="d-flex">
+          <h1 style="padding-left: 0px;"> Hi <%= current_user.first_name %> </h1>
+          <p>how are you feeling?</p>
+        </div>
+        <div class="d-flex">
+          <%= image_tag("smile.svg", width: 35, height: 35) %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="homepage-card">
-    <br>
-      <h3>Milestones of <%=User.find(@slots.first.user_id).first_name%></h3>
-      <p>Diagnosis: leukemia, in treatment for 7 days</p>
-      <p>Next milestone: chemo in 3 days </p>
-    <br>
-      <h3>Your next appointments</h3>
+    <div class="homepage-card">
+      <br>
+        <h3>Milestones of <%=User.find(@slots.first.user_id).first_name%></h3>
+        <p>Diagnosis: leukemia, in treatment for 7 days</p>
+        <p>Next milestone: chemo in 3 days </p>
+      <br>
+        <h3>Your next appointments</h3>
       <div>
         <div>
         <% @slots.each do |slot|%>
@@ -52,13 +54,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div>
-    <%= link_to "Updates", status_updates_path %>
-    <%= link_to "Conversations", conversations_path %>
-    <%= link_to "Calendar", slots_path %>
-    <%= link_to "Circles", circles_path %>
   </div>
 
 </div>
