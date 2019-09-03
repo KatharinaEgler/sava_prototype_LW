@@ -16,7 +16,17 @@
   font-size: 50px;
   text-align: center;
   align-items: center;
-  margin-bottom: 0px;
-
+  vertical-align: center;
 }
 
+
+.notification {
+  background: $red;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  color: white;
+  display:flex;
+  align-items: center;
+  text-align: center;
+}
