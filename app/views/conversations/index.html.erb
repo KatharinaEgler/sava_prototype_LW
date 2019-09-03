@@ -1,91 +1,46 @@
-
 <h1 style="padding-left: 16px;">Messages</h1>
 
-  <div class="conversation">
-        <% @conversations.each do |conversation| %>
+<div class="conversations-container">
+  <% @conversations.each do |conversation| %>
 
-          <div>
+    <!-- for each conversation, we check if it's a new conversation -->
+    <!-- and we add different classes -->
+    <div class="conversation-card <%= conversation.notifications.where(user: current_user).count > 0 ? 'unread-conversation' : 'old-conversation' %>">
+      <!-- we need to check the number of people in the convo to display one or more avatars -->
+        <% if conversation.conversation_members.count <= 2 %>
+          <div class="images-conversation single-avatar">
+            <% conversation.conversation_members.each do |conversation_member| %>
+              <% next if conversation_member.user == current_user  %>
+              <%= cl_image_tag conversation_member.user.photo, crop: "scale", class: "avatar" %>
+            <% end %>
+          </div>
+          <% else %>
+          <div class="images-conversation multiple-avatars">
+            <% conversation.conversation_members[0..2].each do |conversation_member| %>
+              <% next if conversation_member.user == current_user  %>
+              <%= cl_image_tag conversation_member.user.photo, crop: "scale", class: "avatar" %>
+            <% end %>
+          </div>
+        <% end %>
+        <!-- end of the if/else statement to count members -->
 
-            <% if conversation.notifications.where(user: current_user).count > 0 %>
-              <div class="conversation-cards">
+        <div class="conversation-content">
+          <h3 class="name">
+            <%= link_to conversation.conversation_members.second.user.first_name + " " + conversation.conversation_members.second.user.last_name, conversation_path(conversation)%>
+          </h3>
+          <p class="content">
+            <%= conversation.messages.last.content[0,40] + '...' %>
+          </p>
+        </div>
 
-                <div class="d-flex unread-conversation">
-                  <% conversation.conversation_members.each do |conversation_member| %>
-                    <% next if conversation_member.user == current_user  %>
-                    <div>
-                      <%= cl_image_tag conversation_member.user.photo, width: 250, crop: "scale", class: "avatar dropdown-toggle photo-overlap" %>
-                      <div>
-                        <div><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></div>
-                        <div class="unread-conversation"> <%= conversation.messages.last.content[0,40] + '...' %></div>
-                      </div>
-                      <div> <%= conversation.updated_at.strftime("%d.%m.%y") %> </div>
-                      <div> <%= image_tag("delete.svg") %> </div>
-                    </div>
-                  <% end %>
+        <div class="conversation-footer">
+          <%= image_tag("delete.svg") %>
+          <%= conversation.updated_at.strftime("%d.%m.%y") %>
+        </div>
+    </div>
 
-              </div>
-
-
-
-            <% else %>
-              <div class="conversation-cards">
-                <div class="d-flex justify-content: space-between">
-
-                  <% if conversation.conversation_members.count < 3 %>
-
-                    <% conversation.conversation_members.each do |conversation_member| %>
-                      <% next if conversation_member.user == current_user  %>
-                      <div>
-                            <%= cl_image_tag conversation_member.user.photo, width: 250, crop: "scale", class: "avatar dropdown-toggle photo-overlap" %>
-
-                          <div>
-                            <div><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></div>
-                            <div> <%= conversation.messages.last.content[0,40] + '...' %></div>
-                          </div>
-                        <div> <%= conversation.updated_at.strftime("%d.%m.%y") %> </div>
-                        <div> <%= image_tag("delete.svg") %> </div>
-
-                      </div>
-                    <% end %>
-
-
-                  <% else %>
-
-                    <% conversation.conversation_members.each do |conversation_member| %>
-                      <% next if conversation_member.user == current_user  %>
-                        <div class="imgs-group">
-                              <%= cl_image_tag conversation_member.user.photo, width: 180, crop: "scale", class: "avatar dropdown-toggle photo-overlap" %>
-                              <%= cl_image_tag conversation_member.user.photo, width: 180, crop: "scale", class: "avatar dropdown-toggle photo-overlap" %>
-                        </div>
-                            <div><%= link_to conversation_member.user.first_name + " " + conversation_member.user.last_name, conversation_path(conversation)%></div>
-                            <div> <%= conversation.messages.last.content[0,40] + '...' %></div>
-                          </div>
-                        <div> <%= conversation.updated_at.strftime("%d.%m.%y") %> </div>
-                        <div> <%= image_tag("delete.svg") %> </div>
-
-                      </div>
-                    <% end %>
-
-
-                <% end %>
-
-
-                </div>
-
-          <% end %>
-
-      </div>
-      </div>
-    <% end %>
-  </div>
-
-<p> <%= link_to "New Conversation", new_conversation_path %> </p>
-
-<p> <%= link_to "Home", root_path %> </p>
-
-<div>
-  <%= link_to "Updates", status_updates_path %>
-  <%= link_to "Conversations", conversations_path %>
-  <%= link_to "Calendar", slots_path %>
-  <%= link_to "Circles", circles_path %>
+  <% end %>
+  <!-- end of iteration over conversations -->
 </div>
+<!-- end of .conversations -->
+
