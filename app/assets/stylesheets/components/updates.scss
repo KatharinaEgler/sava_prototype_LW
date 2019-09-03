@@ -22,12 +22,29 @@
 .updates-card-content {
   margin-bottom: 10px;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   padding: 10px 16px;
+}
+
+.updates-card-content h3{
+    font-size: 16px;
+    margin: 0;
+    color: #AC9D9D;
 }
 
 .card-update-info img{
   width: 100%;
+  justify-content: space-between;
+}
+
+.updates-link-show {
+  display: flex;
+  align-text: right;
+  flex-direction: column;
+}
+
+.updates-circle {
+
 }
 
 .updates-image {
@@ -38,6 +55,23 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.updates-card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 12px;
+  border-bottom: 1px solid grey;
+  img {
+    width: 25px;
+    height: 25px;
+    top: 4px;
+  }
+}
+
+.updates-card-header > h3 {
+  color: $red;
+  font-size: 12px;
 }
 
 .updates-card-footer > p {
