@@ -1,0 +1,60 @@
+
+
+.conversations-container {
+  padding: 24px;
+}
+
+// need to put that in components folder
+
+.conversation-card {
+  margin: 8px auto;
+  padding: 4px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  height: 92px;
+
+  .images-conversation {
+    width: 94px;
+    height: 74px;
+    position: relative;
+    left: -32px;
+    margin-right: -32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .multiple-avatars img:first-child {
+    position: absolute;
+    top: 8px;
+    right: 6px;
+  }
+
+  .multiple-avatars img:last-child {
+    position: absolute;
+    bottom: 8px;
+    left: 6px;
+  }
+
+  .conversation-content {
+    flex-grow: 1;
+  }
+
+  .conversation-content h3 a{
+    font-size: 16px;
+    margin: 0;
+    color: $grey;
+  }
+
+  .conversation-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 12px 0;
+  }
+
+}
