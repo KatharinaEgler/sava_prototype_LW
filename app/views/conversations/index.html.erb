@@ -26,10 +26,10 @@
           <!-- end of the if/else statement to count members -->
 
           <div class="conversation-content">
-            <h3 class="name">
+            <h3>
               <%= link_to conversation.conversation_members.second.user.first_name + " " + conversation.conversation_members.second.user.last_name, conversation_path(conversation)%>
             </h3>
-            <p class="content">
+            <p>
               <%= conversation.messages.last.content[0,40] + '...' %>
             </p>
           </div>
