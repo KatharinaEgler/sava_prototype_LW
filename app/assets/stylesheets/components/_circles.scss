@@ -1,0 +1,186 @@
+.circles-container {
+  padding: 8px 16px;
+}
+
+.circles-title {
+  display: flex;
+}
+
+.circles-title-red {
+  color: $red;
+}
+
+.circles-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 16px;
+}
+
+.circles-cards ul {
+  padding-inline-start: 0px;
+}
+
+.circles-card li {
+  list-style-type: none;
+}
+
+.circles-card-round {
+  position: relative;
+  background: white;
+  width: 135px;
+  height: 135px;
+  color: $dark-grey;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  margin-right: 14.25px;
+  margin-left: 14.25px;
+  margin-bottom: 40px;
+}
+
+.circles-card-round h3 {
+  color: $dark-grey;
+  font-weight: bold;
+  font-variant: small-caps;
+  list-style-type: none;
+  text-decoration: none;
+  margin-bottom: 0px;
+}
+
+.circles-card-avatar-1 img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -12.5px;
+  right: 55px;
+}
+
+.circles-card-avatar-2 img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -5px;
+  right: 92.5px;
+}
+
+.circles-card-avatar-3 img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 20px;
+  right: 115px;
+}
+
+.circles-card-avatar-4 img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 55px;
+  right: 122.5px;
+}
+
+.circles-card-avatar-5 img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 87.5px;
+  right: 115px;
+}
+
+.circles-card-avatar-6 img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 115px;
+  right: 91.25px;
+}
+
+.circles-card-avatar-7 img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 122.5px;
+  right: 55px;
+}
+
+.circles-card-avatar-8 img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 115px;
+  right: 20px;
+}
+
+.circles-card-avatar-9 img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 87.5px;
+  right: -5px;
+}
+
+.circles-card-avatar-10 img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 55px;
+  right: -12.5px;
+}
+
+.circles-card-delete img {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -5px;
+  right: 20px;
+}
+
+.circle-members-cards ul {
+  padding-inline-start: 0px;
+}
+
+.circle-members-card li {
+  list-style-type: none;
+}
+
+.circle-members-card {
+  background: white;
+  width: 275px;
+  height: 35px;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.circle-members-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

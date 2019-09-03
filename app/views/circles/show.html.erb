@@ -1,25 +1,47 @@
 <div class="main-container">
 
-  <h1>Details of circles</h1>
+  <div class="circles-container">
+      <div class="circles-title">
+        <h2 class="circles-title-grey> <%= link_to "Circles / ", circles_path %></h2>
+        <h2> <%= link_to @circle.name, circles_path %></h2>
+      </div>
 
-  <ul>
-    <% @circle.circle_members.each do |circle_member| %>
-      <li>
-        <%= cl_image_tag circle_member.user.photo, class: "avatar dropdown-toggle" %>
-        <%= circle_member.user.fullname %>
-        </li>
-    <% end %>
-  </ul>
-
-  <p id="edit-circle-button"> <%= link_to "Plus", circle_path(@circle) %> </p>
-  <p> <%= link_to "Home", root_path %> </p>
-
-  <div class="add-members-form">
-    <%= simple_form_for([@circle, @circle_member]) do |f| %>
-      <%= f.input :email %>
-      <%= f.submit %>
-    <% end %>
+    <div class="circle-members-cards">
+      <ul>
+        <% @circle.circle_members.each do |circle_member| %>
+          <div class="circle-members-card">
+            <div class="circle-members-content">
+              <li>
+                <div class="circle-members-avatar">
+                  <%= cl_image_tag circle_member.user.photo, width: 250, crop: "scale", class: "avatar" %>
+                </div>
+              </li>
+              <li>
+                <div class="circle-members-fullname">
+                  <%= circle_member.user.fullname %>
+                </div>
+              </li>
+            </div>
+            <div class="circle-members-card-delete">
+              <%= image_tag "delete.svg"%>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+    </div>
   </div>
+
+  <div class="add-button-green">
+    <a href= <%= circle_path(@circle) %> >
+    <p> + </p>
+  </div>
+
+    <div class="add-members-form">
+      <%= simple_form_for([@circle, @circle_member]) do |f| %>
+        <%= f.input :email %>
+        <%= f.submit %>
+      <% end %>
+    </div>
 
 </div>
 
