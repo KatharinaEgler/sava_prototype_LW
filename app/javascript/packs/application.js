@@ -1,15 +1,24 @@
 import "bootstrap";
-global.jQuery = jQuery
+global.jQuery = jQuery;
 
-const edit = document.querySelector(".add-members-form");
-if (edit){
+const addEventBtn = ()=> {
 
-  edit.style.display = "none";
-  const edit_btn = document.querySelector("#edit-circle-button")
+  const editBtn = document.getElementById("edit-circle-button");
+  const cancelBtn = document.getElementById("cancel-popup-create-member");
 
-  edit_btn.addEventListener("click", (event) => {
-    event.preventDefault()
-    edit.style.display = "flex";
-  });
+  if (editBtn){
 
-}
+    editBtn.addEventListener("click", (event) => {
+      document.getElementById("popup-create-member").style.display= "block";
+      document.getElementById("overlay").style.display = "block";
+    });
+
+    cancelBtn.addEventListener("click", (event) => {
+      document.getElementById("popup-create-member").style.display= "none";
+      document.getElementById("overlay").style.display = "none";
+    });
+  }
+};
+
+
+addEventBtn();
