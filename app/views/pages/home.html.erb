@@ -49,33 +49,32 @@
               </p>
             </div>
 
-            <% StatusUpdate.all.where(current_user.circle).each do |update| %>
+
               <div class="updates-card drop-shadow">
                 <div class="updates-card-header d-flex">
-                  <p> <%=update.last.updated_at.strftime("%B %d, %y")%> </p>
+                  <p> <%= @update.updated_at.strftime("%B %d, %y")%> </p>
                   <div class="updates-circle">
                     <h3>
-                      <%= image_tag("circles.svg") %> <%= update.last.circles.pluck(:name).join(", ") %>
+                      <%= image_tag("circles.svg") %> <%= @update.circles.pluck(:name).join(", ") %>
                     </h3>
                   </div>
 
                 </div>
                 <div class="updates-card-content">
-                  <h3><%= link_to update.last.title, status_update_path(update) %></h3>
-                  <p> <%= update.last.content[0,150] %> ... </p>
+                  <h3><%= link_to @update.title, status_update_path(@update) %></h3>
+                  <p> <%= @update.content[0,150] %> ... </p>
                   <div class="updates-link-show">
-                    <p> <%= link_to "...continue reading", status_update_path(update) %></p>
+                    <p> <%= link_to "...continue reading", status_update_path(@update) %></p>
 
                   </div>
                 </div>
                 <div class="updates-image">
-                    <%= cl_image_tag update.last.photo, crop: :fill %>
+                    <%= cl_image_tag @update.photo, crop: :fill %>
                 </div>
                 <div class="updates-card-footer">
                   <p>Update posted by Chloe</p>
                 </div>
               </div>
-            <% end %>
 
           </div>
         </div>

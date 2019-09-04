@@ -7,5 +7,9 @@ class PagesController < ApplicationController
     else
       @slots = Slot.where(booker_id: current_user.id)
     end
+
+    @update = current_user.visible_updates
+      .order(created_at: :desc)
+      .first
   end
 end
