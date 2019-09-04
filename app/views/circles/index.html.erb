@@ -1,11 +1,10 @@
-
 <div class="main-container">
 
   <div class="title">
-    <h2 >Circles</h2>
+    <h2>Circles</h2>
   </div>
 
-  <div class="circles-container">
+  <div class="body-container">
 
     <div class="circles-cards">
 
@@ -15,11 +14,11 @@
             <a href= <%= circle_path(circle) %> >
             <li>
 
-              <div class="circles-card-round animated fadeIn fast">
+              <div class="circles-card-round">
                 <h3><%= circle.name %></h3>
 
                 <ul>
-                  <div class="circles-card-avatar-1 animated fadeIn delay-1s">
+                  <div class="circles-card-avatar-1 animated fadeIn">
                     <% if circle.circle_members.count<1 %>
                       <li></li>
                     <% else %>
@@ -27,7 +26,7 @@
                     <% end %>
                   </div>
 
-                  <div class="circles-card-avatar-2 animated fadeIn delay-2s">
+                  <div class="circles-card-avatar-2 animated fadeIn">
                     <% if circle.circle_members.count<2 %>
                       <li></li>
                     <% else %>
@@ -35,7 +34,7 @@
                     <% end %>
                   </div>
 
-                  <div class="circles-card-avatar-3 animated fadeIn delay-3s">
+                  <div class="circles-card-avatar-3 animated fadeIn">
                     <% if circle.circle_members.count<3 %>
                       <li></li>
                     <% else %>
@@ -43,7 +42,7 @@
                     <% end %>
                   </div>
 
-                  <div class="circles-card-avatar-4 animated fadeIn delay-4s">
+                  <div class="circles-card-avatar-4 animated fadeIn">
                     <% if circle.circle_members.count<4 %>
                       <li></li>
                     <% else %>
@@ -51,7 +50,7 @@
                     <% end %>
                   </div>
 
-                  <div class="circles-card-avatar-5 animated fadeIn delay-5s">
+                  <div class="circles-card-avatar-5 animated fadeIn">
                     <% if circle.circle_members.count<5 %>
                       <li></li>
                     <% else %>
@@ -59,7 +58,7 @@
                     <% end %>
                   </div>
 
-                  <div class="circles-card-avatar-6 animated fadeIn delay-6s">
+                  <div class="circles-card-avatar-6 animated fadeIn">
                     <% if circle.circle_members.count<6 %>
                       <li></li>
                     <% else %>
@@ -67,7 +66,7 @@
                     <% end %>
                   </div>
 
-                  <div class="circles-card-avatar-7">
+                  <div class="circles-card-avatar-7 animated fadeIn">
                     <% if circle.circle_members.count<7 %>
                       <li></li>
                     <% else %>
@@ -76,7 +75,7 @@
                   </div>
 
 
-                  <div class="circles-card-avatar-8">
+                  <div class="circles-card-avatar-8 animated fadeIn">
                     <% if circle.circle_members.count<8 %>
                       <li></li>
                     <% else %>
@@ -84,7 +83,7 @@
                     <% end %>
                   </div>
 
-                  <div class="circles-card-avatar-9">
+                  <div class="circles-card-avatar-9 animated fadeIn">
                     <% if circle.circle_members.count<9 %>
                       <li></li>
                     <% else %>
@@ -92,7 +91,7 @@
                     <% end %>
                   </div>
 
-                  <div class="circles-card-avatar-10">
+                  <div class="circles-card-avatar-10 animated fadeIn">
                     <% if circle.circle_members.count<10 %>
                       <li></li>
                     <% else %>

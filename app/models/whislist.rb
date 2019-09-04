@@ -1,0 +1,2 @@
+class Whislist < ApplicationRecord
+end

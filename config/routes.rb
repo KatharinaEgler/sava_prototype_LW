@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :slots, only: [:index, :new, :create, :update, :show]
 
-  #resources :wishlists, only: [:index, :new, :create, :update]
+  resources :wishlists, only: [:index]
+
+  resources :features, only: [:index]
 
   resources :conversations, only: [:index, :new, :create, :show] do
   resources :messages, only: [:create]

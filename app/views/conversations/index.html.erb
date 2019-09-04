@@ -1,49 +1,54 @@
 <div class="main-container">
-  <h1 style="padding-left: 16px;">Messages</h1>
 
-  <div class="conversations-container">
-    <% @conversations.each do |conversation| %>
-
-      <!-- for each conversation, we check if it's a new conversation -->
-      <!-- and we add different classes -->
-      <div class="conversation-card drop-shadow <%= conversation.notifications.where(user: current_user).count > 0 ? 'unread-conversation' : 'old-conversation' %>">
-        <!-- we need to check the number of people in the convo to display one or more avatars -->
-          <% if conversation.conversation_members.count <= 2 %>
-            <div class="images-conversation single-avatar">
-              <% conversation.conversation_members.each do |conversation_member| %>
-                <% next if conversation_member.user == current_user  %>
-                <%= cl_image_tag conversation_member.user.photo, crop: "scale", class: "avatar" %>
-              <% end %>
-            </div>
-            <% else %>
-            <div class="images-conversation multiple-avatars">
-              <% conversation.conversation_members[0..2].each do |conversation_member| %>
-                <% next if conversation_member.user == current_user  %>
-                <%= cl_image_tag conversation_member.user.photo, crop: "scale", class: "avatar" %>
-              <% end %>
-            </div>
-          <% end %>
-          <!-- end of the if/else statement to count members -->
-
-          <div class="conversation-content">
-            <h3 class="name">
-              <%= link_to conversation.conversation_members.second.user.first_name + " " + conversation.conversation_members.second.user.last_name, conversation_path(conversation)%>
-            </h3>
-            <p class="content">
-              <%= conversation.messages.last.content[0,40] + '...' %>
-            </p>
-          </div>
-
-          <div class="conversation-footer">
-            <%= image_tag("delete.svg") %>
-            <%= conversation.updated_at.strftime("%d.%m.%y") %>
-          </div>
-      </div>
-
-    <% end %>
-    <!-- end of iteration over conversations -->
-
+  <div class="title">
+    <h2>Messages</h2>
   </div>
+
+  <div class="body-container">
+    <div class="conversations-container">
+      <% @conversations.each do |conversation| %>
+
+        <!-- for each conversation, we check if it's a new conversation -->
+        <!-- and we add different classes -->
+        <div class="conversation-card drop-shadow <%= conversation.notifications.where(user: current_user).count > 0 ? 'unread-conversation' : 'old-conversation' %>">
+          <!-- we need to check the number of people in the convo to display one or more avatars -->
+            <% if conversation.conversation_members.count <= 2 %>
+              <div class="images-conversation single-avatar">
+                <% conversation.conversation_members.each do |conversation_member| %>
+                  <% next if conversation_member.user == current_user  %>
+                  <%= cl_image_tag conversation_member.user.photo, crop: "scale", class: "avatar" %>
+                <% end %>
+              </div>
+              <% else %>
+              <div class="images-conversation multiple-avatars">
+                <% conversation.conversation_members[0..2].each do |conversation_member| %>
+                  <% next if conversation_member.user == current_user  %>
+                  <%= cl_image_tag conversation_member.user.photo, crop: "scale", class: "avatar" %>
+                <% end %>
+              </div>
+            <% end %>
+            <!-- end of the if/else statement to count members -->
+
+            <div class="conversation-content">
+              <h3 class="name">
+                <%= link_to conversation.conversation_members.second.user.first_name + " " + conversation.conversation_members.second.user.last_name, conversation_path(conversation)%>
+              </h3>
+              <p class="content">
+                <%= conversation.messages.last.content[0,40] + '...' %>
+              </p>
+            </div>
+
+            <div class="conversation-footer">
+              <%= image_tag("delete.svg") %>
+              <%= conversation.updated_at.strftime("%d.%m.%y") %>
+            </div>
+        </div>
+
+      <% end %>
+      <!-- end of iteration over conversations -->
+
+    </div>
   <!-- end of .conversations -->
+  </div>
 </div>
 

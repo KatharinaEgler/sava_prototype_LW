@@ -1,11 +1,11 @@
 <div class="main-container">
-  <p></p>
-  <p></p>
-  <%= link_to "Conversations", conversations_path %>
-  <p></p>
-  <h1 class="page-header">Messages/<%= @conversation.conversation_members[1].user.first_name %></h1>
 
-  <div>
+  <div class="title">
+    <h2 class="circles-title-grey"><%= link_to "Messages", conversations_path %></h2>
+    <h2> / <%= @conversation.conversation_members[1].user.first_name %></h2>
+  </div>
+
+  <div class="body-container">
     <% @conversation.messages.each do |message| %>
     <%= render 'messages/card', message: message  %>
     <% Notification.where(user: current_user, conversation: @conversation).destroy_all %>
