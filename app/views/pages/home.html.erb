@@ -43,9 +43,11 @@
         <br>
         <h3>Latest update</h3>
           <div>
-
+            <% unless @update.nil? %>
               <div class="updates-card drop-shadow">
+
                 <div class="updates-card-header d-flex">
+
                   <p> <%= @update.created_at.strftime("%B %d, %y")%> </p>
                   <div class="updates-circle">
                     <h3>
@@ -69,7 +71,7 @@
                   <p>Update posted by Chloe</p>
                 </div>
               </div>
-
+            <% end %>
           </div>
         </div>
       </div>
