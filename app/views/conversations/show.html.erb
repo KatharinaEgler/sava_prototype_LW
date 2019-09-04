@@ -6,11 +6,23 @@
   </div>
 
   <div class="body-container">
-    <% @conversation.messages.each do |message| %>
-    <%= render 'messages/card', message: message  %>
-    <% Notification.where(user: current_user, conversation: @conversation).destroy_all %>
-    <% end %>
-  </div>
+
+    <div class="conversations-container">
+      <% @conversation.messages.each_with_index do |message, index| %>
+      <div>
+        <% if @conversation.messages[index - 1].created_at.strftime("%B %d, %y") != message.created_at.strftime("%B %d, %y") %>
+          <div class="message-date">
+            <hr>
+            <p><span> <%= message.created_at.strftime("%B %d, %y") %> </span>
+              </p>
+          </div>
+
+
+        <% end %>
+        <%= render 'messages/card', message: message  %>
+        </div>
+      <% end %>
+    </div>
 
   <div class="messages-new">
     <%= render 'messages/form', message: @message, conversation: @conversation %>

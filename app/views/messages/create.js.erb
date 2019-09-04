@@ -1,6 +1,6 @@
 // content = "<li><%= @message.content %></li>"
 
-list = document.querySelector(".messages")
+list = document.querySelector(".conversations-container")
 list.insertAdjacentHTML("beforeend", "<%= j render "messages/card", message: @message%>")
 
 form = document.querySelector(".messages-new")

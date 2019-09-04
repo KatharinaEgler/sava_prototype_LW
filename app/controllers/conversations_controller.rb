@@ -25,6 +25,7 @@ class ConversationsController < ApplicationController
   def show
     @conversation = Conversation.find(params[:id])
     @message = Message.new
+    Notification.where(user: current_user, conversation: @conversation).destroy_all
   end
 
     private

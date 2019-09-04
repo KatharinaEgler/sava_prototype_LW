@@ -13,7 +13,9 @@ class MessagesController < ApplicationController
     # else
       # render "conversations/show"
     # end
-    @conversation.users.where.not(user: current_user) # added this as basis for the notifications table
+    @conversation.users.where.not(id: current_user.id).each do |user|
+      Notification.create(conversation_id: @conversation.id, user_id: user.id)
+    end # added this as basis for the notifications table
   end
 
   private
