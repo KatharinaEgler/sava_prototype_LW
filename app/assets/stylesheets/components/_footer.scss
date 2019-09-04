@@ -8,13 +8,16 @@
   height: 50px;
   margin-bottom: 0;
   margin-left: 0;
+  padding-right: 3px;
+  padding-left: 3px;
 }
 
 .footer-icons {
   display: flex;
   flex-grow: 0;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+
   margin: 0px;
   padding-inline-start: 0px;
 }

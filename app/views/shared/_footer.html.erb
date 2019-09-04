@@ -47,18 +47,32 @@
     </li>
     <li class="footer-item">
       <%= link_to wishlists_path, class: "footer-wishlist-link" do %>
-        <div class="footer-link-off">
-          <%= image_tag "wishlist.svg" %>
-          <p>WISHLIST</p>
-        </div>
+        <% if params[:controller] == "wishlists" %>
+          <div class="footer-link-on">
+            <%= image_tag "wishlist-on.svg" %>
+            <p>WISHLIST</p>
+          </div>
+        <% else %>
+          <div class="footer-link-off">
+            <%= image_tag "wishlist.svg" %>
+            <p>WISHLIST</p>
+          </div>
+        <% end %>
       <% end %>
     </li>
     <li class="footer-item">
       <%= link_to features_path, class: "footer-more-link" do %>
-        <div class="footer-link-off">
-          <%= image_tag "more.svg" %>
-          <p>MORE</p>
-        </div>
+        <% if params[:controller] == "features" %>
+          <div class="footer-link-on">
+            <%= image_tag "more-on.svg" %>
+            <p>MORE</p>
+          </div>
+        <% else %>
+          <div class="footer-link-off">
+            <%= image_tag "more.svg" %>
+            <p>MORE</p>
+          </div>
+        <% end %>
       <% end %>
     </li>
   </ul>

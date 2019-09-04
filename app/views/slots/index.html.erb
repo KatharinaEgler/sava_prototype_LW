@@ -5,7 +5,64 @@
   </div>
 
   <div class="body-container">
-    <div class="slot-appointment">
+
+    <div class="calendar animated slideInUp delay-0.5s">
+
+      <div class="month">
+        <ul>
+          <li class="prev">&#10094;</li>
+          <li class="next">&#10095;</li>
+          <li>September 2019</li>
+        </ul>
+      </div>
+
+      <ul class="weekdays">
+        <li><span class="sun">Su</span></li>
+        <li>Mo</li>
+        <li>Tu</li>
+        <li>We</li>
+        <li>Th</li>
+        <li>Fr</li>
+        <li>Sa</li>
+      </ul>
+
+      <ul class="days">
+        <li><span class="sun">01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+        <li>05</li>
+        <li><span class="active">06</span></li>
+        <li>07</li>
+        <li><span class="sun">08</li>
+        <li>09</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li><span class="sun">15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+        <li><span class="sun">22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+        <li>28</li>
+        <li><span class="sun">29</li>
+        <li>30</li>
+      </ul>
+    </div>
+
+
+
+    <div class="slot-appointment animated slideInUp delay-0.8s">
       <div class="slot-card-details">
         <% @slots_by_day.each do |date, slots| %>
           <h2><%= Date::DAYNAMES[date.wday] %></h2>
@@ -34,10 +91,12 @@
         <% end %>
       </div>
     </div>
-
-    <p> <%= link_to "New calendar entry", new_slot_path %> </p>
     </div>
     </div>
     </div>
+  </div>
+  <div class="add-button-green">
+    <a href= <%= new_slot_path %> >
+    <p> + </p>
   </div>
 </div>
