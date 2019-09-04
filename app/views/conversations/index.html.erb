@@ -30,18 +30,28 @@
             <!-- end of the if/else statement to count members -->
 
             <div class="conversation-content">
-              <h3 class="name">
-                <%= link_to conversation.conversation_members.second.user.first_name + " " + conversation.conversation_members.second.user.last_name, conversation_path(conversation)%>
-              </h3>
+              <% if conversation.conversation_members[0].user == current_user %>
+                <h3 class="name">
+                  <%= link_to conversation.conversation_members.second.user.first_name + " " + conversation.conversation_members.second.user.last_name, conversation_path(conversation)%>
+                </h3>
+              <% else %>
+                <h3 class="name">
+                    <%= link_to conversation.conversation_members.first.user.first_name + " " + conversation.conversation_members.first.user.last_name, conversation_path(conversation)%>
+                  </h3>
+              <% end %>
               <p class="content">
                 <%= conversation.messages.last.content[0,45] + '...' %>
               </p>
             </div>
 
             <div class="conversation-footer">
+              <% badge_count = current_user.notifications.where(conversation: conversation).count %>
+              <% if badge_count == 0 %>
+                <div></div>
+              <% else %>
+                <div class="badge"> <%= badge_count %></div>
+              <% end %>
               <p> <%= conversation.updated_at.strftime("%d.%m.%y") %> </p>
-              <%= image_tag("delete.svg") %>
-
             </div>
         </div>
       <% end %>
