@@ -2,7 +2,8 @@ class StatusUpdatesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @status_updates = StatusUpdate.all
+    @status_updates = current_user.visible_updates.order(created_at: :desc)
+
   end
 
   def show

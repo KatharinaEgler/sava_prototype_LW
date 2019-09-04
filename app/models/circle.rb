@@ -1,6 +1,7 @@
 class Circle < ApplicationRecord
   has_many :circle_members, dependent: :destroy
   has_many :circle_updates
+  has_many :status_updates, through: :circle_updates
   belongs_to :user
 
   validates :name, presence: true

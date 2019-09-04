@@ -48,12 +48,34 @@
               <span> <%=StatusUpdate.last.title%></span>
               </p>
             </div>
-            <div class="homepage-appointment">
-              <div class="d-flex">
-                <span> <%= StatusUpdate.last.content[0,200] + '...' %></span>
-                <span><%=cl_image_tag(StatusUpdate.last.photo, height: 150, width: 120, crop: :fill)%></span>
+
+
+              <div class="updates-card drop-shadow">
+                <div class="updates-card-header d-flex">
+                  <p> <%= @update.updated_at.strftime("%B %d, %y")%> </p>
+                  <div class="updates-circle">
+                    <h3>
+                      <%= image_tag("circles.svg") %> <%= @update.circles.pluck(:name).join(", ") %>
+                    </h3>
+                  </div>
+
+                </div>
+                <div class="updates-card-content">
+                  <h3><%= link_to @update.title, status_update_path(@update) %></h3>
+                  <p> <%= @update.content[0,150] %> ... </p>
+                  <div class="updates-link-show">
+                    <p> <%= link_to "...continue reading", status_update_path(@update) %></p>
+
+                  </div>
+                </div>
+                <div class="updates-image">
+                    <%= cl_image_tag @update.photo, crop: :fill %>
+                </div>
+                <div class="updates-card-footer">
+                  <p>Update posted by Chloe</p>
+                </div>
               </div>
-            </div>
+
           </div>
         </div>
       </div>
