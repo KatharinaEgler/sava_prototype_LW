@@ -92,7 +92,7 @@ message_2.save!
 message_3 = Message.new(content: "Yes, the doctor is still waiting for the test results. Maybe I'll arrive an update this afternoon. I will post an update to my family and friends as soon as possible.", user_id: chloe.id, conversation_id: conversation_1.id)
 message_3.save!
 
-message_4 = Message.new(content: "Hey, I was just wondering. I will have quite some free time next week. I guess I can easily visit you again? That would be so great.", user_id: sandra.id, conversation_id: conversation_1.id)
+message_4 = Message.new(content: "Hey! I will have quite some free time next week. I guess I can easily visit you again? That would be so great.", user_id: sandra.id, conversation_id: conversation_1.id)
 message_4.save!
 
 message_5 = Message.new(content: "We miss you at work. We are thinking about you a lot.", user_id: denise.id, conversation_id: conversation_2.id)
