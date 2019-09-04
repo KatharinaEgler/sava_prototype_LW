@@ -1,7 +1,11 @@
 <div class="main-container">
-    <h1> <%= link_to "Messages/", conversations_path %>
-      <%= @conversation.conversation_members[1].user.first_name %>
-    </h1>
+
+  <div class="title">
+    <h2 class="circles-title-grey"><%= link_to "Messages", conversations_path %></h2>
+    <h2> / <%= @conversation.conversation_members[1].user.first_name %></h2>
+  </div>
+
+  <div class="body-container">
 
   <div class="conversations-container">
     <% @conversation.messages.each_with_index do |message, index| %>
@@ -14,11 +18,11 @@
         </div>
 
 
+        <% end %>
+        <%= render 'messages/card', message: message  %>
+        </div>
       <% end %>
-      <%= render 'messages/card', message: message  %>
     </div>
-    <% end %>
-  </div>
 
   <div class="messages-new">
     <%= render 'messages/form', message: @message, conversation: @conversation %>

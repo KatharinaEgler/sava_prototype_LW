@@ -1,15 +1,21 @@
 <div class="main-container">
 
-  <h1>Add your update here</h1>
+  <div class="title">
+    <h2>Add your update here</h2>
+  </div>
 
-  <%= simple_form_for @status_updates do |f| %>
-    <%= f.input :title, wrapper_html: {class: "xxx"}  %>
-    <%= f.input :content, wrapper_html: {class: "xxx"} %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :circles, as: :select, collection: @circles %>
+  <div class="body-container">
 
-    <%= f.button :submit, value: "Post update", class: 'btn btn-lg btn-primary big-btn-form' %>
-  <% end %>
+    <%= simple_form_for @status_updates do |f| %>
+      <%= f.input :title, wrapper_html: {class: "xxx"}  %>
+      <%= f.input :content, wrapper_html: {class: "xxx"} %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.input :circles, as: :select, collection: @circles %>
+
+      <%= f.button :submit, value: "Post update", class: 'btn btn-lg btn-primary big-btn-form' %>
+    <% end %>
+
+  </div>
 
 </div>
