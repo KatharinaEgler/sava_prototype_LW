@@ -34,13 +34,14 @@
                 <%= link_to conversation.conversation_members.second.user.first_name + " " + conversation.conversation_members.second.user.last_name, conversation_path(conversation)%>
               </h3>
               <p class="content">
-                <%= conversation.messages.last.content[0,40] + '...' %>
+                <%= conversation.messages.last.content[0,45] + '...' %>
               </p>
             </div>
 
             <div class="conversation-footer">
+              <p> <%= conversation.updated_at.strftime("%d.%m.%y") %> </p>
               <%= image_tag("delete.svg") %>
-              <%= conversation.updated_at.strftime("%d.%m.%y") %>
+
             </div>
         </div>
       <% end %>
