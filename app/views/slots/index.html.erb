@@ -65,7 +65,8 @@
     <div class="slot-appointment animated slideInUp delay-0.8s">
       <div class="slot-card-details">
         <% @slots_by_day.each do |date, slots| %>
-          <h2><%= Date::DAYNAMES[date.wday] %></h2>
+          <h2 class="slot-booking"><%= Date::DAYNAMES[date.wday] %></h2>
+          <p></p>
           <% slots.each do |slot| %>
             <% if slot.date = Date.today %>
               <% if slot.booked && current_user.sick_status == true %>
