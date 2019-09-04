@@ -6,10 +6,10 @@
   <div class="conversations-container">
     <% @conversation.messages.each_with_index do |message, index| %>
     <div>
-      <% if @conversation.messages[index - 1].created_at.strftime("%B %d, %y") != message.created_at.strftime("%B %d, %y") %>
+      <% if @conversation.messages[index - 1].created_at.strftime("%d.%m.%y") != message.created_at.strftime("%d.%m.%y") %>
         <div class="message-date">
           <hr>
-          <p><span> <%= message.created_at.strftime("%B %d, %y") %> </span>
+          <p><span> <%= message.created_at.strftime("%d.%m.%y") %> </span>
             </p>
         </div>
 
@@ -24,6 +24,5 @@
     <%= render 'messages/form', message: @message, conversation: @conversation %>
   </div>
 
-  <%= link_to "Conversations overview", conversations_path %>
 
 </div>

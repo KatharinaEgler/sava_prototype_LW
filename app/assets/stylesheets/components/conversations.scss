@@ -4,17 +4,16 @@
   padding: 24px;
 }
 
-// need to put that in components folder
 
 .conversation-card {
-  margin: 12px auto;
+  margin: 14px auto;
   padding: 4px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: white;
   border-radius: 8px;
-  height: 88px;
+  height: 80px;
 
   .images-conversation {
     width: 88px;
@@ -44,7 +43,8 @@
   }
 
   .conversation-content h3 a{
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 600;
     margin: 0;
     color: $grey;
   }
@@ -55,6 +55,10 @@
     justify-content: space-between;
     height: 100%;
     padding: 12px 0;
+    p {
+      margin-bottom: 0px;
+      color: $grey;
+    }
   }
 
 }
@@ -102,6 +106,19 @@
     p {
       margin-bottom: 0px;
     }
+    .conversation-message-header {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 2px;
+      h3 {
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+      p {
+        color: $grey;
+      }
+    }
   }
 
   .conversation-content h3 a{
@@ -137,6 +154,7 @@
 
 .message-other-user {
   grid-template-columns: 15fr 85fr;
+  margin-bottom: 16px;
 
 .conversation-content {
     background-color: $light-green;
@@ -149,11 +167,42 @@
   p {
     position: relative;
     top: -25px;
+    margin-bottom: 0px;
+    height: 0px;
   }
   span {
     background-color: $light-grey;
     padding: 4px;
   }
+}
+.simple_form {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 24px;
+
+  .messages-new {
+    padding: 24px;
+    border-radius: 8px;
+    height: 48px;
+
+  }
+
+  .message-form {
+    padding: 4px;
+    border-radius: 16px;
+    width: 220px;
+    height: 40px;
+    margin-right: 16px;
+    border-color: white;
+  }
+
+  .message-button {
+    width: 100px;
+    height: 40px;
+    border-radius: 16px;
+
+  }
+
 }
 
 
