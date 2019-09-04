@@ -2,11 +2,11 @@
   border: 1px solid $green;
   border-radius: 8px;
   background-color: white;
-  margin: 10px;
+  margin: 10px 0px;
   justify-content: space-between;
   align-items: center;
   height: 48px;
-  padding: 0 16px;
+  padding: 10px 16px;
 }
 
 .slots-container {
@@ -29,12 +29,11 @@
   border-radius: 8px;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+
 }
 
 .slot-card-details {
      align-items: center;
-    padding: 10px;
     width: 100%;
 }
 
@@ -92,4 +91,18 @@ font-size: 24px;
 
 .booked-confirmation-info{
   padding-left: 15px;
+}
+
+.home-page-milestone{
+  border: 1px solid $green;
+  border-radius: 8px;
+  background-color: white;
+  margin: 10px 0px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  p {
+    margin-bottom: 0px !important;
+
+  }
 }

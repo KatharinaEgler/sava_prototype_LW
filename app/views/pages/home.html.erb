@@ -1,27 +1,47 @@
 <div class="main-container">
-
-  <div class="body-container">
-    <div class="homepage-container">
-      <div class="homepage-banner">
-        <div class="intro-container">
-          <div class="d-flex">
-            <h1 style="padding-left: 0px;"> Hi <%= current_user.first_name %> </h1>
-            <p>how are you feeling?</p>
-          </div>
-          <div class="d-flex">
-            <%= image_tag("smile.svg", width: 35, height: 35) %>
-          </div>
-        </div>
+  <div class="body-container" style="margin-top:0px">
+    <div class="homepage-container" style="margin-bottom: 20px">
+      <div>
+        <h1 style="padding-left: 0px;"> Hi <%= current_user.first_name %> </h1>
+        <p>how are you feeling?</p>
+      </div>
+      <div>
+        <%= image_tag("smile.svg", width: 100, height: 100) %>
       </div>
     </div>
-    <div class="homepage-card">
-      <br>
-        <h3>Milestones of Chloe></h3>
-        <p>Diagnosis: leukemia, in treatment for 7 days</p>
-        <p>Next milestone: chemo in 3 days </p>
-      <br>
-        <h3>Your next appointments</h3>
+    <div class="homepage-section">
+    <h3>Milestones</h3>
+      <div class="home-page-milestone">
+        <p>Diagnosis: leukemia, in treatment for 7 days<br/>
+        Next milestone: chemo in 3 days </p>
+      </div>
+    </div>
+    <div class="homepage-section">
+      <h3>Your next appointments</h3>
+
       <div>
+        <% @slots.each do |slot|%>
+             <% if current_user.sick_status == true %>
+              <div class='time-slot d-flex'>
+                <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
+                <span>
+                <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
+                <%= User.find(slot.booker_id).first_name%></span>
+              </div>
+            <% else %>
+              <div class='time-slot d-flex'>
+                <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
+                <div>
+                  <%= cl_image_tag(User.find(slot.user_id).photo,width: 20, height:20, class:"appointment-avatar") %>
+                  <%= User.find(slot.user_id).first_name%></span>
+                </div>
+              </div>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+      <br>
+      <h3>Latest update</h3>
         <div>
           <div>
           <% @slots.each do |slot|%>
@@ -75,6 +95,6 @@
           </div>
         </div>
       </div>
-    </div>
+
   </div>
 </div>
