@@ -10,18 +10,16 @@
           <%= link_to conversations_path, class: "navbar-messages-link" do %>
             <% if params[:controller] == "conversations" %>
               <%= image_tag "messages-on.svg" %>
-              <% @counter = 0 %>
-              <% Conversation.all.each do |conversation| %>
-              <% conversation.notifications.any? ? @counter += conversation.notifications.count : ""  %>
+              <% @counter = current_user.notifications.count %>
+              <% if @counter > 0 %>
+                <div class="notification"> <%= @counter %></div>
               <% end %>
-              <div class="notification"> <%= @counter %></div>
             <% else %>
               <%= image_tag "messages.svg" %>
-              <% @counter = 0 %>
-              <% Conversation.all.each do |conversation| %>
-              <% conversation.notifications.any? ? @counter += conversation.notifications.count : ""  %>
+              <% @counter = current_user.notifications.count %>
+              <% if @counter > 0 %>
+                <div class="notification"> <%= @counter %></div>
               <% end %>
-              <div class="notification"> <%= @counter %></div>
             <% end %>
           <% end %>
         </li>

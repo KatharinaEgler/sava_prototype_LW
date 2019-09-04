@@ -2,7 +2,13 @@ class StatusUpdatesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @status_updates = StatusUpdate.all
+
+    if current_user.sick_status == true
+      @status_updates = current_user.status_updates.order(created_at: :desc)
+    else
+      @status_updates = current_user.visible_updates.order(created_at: :desc)
+    end
+
   end
 
   def show

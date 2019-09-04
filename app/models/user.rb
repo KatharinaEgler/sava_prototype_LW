@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :status_updates, dependent: :destroy
   has_many :circles, dependent: :destroy
   has_many :circle_members, dependent: :destroy
+  has_many :circles_as_a_member, through: :circle_members, source: "circle"
   has_many :notifications, dependent: :destroy
   has_many :conversation_members, dependent: :destroy
   has_many :messages, dependent: :destroy
@@ -22,5 +23,12 @@ class User < ApplicationRecord
 
   def fullname
     self.first_name + " " + self.last_name
+  end
+
+  def visible_updates
+    StatusUpdate
+      .joins(circle_updates: { circle: { circle_members: :user } })
+      .where(circles: { id: self.circles_as_a_member })
+      .distinct
   end
 end

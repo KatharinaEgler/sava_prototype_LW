@@ -4,17 +4,16 @@
   // padding-left: 16px;
 }
 
-// need to put that in components folder
 
 .conversation-card {
-  margin-bottom: 16px;
+  margin: 14px auto;
   padding: 4px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: white;
   border-radius: 8px;
-  height: 88px;
+  height: 80px;
 
   .images-conversation {
     width: 88px;
@@ -41,20 +40,54 @@
 
   .conversation-content {
     flex-grow: 1;
+    .name {
+      margin-bottom: 2px;
+    }
   }
 
   .conversation-content h3 a{
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 500;
     margin: 0;
-    color: $grey;
+    color: $dark-grey;
+    padding-top: 4px;
+    margin-bottom: 2px;
   }
 
   .conversation-footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
     height: 100%;
-    padding: 12px 0;
+    padding-bottom: 4px;
+    padding-top: 2px;
+    p {
+      margin-bottom: 0px;
+      color: $grey;
+      font-size: 12px;
+    }
+    img {
+      text-align: right;
+    }
+    .badge {
+      position: relative;
+      top: -16px;
+      right: -22px;
+      background-color: $red;
+      /* padding: 5px; */
+      border-radius: 50%;
+      width: 25px;
+      /* text-align: center; */
+      height: 25px;
+      color: #ffffffd6;
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
   }
 
 }
@@ -102,6 +135,19 @@
     p {
       margin-bottom: 0px;
     }
+    .conversation-message-header {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 2px;
+      h3 {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+      p {
+        color: $grey;
+      }
+    }
   }
 
   .conversation-content h3 a{
@@ -137,6 +183,7 @@
 
 .message-other-user {
   grid-template-columns: 15fr 85fr;
+  margin-bottom: 16px;
 
 .conversation-content {
     background-color: $light-green;
@@ -149,11 +196,43 @@
   p {
     position: relative;
     top: -25px;
+    margin-bottom: 0px;
+    height: 0px;
   }
   span {
     background-color: $light-grey;
     padding: 4px;
   }
+}
+.new_message {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 12px;
+
+  .messages-new {
+    padding: 24px;
+    border-radius: 8px;
+    height: 48px;
+
+  }
+
+  .message-form {
+    padding: 4px;
+    border-radius: 16px;
+    width: 220px;
+    height: 40px;
+    margin-right: 16px;
+    border-color: white;
+  }
+
+  .message-button {
+    width: 100px;
+    height: 40px;
+    border-radius: 16px;
+    border-color: $green;
+
+  }
+
 }
 
 

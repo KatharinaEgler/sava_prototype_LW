@@ -85,14 +85,14 @@ conversation_8 = Conversation.new(name: "Conversation between Chloe & Grandma")
 conversation_8.save!
 
 
-message_1 = Message.new(content: "It was so great seeing you. I want to see you as soon as possible again. I'll book a slot with sava then. The application is great.", user_id: sandra.id, conversation_id: conversation_1.id)
+message_1 = Message.new(content: "It was so great seeing you. I want to see you as soon as possible again. I'll book a slot with sava then. The application is great.", user_id: sandra.id, conversation_id: conversation_1.id, created_at: "Mon, 02 Sep 2019 21:05:56 UTC +00:00")
 message_1.save!
-message_2 = Message.new(content: "They are really taking a long time with the test results.", user_id: sandra.id, conversation_id: conversation_1.id)
+message_2 = Message.new(content: "They are really taking a long time with the test results.", user_id: sandra.id, conversation_id: conversation_1.id, created_at: "Mon, 02 Sep 2019 23:36:56 UTC +00:00")
 message_2.save!
-message_3 = Message.new(content: "Yes, the doctor is still waiting for the test results. Maybe I'll arrive an update this afternoon. I will post an update to my family and friends as soon as possible.", user_id: chloe.id, conversation_id: conversation_1.id)
+message_3 = Message.new(content: "Yes, the doctor is still waiting for the test results. Maybe I'll arrive an update this afternoon. I will post an update to my family and friends as soon as possible.", user_id: chloe.id, conversation_id: conversation_1.id, created_at: "Tue, 03 Sep 2019 14:45:56 UTC +00:00")
 message_3.save!
 
-message_4 = Message.new(content: "Hey, I was just wondering. I will have quite some free time next week. I guess I can easily visit you again? That would be so great.", user_id: sandra.id, conversation_id: conversation_1.id)
+message_4 = Message.new(content: "Hey! I will have quite some free time next week. I can easily visit you again? That would be so great.", user_id: sandra.id, conversation_id: conversation_1.id, created_at: "Fri, 06 Sep 2019 18:57:11 UTC +00:00" )
 message_4.save!
 
 message_5 = Message.new(content: "We miss you at work. We are thinking about you a lot.", user_id: denise.id, conversation_id: conversation_2.id)
@@ -207,18 +207,39 @@ circleupdate_1 = CircleUpdate.new(circle_id: family.id, status_update_id: status
 circleupdate_1.save!
 circleupdate_2 = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_1.id)
 circleupdate_2.save!
-circleupdate_3 = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_2.id)
+circleupdate_2b = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_1.id)
+circleupdate_2b.save!
+circleupdate_3 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_2.id)
 circleupdate_3.save!
-circleupdate_4 = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_3.id)
+circleupdate_3b = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_2.id)
+circleupdate_3b.save!
+circleupdate_4 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_3.id)
+circleupdate_4b = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_3.id)
 circleupdate_4.save!
 circleupdate_5 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_4.id)
 circleupdate_5.save!
-circleupdate_6 = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_5.id)
+circleupdate_5 = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_4.id)
+circleupdate_5.save!
+
+circleupdate_6 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_5.id)
 circleupdate_6.save!
-circleupdate_7 = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_6.id)
+circleupdate_6b = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_5.id)
+circleupdate_6b.save!
+circleupdate_6c = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_5.id)
+circleupdate_6c.save!
+
+circleupdate_7 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_6.id)
 circleupdate_7.save!
+circleupdate_7b = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_6.id)
+circleupdate_7b.save!
+circleupdate_7c = CircleUpdate.new(circle_id: colleagues.id, status_update_id: statusupdate_6.id)
+circleupdate_7c.save!
+
+
 circleupdate_8 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_7.id)
 circleupdate_8.save!
+circleupdate_8b = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_7.id)
+circleupdate_8b.save!
 circleupdate_9 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_8.id)
 circleupdate_9.save!
 

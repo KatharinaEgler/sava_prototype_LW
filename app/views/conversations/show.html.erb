@@ -2,20 +2,24 @@
 
   <div class="title">
     <h2 class="circles-title-grey"><%= link_to "Messages", conversations_path %></h2>
-    <h2> / <%= @conversation.conversation_members[1].user.first_name %></h2>
+    <% if @conversation.conversation_members[0].user == current_user  %>
+      <h2> / <%= @conversation.conversation_members[1].user.first_name %></h2>
+    <% else %>
+      <h2> / <%= @conversation.conversation_members[0].user.first_name %></h2>
+    <% end %>
   </div>
 
   <div class="body-container">
 
-    <div class="conversations-container">
-      <% @conversation.messages.each_with_index do |message, index| %>
-      <div>
-        <% if @conversation.messages[index - 1].created_at.strftime("%B %d, %y") != message.created_at.strftime("%B %d, %y") %>
-          <div class="message-date">
-            <hr>
-            <p><span> <%= message.created_at.strftime("%B %d, %y") %> </span>
-              </p>
-          </div>
+  <div class="conversations-container">
+    <% @conversation.messages.order(:created_at).each_with_index do |message, index| %>
+    <div>
+      <% if @conversation.messages[index - 1].created_at.strftime("%d.%m.%y") != message.created_at.strftime("%d.%m.%y") %>
+        <div class="message-date">
+          <hr>
+          <p><span> <%= message.created_at.strftime("%d.%m.%y") %> </span>
+            </p>
+        </div>
 
 
         <% end %>

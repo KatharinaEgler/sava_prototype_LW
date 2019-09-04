@@ -1,7 +1,7 @@
 .updates-card {
     background: white;
     /* border: 1px solid #adb5bd; */
-    border-radius: 8px;
+    border-radius: 10px;
     /* margin: 8px; */
     // margin-right: 24px;
     // margin-left: 24px;
@@ -83,25 +83,27 @@
 }
 
 .updates-card-header {
-  display: flex;
   justify-content: space-between;
   padding: 4px 12px;
-  border-bottom: 1px solid grey;
+  border-bottom: 0.001em solid $grey;
   img {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     top: 0px;
+    margin-right: 6px;
   }
   p {
     margin-top: 4px;
     margin-bottom: 0px;
     color: $grey;
+    font-size: 12px;
+    font-weight: 550;
   }
 }
 
 .updates-circle > h3 {
   color: $red;
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 0px;
   font-weight: 650;
 
