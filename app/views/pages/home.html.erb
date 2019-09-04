@@ -46,7 +46,7 @@
 
               <div class="updates-card drop-shadow">
                 <div class="updates-card-header d-flex">
-                  <p> <%= @update.updated_at.strftime("%B %d, %y")%> </p>
+                  <p> <%= @update.created_at.strftime("%B %d, %y")%> </p>
                   <div class="updates-circle">
                     <h3>
                       <%= image_tag("circles.svg") %>
