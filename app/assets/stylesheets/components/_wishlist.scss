@@ -1,0 +1,174 @@
+.wishlistitem-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 2px rgba(157, 157, 157, 0.2);
+  margin-bottom: 10px;
+}
+
+.wishlistitem-card-top {
+  border-bottom: 0.001em solid $grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.wishlistitem-card-type {
+  background: $dark-grey;
+  border-radius: 10px 10px 0 0;
+  width: 80px;
+  text-align: center;
+  padding: 6px 6px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.wishlistitem-card-type p {
+  color: $light-grey;
+  font-weight: light;
+  margin-bottom: 0px;
+}
+
+.wishlistitem-card-type img {
+  height: 15px;
+  width: 15px;
+}
+
+.wishlistitem-card-name {
+  padding: 6px 6px;
+  width: 150px;
+}
+
+.wishlistitem-card-name h3 {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.wishlistitem-card-circles {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 6px 6px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.wishlistitem-card-circles img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.wishlistitem-card-circles p {
+  color: $grey;
+  font-weight: light;
+  margin-bottom: 0px;
+}
+
+.wishlistitem-cards-bottom {
+  height: 120px;
+  display: flex;
+}
+
+.wishlistitem-card-picture img {
+  height: 60px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.wishlistitem-card-content {
+  width: 263px;
+}
+
+.wishlistitem-card-details {
+  margin: 10px;
+}
+
+.wishlistitem-card-text p {
+  margin-bottom: 0px;
+  font-size: 12px;
+  color: $dark-grey;
+  margin-bottom: 8px;
+}
+
+.wishlistitem-card-date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wishlistitem-card-day {
+  display: flex;
+  width: 180px;
+  margin-bottom: 8px;
+}
+
+.wishlistitem-card-day img {
+  height: 15px;
+  width: 15px;
+}
+
+.wishlistitem-card-day p {
+  font-size: 12px;
+  color: $grey;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.wishlistitem-card-time {
+  display: flex;
+  width: 150px;
+  margin-bottom: 8px;
+}
+
+.wishlistitem-card-time img {
+  height: 15px;
+  width: 15px;
+}
+
+.wishlistitem-card-time p {
+  font-size: 12px;
+  color: $grey;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.wishlistitem-card-place {
+  display: flex;
+}
+
+.wishlistitem-card-place img {
+  height: 15px;
+  width: 15px;
+}
+
+.wishlistitem-card-place p {
+  font-size: 12px;
+  color: $grey;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.wishlistitem-card-button {
+  border-radius: 10px;
+  background: $green;
+  height: 30px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlistitem-card-button p {
+  color: white;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.wishlistitem-card-bottom-right {
+  padding: 10px 10px;
+  align-items: center;
+}
