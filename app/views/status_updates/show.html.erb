@@ -1,9 +1,11 @@
 <div class="main-container">
 
-  <h1> <%= link_to "Updates/", status_updates_path %>
-    <%= @status_update.title %>
-     </h1>
+  <div class="title">
+    <h2 class="circles-title-grey"><%= link_to "Updates", status_updates_path %></h2>
+    <h2> / <%= @status_update.title %></h2>
+  </div>
 
+  <div class="body-container">
 
     <div class="updates-card drop-shadow">
       <div class="updates-card-header d-flex">
@@ -27,4 +29,7 @@
         <p>Update posted by Chloe</p>
       </div>
     </div>
+
+  </div>
+
 </div>

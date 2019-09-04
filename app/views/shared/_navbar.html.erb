@@ -6,11 +6,6 @@
   <div class="navbar-items">
     <% if user_signed_in? %>
       <div class="navbar-icons">
-        <li class="navbar-item">
-          <%= link_to "#", class: "navbar-notifications-link" do %>
-            <%= image_tag "notifications.svg" %>
-          <% end %>
-        </li>
         <li class="navbar-item messages">
           <%= link_to conversations_path, class: "navbar-messages-link" do %>
             <% if params[:controller] == "conversations" %>

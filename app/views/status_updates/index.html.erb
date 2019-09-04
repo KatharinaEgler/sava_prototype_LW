@@ -1,35 +1,41 @@
 <div class="main-container">
 
-  <h1>Updates</h1>
+  <div class="title">
+    <h2>Updates</h2>
+  </div>
 
-  <% @status_updates.each do |update| %>
-    <div class="updates-card drop-shadow">
-      <div class="updates-card-header d-flex">
-        <p> <%=update.updated_at.strftime("%B %d, %y")%> </p>
-        <div class="updates-circle">
-          <h3>
-            <%= image_tag("circles.svg") %> <%= update.circles.pluck(:name).join(", ") %>
-          </h3>
-        </div>
+  <div class="body-container">
 
-      </div>
-      <div class="updates-card-content">
-        <h3><%= link_to update.title, status_update_path(update) %></h3>
-        <p> <%= update.content[0,150] %> ... </p>
-        <div class="updates-link-show">
-          <p> <%= link_to "...continue reading", status_update_path(update) %></p>
+    <% @status_updates.each do |update| %>
+      <div class="updates-card drop-shadow">
+        <div class="updates-card-header d-flex">
+          <p> <%=update.updated_at.strftime("%B %d, %y")%> </p>
+          <div class="updates-circle">
+            <h3>
+              <%= image_tag("circles.svg") %> <%= update.circles.pluck(:name).join(", ") %>
+            </h3>
+          </div>
 
         </div>
-      </div>
-      <div class="updates-image">
-          <%= cl_image_tag update.photo, crop: :fill %>
-      </div>
-      <div class="updates-card-footer">
-        <p>Update posted by Chloe</p>
-      </div>
-    </div>
-  <% end %>
+        <div class="updates-card-content">
+          <h3><%= link_to update.title, status_update_path(update) %></h3>
+          <p> <%= update.content[0,150] %> ... </p>
+          <div class="updates-link-show">
+            <p> <%= link_to "...continue reading", status_update_path(update) %></p>
 
-  <p> <%= link_to "New Update",new_status_update_path %> </p>
+          </div>
+        </div>
+        <div class="updates-image">
+            <%= cl_image_tag update.photo, crop: :fill %>
+        </div>
+        <div class="updates-card-footer">
+          <p>Update posted by Chloe</p>
+        </div>
+      </div>
+    <% end %>
+
+    <p> <%= link_to "New Update",new_status_update_path %> </p>
+
+  </div>
 
 </div>

@@ -1,10 +1,16 @@
 <div class="main-container">
 
-        <ul>
-          <div><%= @slot.date%> </li></div>
-          <div><%= @slot.hour%></div>
-          <div>Details</div>
-       </ul>
-      </div>
-    </div>
+  <div class="title">
+    <h2 class="circles-title-grey"><%= link_to "Calendar", slot_path %></h2>
+    <h2> / Your booking</h2>
   </div>
+
+  <div class="body-container">
+    <ul>
+      <div><%= @slot.date%></div>
+      <div><%= @slot.hour%></div>
+      <div>Details</div>
+    </ul>
+
+  </div>
+</div>
