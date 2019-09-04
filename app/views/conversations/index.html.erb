@@ -5,7 +5,7 @@
   </div>
 
   <div class="body-container">
-    <div class="conversations-container">
+    <div class="conversations-container animated slideInUp">
       <% @conversations.each do |conversation| %>
 
         <!-- for each conversation, we check if it's a new conversation -->
@@ -16,14 +16,14 @@
               <div class="images-conversation single-avatar">
                 <% conversation.conversation_members.each do |conversation_member| %>
                   <% next if conversation_member.user == current_user  %>
-                  <%= cl_image_tag conversation_member.user.photo, crop: "scale", class: "avatar" %>
+                  <%= cl_image_tag conversation_member.user.photo, width: 250, crop: "scale", class: "avatar" %>
                 <% end %>
               </div>
               <% else %>
               <div class="images-conversation multiple-avatars">
                 <% conversation.conversation_members[0..2].each do |conversation_member| %>
                   <% next if conversation_member.user == current_user  %>
-                  <%= cl_image_tag conversation_member.user.photo, crop: "scale", class: "avatar" %>
+                  <%= cl_image_tag conversation_member.user.photo, width: 250, crop: "scale", class: "avatar" %>
                 <% end %>
               </div>
             <% end %>
@@ -42,11 +42,18 @@
               <%= image_tag("delete.svg") %>
               <%= conversation.updated_at.strftime("%d.%m.%y") %>
             </div>
+        </div>
       <% end %>
       <!-- end of iteration over conversations -->
       </div>
     </div>
   <!-- end of .conversations -->
   </div>
+
+  <div class="add-button-green">
+    <a href= <%= new_conversation_path %> >
+    <p> + </p>
+  </div>
+
 </div>
 
