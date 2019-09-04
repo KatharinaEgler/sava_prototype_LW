@@ -1,10 +1,16 @@
 <div class="main-container">
-
-        <ul>
-          <div><%= @slot.date%> </li></div>
-          <div><%= @slot.hour%></div>
-          <div>Details</div>
+<div class="slot-card-details  "></div>
+<%= image_tag("calendar.svg", width: 35, height: 35) %><%= @slot.date%>
+<div class="slot-card-details "> </div>
+            <%= image_tag("home.svg", width: 35, height: 35) %><%= @slot.date%>
+            <div class="slot-card-details  ">
+        </div>
+           <%= image_tag("calendar.svg", width: 35, height: 35) %><%= @slot.hour%>
+           <div>
+            <%= image_tag("icon-clock.svg", width: 35, height: 35) %><%= @slot.user%>
        </ul>
       </div>
     </div>
   </div>
+</div>
+</div>
