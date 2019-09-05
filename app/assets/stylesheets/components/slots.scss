@@ -1,12 +1,52 @@
-.time-slot {
+.time-slot-available {
   border: 1px solid $green;
   border-radius: 8px;
   background-color: white;
   margin: 10px 0px;
-  justify-content: space-between;
   align-items: center;
   height: 48px;
   padding: 10px 16px;
+  justify-content: space-between;
+}
+
+.time-slot-booked {
+  border: 1px solid $dark-grey;
+  border-radius: 8px;
+  background-color: white;
+  margin: 10px 0px;
+  align-items: center;
+  height: 48px;
+  padding: 10px 16px;
+  justify-content: space-between;
+}
+
+.time-slot-time {
+  display: flex;
+}
+
+.time-slot-time p{
+  display: flex;
+  margin-left: 10px;
+}
+
+.time-slot-visitor {
+  display: flex;
+  width: 100px;
+}
+
+.time-slot-visitor img {
+  margin-right: 10px;
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+}
+
+.time-slot-visitor p {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 0px;
+  align-items: center;
+  padding: 5px 0;
 }
 
 .slots-container {
@@ -61,12 +101,13 @@ font-size: 24px;
   background-color: $grey;
   border-radius: 8px;
   padding-top: 10px;
-  padding-left: 30px;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 48px;
   margin: 10px 0px;
-
+  font-size: 20px;
+  font-weight: normal;
 }
 
 .booked-confirmation{
@@ -87,6 +128,10 @@ font-size: 24px;
 .confirmation-card-details {
   align-items: center;
   padding: 10px
+}
+
+.slot-card-detail {
+  margin-bottom: 10;
 }
 
 .booked-confirmation-info{
