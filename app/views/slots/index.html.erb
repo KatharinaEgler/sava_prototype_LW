@@ -81,7 +81,7 @@
                       <span>
                     </div>
                       <div class='time-slot-visitor'>
-                      <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
+                      <%= cl_image_tag(User.find(slot.booker_id).photo,width: 250, crop: "scale", class:"appointment-avatar") %>
                       <p><%= User.find(slot.booker_id).first_name%></p>
                       </div>
                   </div>
