@@ -2,7 +2,7 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @conversations = current_user.conversations.order( updated_at: :desc).to_a
+    @conversations = current_user.conversations.order( created_at: :desc).to_a
     @conversations = @conversations.sort_by { |conversation| - conversation.notifications.where(user: current_user).count}
   end
 

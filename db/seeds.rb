@@ -77,35 +77,35 @@ grandma.save!
 conversation_1 = Conversation.new(name: "Conversation between Chloe & Sandra")
 conversation_1.save!
 
-conversation_2 = Conversation.new(name: "Conversation between Chloe & Denise", updated_at: "Tue, 03 Sep 2019 13:45:56 UTC +00:00")
+conversation_2 = Conversation.new(name: "Conversation between Chloe & Denise", created_at: "Tue, 03 Sep 2019 13:45:56 UTC +00:00")
 conversation_2.save!
 
 # Group message
 
-conversation_3 = Conversation.new(name: "Conversation between Chloe & Family", updated_at: "Mon, 02 Sep 2019 9:31:22 UTC +00:00")
+conversation_3 = Conversation.new(name: "Conversation between Chloe & Family", created_at: "Mon, 02 Sep 2019 9:31:22 UTC +00:00")
 conversation_3.save!
 
 # ----
 
-conversation_4 = Conversation.new(name: "Conversation between Chloe & Tina", updated_at: "Sun, 01 Sep 2019 11:37:56 UTC +00:00")
+conversation_4 = Conversation.new(name: "Conversation between Chloe & Tina", created_at: "Sun, 01 Sep 2019 11:37:56 UTC +00:00")
 conversation_4.save!
 
-conversation_5 = Conversation.new(name: "Conversation between Chloe & Philippe", updated_at: "Tue, 03 Sep 2019 21:35:16 UTC +00:00")
+conversation_5 = Conversation.new(name: "Conversation between Chloe & Philippe", created_at: "Tue, 03 Sep 2019 21:35:16 UTC +00:00")
 conversation_5.save!
 
-conversation_6 = Conversation.new(name: "Conversation between Chloe & Marta", updated_at: "Thu, 05 Sep 2019 10:56:56 UTC +00:00")
+conversation_6 = Conversation.new(name: "Conversation between Chloe & Marta", created_at: "Thu, 05 Sep 2019 10:56:56 UTC +00:00")
 conversation_6.save!
 
-conversation_7 = Conversation.new(name: "Conversation between Chloe & Sophie", updated_at: "Fri, 30 Aug 2019 17:17:56 UTC +00:00")
+conversation_7 = Conversation.new(name: "Conversation between Chloe & Sophie", created_at: "Fri, 30 Aug 2019 17:17:56 UTC +00:00")
 conversation_7.save!
 
-conversation_8 = Conversation.new(name: "Conversation between Chloe & Grandma", updated_at: "Thu, 05 Sep 2019 10:56:56 UTC +00:00")
+conversation_8 = Conversation.new(name: "Conversation between Chloe & Grandma")
 conversation_8.save!
 
-conversation_9 = Conversation.new(name: "Conversation between Sandra & Father Chloe", updated_at: "Fri, 06 Sep 2019 18:55:56 UTC +00:00")
+conversation_9 = Conversation.new(name: "Conversation between Sandra & Father Chloe", created_at: "Fri, 06 Sep 2019 18:55:56 UTC +00:00")
 conversation_9.save!
 
-conversation_10 = Conversation.new(name: "Conversation between Sandra & Sister Chloe", updated_at: "Thu, 05 Sep 2019 22:02:56 UTC +00:00")
+conversation_10 = Conversation.new(name: "Conversation between Sandra & Sister Chloe", created_at: "Thu, 05 Sep 2019 22:02:56 UTC +00:00")
 conversation_10.save!
 
 
