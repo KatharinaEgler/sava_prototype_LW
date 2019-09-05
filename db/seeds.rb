@@ -18,12 +18,12 @@ ConversationMember.destroy_all
 Notification.destroy_all
 
 # Main character
-chloe = User.new(first_name: "Chloe", last_name: "Leroux", email: "chloe@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567020979/sava/edward-cisneros-_H6wpor9mjs-unsplash_w0qgaa.jpg", sick_status: true)
+chloe = User.new(first_name: "Chloe", last_name: "Leroux", email: "chloe@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567657853/sava/jessica-to-oto-o--eO4eTRkDok-unsplash_eldkvu.jpg", sick_status: true)
 chloe.save!
 
 # Members of conversations & circles
-tom = User.new(first_name: "Tom", last_name: "Leroux", email: "tom@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567030877/sava/josh-howard-6BI7fVlw_BA-unsplash_giluqv.jpg", sick_status: false)
-tom.save!
+tina = User.new(first_name: "Tina", last_name: "Leroux", email: "tina@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567699806/nick-grant-ygrOmmn1Oss-unsplash_qgyibg.jpg", sick_status: false)
+tina.save!
 marta = User.new(first_name: "Marta", last_name: "Thompson", email: "marta@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567037714/sava/daniil-kuzelev-AkGd_YB6Q2c-unsplash_pvtgst.jpg", sick_status: false)
 marta.save!
 louise = User.new(first_name: "Louise", last_name: "Leroux", email: "louise@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567031725/sava/kal-visuals-b1Hg7QI-zcc-unsplash_sjf9cd.jpg", sick_status: false)
@@ -32,7 +32,7 @@ simon = User.new(first_name: "Simon", last_name: "Girand", email: "simon@email.c
 simon.save!
 charles = User.new(first_name: "Charles", last_name: "Leroux", email: "charles@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567032762/sava/yerling-villalobos-r-hssyiKimQ-unsplash_wmptf9.jpg", sick_status: false)
 charles.save!
-manuel = User.new(first_name: "Manuel", last_name: "Smith", email: "manuel@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567032763/sava/brooke-cagle-Nm70URdtf3c-unsplash_vzpdv2.jpg", sick_status: false)
+manuel = User.new(first_name: "Manuel", last_name: "Smith", email: "manuel@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567657748/sava/bill-rpiO3N3Tp7o-unsplash_gwpu4p.jpg", sick_status: false)
 manuel.save!
 
 leonie = User.new(first_name: "Leonie", last_name: "Tremblay", email: "leonie@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567037714/sava/christiana-rivers-O_XIvDy0pcs-unsplash_mmdebe.jpg", sick_status: false)
@@ -57,14 +57,14 @@ sophie.save!
 
 linn = User.new(first_name: "Linn", last_name: "Beaulieu", email: "linn@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567037700/sava/jeshoots-com--2vD8lIhdnw-unsplash_rhacax.jpg", sick_status: false)
 linn.save!
-alexandre = User.new(first_name: "Alexandre", last_name: "Caron", email: "alexandre@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567657748/sava/bill-rpiO3N3Tp7o-unsplash_gwpu4p.jpg", sick_status: false)
+alexandre = User.new(first_name: "Alexandre", last_name: "Caron", email: "alexandre@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567032763/sava/brooke-cagle-Nm70URdtf3c-unsplash_vzpdv2.jpg", sick_status: false)
 alexandre.save!
 
 wen = User.new(first_name: "Wen", last_name: "Lachance", email: "wen@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567657806/sava/lau-keith-dcZsxUAAJXs-unsplash_umbmcx.jpg", sick_status: false)
 wen.save!
 gustave = User.new(first_name: "Gustave", last_name: "Schuhman", email: "gustave@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567657841/sava/humphrey-muleba-cjWREdFXn90-unsplash_sflrfp.jpg", sick_status: false)
 gustave.save!
-maria = User.new(first_name: "Maria", last_name: "Kirkman", email: "maria@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567657853/sava/jessica-to-oto-o--eO4eTRkDok-unsplash_eldkvu.jpg", sick_status: false)
+maria = User.new(first_name: "Maria", last_name: "Kirkman", email: "maria@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567020979/sava/edward-cisneros-_H6wpor9mjs-unsplash_w0qgaa.jpg", sick_status: false)
 maria.save!
 
 
@@ -87,7 +87,7 @@ conversation_3.save!
 
 # ----
 
-conversation_4 = Conversation.new(name: "Conversation between Chloe & Tom", updated_at: "Sun, 01 Sep 2019 11:37:56 UTC +00:00")
+conversation_4 = Conversation.new(name: "Conversation between Chloe & Tina", updated_at: "Sun, 01 Sep 2019 11:37:56 UTC +00:00")
 conversation_4.save!
 
 conversation_5 = Conversation.new(name: "Conversation between Chloe & Philippe", updated_at: "Tue, 03 Sep 2019 21:35:16 UTC +00:00")
@@ -162,7 +162,7 @@ conversation_member_12.save!
 
 conversation_member_13 = ConversationMember.new(conversation_id: conversation_4.id, user_id: chloe.id)
 conversation_member_13.save!
-conversation_member_14 = ConversationMember.new(conversation_id: conversation_4.id, user_id: tom.id)
+conversation_member_14 = ConversationMember.new(conversation_id: conversation_4.id, user_id: tina.id)
 conversation_member_14.save!
 
 conversation_member_13 = ConversationMember.new(conversation_id: conversation_7.id, user_id: chloe.id)
@@ -176,21 +176,21 @@ notification_2 = Notification.new(conversation_id: conversation_1.id, user_id: c
 notification_2.save!
 
 
-statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg")
+statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg", created_at: "Mon, 02 Sep 2019 12:40:56 UTC +00:00")
 statusupdate_1.save!
-statusupdate_2 = StatusUpdate.new(user_id: chloe.id, title: "I broke my shoulder", content: "My x-rays look weird. In my last boost, I tripped, fell and hurt myself on the shoulder - really bad! Fortuneately, it hurts less that expected.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567049628/sava/harlie-raethel-ouyjDk-KdfY-unsplash_jxc9b9.jpg")
+statusupdate_2 = StatusUpdate.new(user_id: chloe.id, title: "I broke my shoulder", content: "My x-rays look weird. In my last boost, I tripped, fell and hurt myself on the shoulder - really bad! Fortuneately, it hurts less that expected.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567049628/sava/harlie-raethel-ouyjDk-KdfY-unsplash_jxc9b9.jpg", created_at: "Wed, 28 Aug 2019 20:30:56 UTC +00:00")
 statusupdate_2.save!
-statusupdate_3 = StatusUpdate.new(user_id: chloe.id, title: "Big day!", content: "So, yes - big day! I start my new meds today. There's an exhaustive list of side effects including flushing, abdominal pain, diarrhea, vomiting, rashing, nausea and the list goes on. Reading about it is so different than living the side effects, so far nothing yet in the past hour. Keep your fingers crossed. ", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567118763/sava/anastasiia-ostapovych-YgeTHz0wspk-unsplash_tuykps.jpg")
+statusupdate_3 = StatusUpdate.new(user_id: chloe.id, title: "Big day!", content: "So, yes - big day! I start my new meds today. There's an exhaustive list of side effects including flushing, abdominal pain, diarrhea, vomiting, rashing, nausea and the list goes on. Reading about it is so different than living the side effects, so far nothing yet in the past hour. Keep your fingers crossed. ", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567118763/sava/anastasiia-ostapovych-YgeTHz0wspk-unsplash_tuykps.jpg", created_at: "Thu, 29 Aug 2019 09:55:56 UTC +00:00")
 statusupdate_3.save!
-statusupdate_4 = StatusUpdate.new(user_id: chloe.id, title: "My arm hurts", content: " I got rid of the tube in my arm today. It hurts all the time. They will set me a new tube tomorrow, so one day/night of freedom.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image2-2_jnoycf.jpg")
+statusupdate_4 = StatusUpdate.new(user_id: chloe.id, title: "My arm hurts", content: " I got rid of the tube in my arm today. It hurts all the time. They will set me a new tube tomorrow, so one day/night of freedom.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image2-2_jnoycf.jpg", created_at: "Sun, 01 Sep 2019 11:13:56 UTC +00:00")
 statusupdate_4.save!
-statusupdate_5 = StatusUpdate.new(user_id: chloe.id, title: "Hospital food", content: "A bunch of you have been asking what the food is like. Well, it is actually not that bad.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120097/sava/image1-1_zeqezv.jpg")
+statusupdate_5 = StatusUpdate.new(user_id: chloe.id, title: "Hospital food", content: "A bunch of you have been asking what the food is like. Well, it is actually not that bad.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120097/sava/image1-1_zeqezv.jpg", created_at: "Fri, 30 Aug 2019 17:21:56 UTC +00:00")
 statusupdate_5.save!
-statusupdate_6 = StatusUpdate.new(user_id: chloe.id, title: "Daily life", content: "Hello everyone, I just wanted to give you an update of how I am. Days are really just doctors' appointments and waiting. I feel helpless. Doctors and nurses are nice though. I will go into more details very soon. Check out one of our treatments rooms, nothing special. They all look the same.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image1-2_a9oews.jpg")
+statusupdate_6 = StatusUpdate.new(user_id: chloe.id, title: "Daily life", content: "Hello everyone, I just wanted to give you an update of how I am. Days are really just doctors' appointments and waiting. I feel helpless. Doctors and nurses are nice though. I will go into more details very soon. Check out one of our treatments rooms, nothing special. They all look the same.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image1-2_a9oews.jpg", created_at: "Tue, 03 Sep 2019 20:46:56 UTC +00:00")
 statusupdate_6.save!
-statusupdate_7 = StatusUpdate.new(user_id: chloe.id, title: "Hospital roomie", content: "Quick update. I have a new hospital roomie now. She is nice. The doctors made a really tough procedure on her today. The PRP is injected into the damaged tissue or joint. It takes about 60 to 90 minutes to make and inject PRP. For tendon or ligament conditions, in addition to the PRP injection, the needle may be used to break up scar tissue and adhesions. This is called a tenotomy or fasciotomy. She was is so much pain. I almost cried.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120092/sava/image2-1_d54ti2.jpg")
+statusupdate_7 = StatusUpdate.new(user_id: chloe.id, title: "Hospital roomie", content: "Quick update. I have a new hospital roomie now. She is nice. The doctors made a really tough procedure on her today. The PRP is injected into the damaged tissue or joint. It takes about 60 to 90 minutes to make and inject PRP. For tendon or ligament conditions, in addition to the PRP injection, the needle may be used to break up scar tissue and adhesions. This is called a tenotomy or fasciotomy. She was is so much pain. I almost cried.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120092/sava/image2-1_d54ti2.jpg", created_at: "Wed, 04 Sep 2019 23:15:56 UTC +00:00")
 statusupdate_7.save!
-statusupdate_8 = StatusUpdate.new(user_id: chloe.id, title: "Pain", content: "I have this little guy on me for the next ten days. It's a catheter bit it kinda looks like a dildo. Nurses must've played a prank when they strapped the bandage on. Fucking hurt though to put that. I got stabbed in the neck with local anesthesia and then had the worst ten minutes. The catheter is for my immunoabsorption therapy which involves blood cleansing to get rid of the autoimmunebodies. The blood that gets cleaned gets returned back to me. Kinda cool. While my cortisone therapies did help, this would just make me recover faster from my relapse. I was breaking down a lot on the weekend for fear of this therapy. But its a lot better than I expected and the road to recovery seems a lot closer. Plus, I have something to laugh about when I look at the mirror now.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image3_avbrmz.jpg")
+statusupdate_8 = StatusUpdate.new(user_id: chloe.id, title: "Pain", content: "I have this little guy on me for the next ten days. It's a catheter bit it looks really weird. Nurses must've played a prank when they strapped the bandage on. Fucking hurt though to put that. I got stabbed in the neck with local anesthesia and then had the worst ten minutes. The catheter is for my immunoabsorption therapy which involves blood cleansing to get rid of the autoimmunebodies. The blood that gets cleaned gets returned back to me. Kinda cool. While my cortisone therapies did help, this would just make me recover faster from my relapse. I was breaking down a lot on the weekend for fear of this therapy. But its a lot better than I expected and the road to recovery seems a lot closer. Plus, I have something to laugh about when I look at the mirror now.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image3_avbrmz.jpg", created_at: "Thu, 05 Sep 2019 18:29:56 UTC +00:00")
 statusupdate_8.save!
 
 
@@ -273,7 +273,7 @@ family_member_4 = CircleMember.new(circle_id: family.id, email: marta.email)
 family_member_4.save!
 family_member_5 = CircleMember.new(circle_id: family.id, email: michaela.email)
 family_member_5.save!
-family_member_6 = CircleMember.new(circle_id: family.id, email: tom.email)
+family_member_6 = CircleMember.new(circle_id: family.id, email: tina.email)
 family_member_6.save!
 family_member_7 = CircleMember.new(circle_id: family.id, email: alexandre.email)
 family_member_7.save!
