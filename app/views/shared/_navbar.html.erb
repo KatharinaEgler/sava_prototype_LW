@@ -23,15 +23,17 @@
             <% end %>
           <% end %>
         </li>
-        <li class="navbar-item">
-          <%= link_to circles_path, class: "navbar-circles-link" do %>
-            <% if params[:controller] == "circles" %>
-              <%= image_tag "circles-on.svg" %>
-            <% else %>
-              <%= image_tag "circles.svg" %>
+        <% if current_user.sick_status == true %>
+          <li class="navbar-item">
+            <%= link_to circles_path, class: "navbar-circles-link" do %>
+              <% if params[:controller] == "circles" %>
+                <%= image_tag "circles-on.svg" %>
+              <% else %>
+                <%= image_tag "circles.svg" %>
+              <% end %>
             <% end %>
-          <% end %>
-        </li>
+          </li>
+        <% end %>
       </div>
 
       <div class="navbar-avatar">

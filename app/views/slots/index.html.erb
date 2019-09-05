@@ -96,8 +96,11 @@
     </div>
     </div>
   </div>
-  <div class="add-button-green">
-    <a href= <%= new_slot_path %> >
-    <p> + </p>
-  </div>
+
+  <% if current_user.sick_status == true %>
+    <div class="add-button-green">
+      <a href= <%= new_slot_path %> >
+      <p> + </p>
+    </div>
+  <% end %>
 </div>

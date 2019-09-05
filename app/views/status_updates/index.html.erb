@@ -34,10 +34,11 @@
       </div>
     <% end %>
   </div>
-
-  <div class="add-button-green">
-    <a href= <%= new_status_update_path %> >
-    <p> + </p>
-  </div>
+  <% if current_user.sick_status == true %>
+    <div class="add-button-green">
+      <a href= <%= new_status_update_path %> >
+      <p> + </p>
+    </div>
+  <% end %>
 
 </div>
