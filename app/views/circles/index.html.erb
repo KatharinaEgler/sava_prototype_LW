@@ -112,10 +112,12 @@
       </div>
     </div>
 
+    <% if current_user.sick_status == true %>
     <div class="add-button-green">
       <a href= <%= new_circle_path %> >
       <p> + </p>
     </div>
+    <% end %>
 
   </div>
 

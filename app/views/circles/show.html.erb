@@ -31,8 +31,10 @@
     </div>
   </div>
 
-  <div class="add-button-green" id="edit-circle-button"><p>+</p>
-  </div>
+  <% if current_user.sick_status == true %>
+    <div class="add-button-green" id="edit-circle-button"><p>+</p>
+    </div>
+  <% end %>`
   <div class="popup animated fadeInUp" id="popup-create-member" style="display: none;">
 
     <div class= "cancel-button" id="cancel-popup-create-member">Cancel</div>
