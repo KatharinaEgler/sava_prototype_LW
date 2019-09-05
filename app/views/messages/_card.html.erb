@@ -1,6 +1,6 @@
 
 <div class="conversation-message-card  <%= message.user == current_user ? "message-current-user" : "message-other-user" %>">
-  <%= cl_image_tag message.user.photo, crop: "scale", class: "avatar" %>
+  <%= cl_image_tag message.user.photo, width: 250, crop: "scale", class: "avatar" %>
   <div class="conversation-content drop-shadow">
     <div class="conversation-message-header">
       <h3><%= message.user.fullname %></h3>
