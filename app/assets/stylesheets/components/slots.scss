@@ -106,3 +106,76 @@ font-size: 24px;
 
   }
 }
+
+.homepage-slots {
+  margin-bottom: 20px;
+}
+
+.homepage-slot {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid $dark-grey;
+  padding: 10px;
+  display: flex;
+}
+
+.homepage-slot-date {
+  width: 180px;
+  margin-left: 10px;
+}
+
+.homepage-slot-day{
+  display:flex;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.homepage-slot-day p {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+.homepage-slot-day img {
+  height: 15px;
+  width: 15px;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+}
+
+.homepage-slot-time {
+  display:flex;
+}
+
+.homepage-slot-time p {
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.homepage-slot-time img {
+  height: 15px;
+  width: 15px;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+}
+
+.homepage-slot-visitor {
+  display: flex;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+}
+
+.homepage-slot-visitor p {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+.homepage-slot-visitor img {
+  height: 40px;
+  width: 40px;
+}
