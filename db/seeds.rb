@@ -99,8 +99,14 @@ conversation_6.save!
 conversation_7 = Conversation.new(name: "Conversation between Chloe & Sophie", updated_at: "Fri, 30 Aug 2019 17:17:56 UTC +00:00")
 conversation_7.save!
 
-conversation_8 = Conversation.new(name: "Conversation between Chloe & Grandma")
+conversation_8 = Conversation.new(name: "Conversation between Chloe & Grandma", updated_at: "Thu, 05 Sep 2019 10:56:56 UTC +00:00")
 conversation_8.save!
+
+conversation_9 = Conversation.new(name: "Conversation between Sandra & Father Chloe", updated_at: "Fri, 06 Sep 2019 18:55:56 UTC +00:00")
+conversation_9.save!
+
+conversation_10 = Conversation.new(name: "Conversation between Sandra & Sister Chloe", updated_at: "Thu, 05 Sep 2019 22:02:56 UTC +00:00")
+conversation_10.save!
 
 
 message_1 = Message.new(content: "It was so great seeing you. I want to see you as soon as possible again. I'll book a slot with sava then. The application is great.", user_id: sandra.id, conversation_id: conversation_1.id, created_at: "Mon, 02 Sep 2019 21:05:56 UTC +00:00")
@@ -125,8 +131,14 @@ message_7.save!
 message_8 = Message.new(content: "Thanks you so much for the nice presents! 🤗 ", user_id: chloe.id, conversation_id: conversation_4.id, created_at: "Fri, 30 Aug 2019 23:57:11 UTC +00:00")
 message_8.save!
 
-message_8 = Message.new(content: "Your last update is so intense. I wish, I could have been there for you.", user_id: sophie.id, conversation_id: conversation_7.id, created_at: "Thu, 29 Aug 2019 14:22:11 UTC +00:00")
-message_8.save!
+message_9 = Message.new(content: "Your last update is so intense. I wish, I could have been there for you.", user_id: sophie.id, conversation_id: conversation_7.id, created_at: "Thu, 29 Aug 2019 14:22:11 UTC +00:00")
+message_9.save!
+
+message_10 = Message.new(content: "Please, let me know if I can help you somehow. I really want to help!", user_id: sandra.id, conversation_id: conversation_9.id, created_at: "Wed, 04 Sep 2019 14:44:11 UTC +00:00")
+message_10.save!
+
+message_10 = Message.new(content: "Thank you so much for all your support. Let's crap a coffee sometime soon.", user_id: tina.id, conversation_id: conversation_10.id, created_at: "Wed, 04 Sep 2019 22:05:11 UTC +00:00")
+message_10.save!
 
 
 conversation_member_1 = ConversationMember.new(conversation_id: conversation_1.id, user_id: chloe.id)
@@ -170,6 +182,16 @@ conversation_member_13.save!
 conversation_member_14 = ConversationMember.new(conversation_id: conversation_7.id, user_id: sophie.id)
 conversation_member_14.save!
 
+conversation_member_15 = ConversationMember.new(conversation_id: conversation_9.id, user_id: charles.id)
+conversation_member_15.save!
+conversation_member_16 = ConversationMember.new(conversation_id: conversation_9.id, user_id: sandra.id)
+conversation_member_16.save!
+
+conversation_member_17 = ConversationMember.new(conversation_id: conversation_10.id, user_id: sandra.id)
+conversation_member_17.save!
+conversation_member_18 = ConversationMember.new(conversation_id: conversation_10.id, user_id: tina.id)
+conversation_member_18.save!
+
 notification_1 = Notification.new(conversation_id: conversation_8.id, user_id: chloe.id)
 notification_1.save!
 notification_2 = Notification.new(conversation_id: conversation_1.id, user_id: chloe.id)
@@ -193,15 +215,31 @@ statusupdate_7.save!
 statusupdate_8 = StatusUpdate.new(user_id: chloe.id, title: "Pain", content: "I have this little guy on me for the next ten days. It's a catheter bit it looks really weird. Nurses must've played a prank when they strapped the bandage on. Fucking hurt though to put that. I got stabbed in the neck with local anesthesia and then had the worst ten minutes. The catheter is for my immunoabsorption therapy which involves blood cleansing to get rid of the autoimmunebodies. The blood that gets cleaned gets returned back to me. Kinda cool. While my cortisone therapies did help, this would just make me recover faster from my relapse. I was breaking down a lot on the weekend for fear of this therapy. But its a lot better than I expected and the road to recovery seems a lot closer. Plus, I have something to laugh about when I look at the mirror now.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567120091/sava/image3_avbrmz.jpg", created_at: "Thu, 05 Sep 2019 18:29:56 UTC +00:00")
 statusupdate_8.save!
 
+slot_01 = Slot.new(date: "06.09.2019", hour: 19, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_01.save!
+slot_02 = Slot.new(date: "06.09.2019", hour: 20, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_02.save!
+
+slot_03 = Slot.new(date: "07.09.2019", hour: 10, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_03.save!
+slot_04 = Slot.new(date: "07.09.2019", hour: 14, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_04.save!
+
+slot_05 = Slot.new(date: "08.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_05.save!
+slot_06 = Slot.new(date: "08.09.2019", hour: 13, booked: true, user_id: chloe.id, booker_id: tina.id, location: "3801 Rue Université, Montréal")
+slot_06.save!
+
+
 
 slot_1 = Slot.new(date: "09.09.2019", hour: 9, booked: true, user_id: chloe.id, booker_id: michaela.id, location: "3801 Rue Université, Montréal")
 slot_1.save!
 slot_4 = Slot.new(date: "10.09.2019", hour: 10, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_4.save!
 slot_2 = Slot.new(date: "09.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_2.save!
 slot_3 = Slot.new(date: "09.09.2019", hour: 15, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_3.save!
-slot_4.save!
 slot_5 = Slot.new(date: "10.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_5.save!
 slot_6 = Slot.new(date: "11.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
