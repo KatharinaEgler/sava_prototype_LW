@@ -1,17 +1,17 @@
 
 <div class="main-container">
-  <div class="title">
-    <h2 class="booking-container"><%= link_to "Confirmation", slot_path %></h2>
+  <div class="title-confirmation">
+    <h2 class="booking-container"><%= link_to "Booking confirmed:", slot_path, style: "color: #645959;"  %></h2>
   </div>
-  <div class="body-container">
+  <div class="body-container" style="margin-top: 10px;">
   <div class="booked-confirmation">
     <div class="booked-confirmation-info">
-      <div class="confirmation-card-details d-flex"><%= image_tag "cal.svg", alt: "alttext" %><%= @slot.date %></div>
+      <div class="confirmation-card-details d-flex"><%= image_tag "cal.svg", alt: "alttext" %><%= Date::DAYNAMES[@slot.date.wday] %> - <%= @slot.date.strftime('%d.%m.%Y') %></div>
       <div class="confirmation-card-details d-flex"><%= image_tag "clock.svg", alt: "alttext" %><%= @slot.get_start_time.strftime('%l:%M %p') %> - <%= @slot.get_end_time.strftime('%l:%M %p')%></div>
       <div class="confirmation-card-details d-flex"><%= image_tag "permission.svg", alt: "alttext" %> Room: 123, Building C </div>
       <div class="confirmation-card-details d-flex"><%= image_tag "pin.svg", alt: "alttext" %>1385 Jean Talon St E, Montreal, QC H2E 1S6<%= @slot.date%></div>
     </div>
-    <div class="slot-card-details d-flex"><%= image_tag "map.png", alt: "alttext", style: "width: 100%" %></div>
+    <div class="confirmation-card-details d-flex"><%= image_tag "map.png", alt: "alttext", style: "width: 100%" %></div>
   </div>
 </div>
 </div>
