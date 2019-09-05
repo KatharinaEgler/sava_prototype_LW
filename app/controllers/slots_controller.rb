@@ -2,7 +2,8 @@ class SlotsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @slots_by_day = Slot.order(:hour).to_a.group_by { |slot| slot.date }
+    #@slots_by_day = Slot.all.sort_by { |a| a.date }
+    @slots_by_day = Slot.order(:hour).to_a.sort_by { |a| a.date }.group_by { |slot| slot.date }
 
     # {
     #   monday: [..., ...],

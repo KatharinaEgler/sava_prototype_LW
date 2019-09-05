@@ -70,7 +70,7 @@
             <h2 class="slot-booking"><%= Date::DAYNAMES[date.wday] %> - <%= date.strftime('%d.%m.%Y') %> </h2>
             <p></p>
 
-            <% slots.each do |slot| %>
+            <% slots.sort_by { |a| a.hour }.each do |slot| %>
               <% if slot.date = Date.today %>
 
                 <% if slot.booked && current_user.sick_status == true %>
