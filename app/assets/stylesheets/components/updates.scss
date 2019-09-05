@@ -112,3 +112,41 @@
 .updates-card-footer > p {
   color: white;
 }
+
+#showcase-link {
+
+}
+
+.hidden-popup {
+  display: none;
+}
+
+#popup-definition {
+  width: 100vw;
+  position: fixed;
+  top: 50vh;
+
+  p {
+    border-radius: 10px;
+    width: 80vw;
+    background: $light-grey;
+    margin-bottom: 4px;
+    padding: 15px;
+    padding-top: 8px;
+    padding-right: 16px;
+    margin: auto;
+    opacity: 0.97;
+    color: $dark-grey;
+
+  }
+
+  .close {
+    position: absolute;
+    right: 12.5vw;
+    top: 0.5vh;
+    font-size: 25px;
+    color: $dark-grey;
+
+  }
+
+}
