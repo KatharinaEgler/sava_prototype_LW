@@ -3,7 +3,15 @@
     <div class="homepage-container" style="margin-bottom: 20px">
       <div>
         <h1 style="padding-left: 0px;"> Hi <%= current_user.first_name %> </h1>
-        <p>how are you feeling?</p>
+        <% if current_user.sick_status == true %>
+          <p>how are you feeling?</p>
+        <% else %>
+          <% User.all.each do |user| %>
+            <% if user.sick_status == true %>
+              <p> <%= user.first_name %>'s mood </p>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
       <div>
         <%= image_tag("smile.svg", width: 100, height: 100) %>
@@ -12,7 +20,7 @@
     <div class="homepage-section">
     <h3>Milestones</h3>
       <div class="home-page-milestone">
-        <p>Diagnosis: leukemia, in treatment for 7 days<br/>
+        <p>Diagnosis: leukemia, in treatment for 14 days<br/>
         Next milestone: chemo in 3 days </p>
       </div>
     </div>
@@ -41,7 +49,6 @@
       </div>
     </div>
       <br>
-      <h3>Latest update</h3>
         <div>
           <div>
           <% @slots.each do |slot|%>
