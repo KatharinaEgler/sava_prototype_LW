@@ -44,50 +44,61 @@
       </div>
     </div>
 
-    <% if current_user.sick_status == true %>
-    <div class="homepage-section">
-      <h2>Your next appointments</h2>
+    <h2>Your next appointments</h2>
 
-      <div>
+    <div class= homepage-slots>
+
+      <% if current_user.sick_status == true %>
         <% @slots.each do |slot|%>
-             <% if current_user.sick_status == true %>
-              <div class='time-slot d-flex'>
+          <% if current_user.sick_status == true %>
+            <div class="homepage-slot">
+
+              <div class="homepage-slot-date">
+                <div class="homepage-slot-day">
+                  <%= image_tag("time-darkgrey.svg") %>
+                  <p> <%=slot.date.strftime("%d.%m.%y")%></p>
+                </div>
+
+                <div class="homepage-slot-time">
+                <%= image_tag("calendar-darkgrey.svg") %>
                 <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
-                <span>
-                <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-                <%= User.find(slot.booker_id).first_name%></span>
-              </div>
-            <% else %>
-              <div class='time-slot d-flex'>
-                <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
-                <div>
-                  <%= cl_image_tag(User.find(slot.user_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-                  <%= User.find(slot.user_id).first_name%></span>
                 </div>
               </div>
-            <% end %>
-        <% end %>
-      </div>
-    </div>
-    <% end %>
-        <div>
-          <div>
-          <% @slots.each do |slot|%>
-            <div class="homepage-appointment homepage-appointment-img">
-              <div class="d-flex">
-                <%= image_tag("time.svg") %>
-                <span> <%=slot.date.strftime("%d.%m.%y")%> at </span>
-                <span> <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
-              </div>
-              <div class="d-flex">
-                <% if current_user.sick_status == true %>
-                  <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-                  <span><%=User.find(slot.booker_id).first_name%></span>
-                <% end %>
+
+              <div class="homepage-slot-visitor">
+                <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
+                <p><%= User.find(slot.booker_id).first_name%></p>
               </div>
             </div>
+
+          <% else %>
+
+            <div class="homepage-slot">
+
+              <div class="homepage-slot-date">
+                <div class="homepage-slot-day">
+                  <%= image_tag("time-darkgrey.svg") %>
+                  <p> <%=slot.date.strftime("%d.%m.%y")%></p>
+                </div>
+
+                <div class="homepage-slot-time">
+                <%= image_tag("calendar-darkgrey.svg") %>
+                <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
+                </div>
+              </div>
+
+              <div class="homepage-slot-visitor">
+                <%= cl_image_tag(User.find(slot.user_id).photo,width: 20, height:20, class:"appointment-avatar") %>
+                <p><%= User.find(slot.user_id).first_name%></p>
+              </div>
+            </div>
+
           <% end %>
-          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+
         <h2>Latest update</h2>
           <div>
             <% unless @update.nil? %>
