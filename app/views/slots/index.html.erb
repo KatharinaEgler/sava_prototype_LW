@@ -64,38 +64,56 @@
 
     <div class="slot-appointment animated slideInUp delay-0.8s">
       <div class="slot-card-details">
-        <% @slots_by_day.each do |date, slots| %>
-          <h2 class="slot-booking"><%= Date::DAYNAMES[date.wday] %></h2>
-          <p></p>
-          <% slots.each do |slot| %>
-            <% if slot.date = Date.today %>
-              <% if slot.booked && current_user.sick_status == true %>
-                <div class='time-slot d-flex'>
-                  <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
-                  <span>
-                  <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-                  <%= User.find(slot.booker_id).first_name%></span>
-                </div>
-              <% else %>
-                <div class='time-slot d-flex'>
-                  <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
-                  <% if current_user.sick_status == true %>
-                    <label class="slot-label book-button">Available</label>
-                  <% else %>
-                    <label class="slot-label book-button"> <%= link_to "Book", slot_path(slot) %></label>
-                  <% end %>
 
-                </div>
+        <% @slots_by_day.each do |date, slots| %>
+          <div class="slot-card-detail">
+            <h2 class="slot-booking"><%= Date::DAYNAMES[date.wday] %> - <%= date.strftime('%d.%m.%Y') %> </h2>
+            <p></p>
+
+            <% slots.sort_by { |a| a.hour }.each do |slot| %>
+              <% if slot.date = Date.today %>
+
+                <% if slot.booked && current_user.sick_status == true %>
+                  <div class='time-slot-booked d-flex'>
+                    <div class='time-slot-time'>
+                      <%= image_tag("time-darkgrey.svg") %>
+                      <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
+                      <span>
+                    </div>
+                      <div class='time-slot-visitor'>
+                      <%= cl_image_tag(User.find(slot.booker_id).photo,width: 250, crop: "scale", class:"appointment-avatar") %>
+                      <p><%= User.find(slot.booker_id).first_name%></p>
+                      </div>
+                  </div>
+
+                <% else %>
+
+
+                  <div class='time-slot-available d-flex'>
+                    <div class='time-slot-time'>
+                      <%= image_tag("time-darkgrey.svg") %>
+                      <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
+                    </div>
+                    <% if current_user.sick_status == true %>
+                      <label class="slot-label book-button">Available</label>
+                    <% else %>
+                      <label class="slot-label book-button"> <%= link_to "Book", slot_path(slot) %></label>
+                    <% end %>
+
+                  </div>
+                <% end %>
+
               <% end %>
             <% end %>
+
           <% end %>
-        <% end %>
+        </div>
+
       </div>
     </div>
-    </div>
-    </div>
-    </div>
   </div>
+</div>
+</div>
 
   <% if current_user.sick_status == true %>
     <div class="add-button-green">

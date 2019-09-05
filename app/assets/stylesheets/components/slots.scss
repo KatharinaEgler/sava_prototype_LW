@@ -1,12 +1,52 @@
-.time-slot {
+.time-slot-available {
   border: 1px solid $green;
   border-radius: 8px;
   background-color: white;
   margin: 10px 0px;
-  justify-content: space-between;
   align-items: center;
   height: 48px;
   padding: 10px 16px;
+  justify-content: space-between;
+}
+
+.time-slot-booked {
+  border: 1px solid $dark-grey;
+  border-radius: 8px;
+  background-color: white;
+  margin: 10px 0px;
+  align-items: center;
+  height: 48px;
+  padding: 10px 16px;
+  justify-content: space-between;
+}
+
+.time-slot-time {
+  display: flex;
+}
+
+.time-slot-time p{
+  display: flex;
+  margin-left: 10px;
+}
+
+.time-slot-visitor {
+  display: flex;
+  width: 100px;
+}
+
+.time-slot-visitor img {
+  margin-right: 10px;
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+}
+
+.time-slot-visitor p {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 0px;
+  align-items: center;
+  padding: 5px 0;
 }
 
 .slots-container {
@@ -61,12 +101,13 @@ font-size: 24px;
   background-color: $grey;
   border-radius: 8px;
   padding-top: 10px;
-  padding-left: 30px;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 48px;
   margin: 10px 0px;
-
+  font-size: 20px;
+  font-weight: normal;
 }
 
 .booked-confirmation{
@@ -78,7 +119,7 @@ font-size: 24px;
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  padding: 30px 0px 40px 0px;
+  padding: 10px 0px 10px 0px;
   img {
     margin-right: 7px;
   }
@@ -89,8 +130,13 @@ font-size: 24px;
   padding: 10px
 }
 
+.slot-card-detail {
+  margin-bottom: 10;
+}
+
 .booked-confirmation-info{
   padding-left: 15px;
+  margin-top:0px;
 }
 
 .home-page-milestone{
@@ -105,4 +151,77 @@ font-size: 24px;
     margin-bottom: 0px !important;
 
   }
+}
+
+.homepage-slots {
+  margin-bottom: 20px;
+}
+
+.homepage-slot {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid $dark-grey;
+  padding: 10px;
+  display: flex;
+}
+
+.homepage-slot-date {
+  width: 180px;
+  margin-left: 10px;
+}
+
+.homepage-slot-day{
+  display:flex;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.homepage-slot-day p {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+.homepage-slot-day img {
+  height: 15px;
+  width: 15px;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+}
+
+.homepage-slot-time {
+  display:flex;
+}
+
+.homepage-slot-time p {
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.homepage-slot-time img {
+  height: 15px;
+  width: 15px;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+}
+
+.homepage-slot-visitor {
+  display: flex;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+}
+
+.homepage-slot-visitor p {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+.homepage-slot-visitor img {
+  height: 40px;
+  width: 40px;
 }

@@ -8,7 +8,7 @@
         <% else %>
           <% User.all.each do |user| %>
             <% if user.sick_status == true %>
-              <p> <%= user.first_name %>'s mood </p>
+              <p> <%= user.first_name %>'s mood today: </p>
             <% end %>
           <% end %>
         <% end %>
@@ -17,7 +17,7 @@
         <%= image_tag("smile.svg", width: 100, height: 100) %>
       </div>
     </div>
-    <div class="milestones">
+    <div class="milestones animated slideInUp delay-0.5s">
       <h2 class="milestones_title">Milestones</h2>
       <div class="milestones-table">
         <div class="milestones-icon">
@@ -25,69 +25,80 @@
         </div>
         <div class="milestones-stages">
           <div class="milestones-stages-1">
-            <p class="date">15/08/2019</p>
+            <p class="date">23/08/2019</p>
             <p class="stage">diagnosis: leukemia stage II</p>
           </div>
           <div class="milestones-stages-2">
-            <p class="date">23/08/2019</p>
+            <p class="date">30/08/2019</p>
             <p class="stage">Immunotherapy starting</p>
           </div>
           <div class="milestones-stages-3">
-            <p class="date">20/09/2019</p>
+            <p class="date">13/09/2019</p>
             <p class="stage">Splenectomy surgery</p>
           </div>
           <div class="milestones-stages-4">
-            <p class="date">23/08/2019</p>
+            <p class="date">27/09/2019</p>
             <p class="stage">Biological therapy</p>
           </div>
         </div>
       </div>
     </div>
 
-    <% if current_user.sick_status == true %>
-    <div class="homepage-section">
-      <h2>Your next appointments</h2>
 
-      <div>
+    <div class= "homepage-slots animated slideInUp delay-0.5s">
+
+      <% if current_user.sick_status == true %>
+      <h2>Your next appointments</h2>
         <% @slots.each do |slot|%>
-             <% if current_user.sick_status == true %>
-              <div class='time-slot d-flex'>
+          <% if current_user.sick_status == true %>
+            <div class="homepage-slot">
+
+              <div class="homepage-slot-date">
+                <div class="homepage-slot-day">
+                  <%= image_tag("time-darkgrey.svg") %>
+                  <p> <%=slot.date.strftime("%d.%m.%y")%></p>
+                </div>
+
+                <div class="homepage-slot-time">
+                <%= image_tag("calendar-darkgrey.svg") %>
                 <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
-                <span>
-                <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-                <%= User.find(slot.booker_id).first_name%></span>
-              </div>
-            <% else %>
-              <div class='time-slot d-flex'>
-                <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
-                <div>
-                  <%= cl_image_tag(User.find(slot.user_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-                  <%= User.find(slot.user_id).first_name%></span>
                 </div>
               </div>
-            <% end %>
-        <% end %>
-      </div>
-    </div>
-    <% end %>
-        <div>
-          <div>
-          <% @slots.each do |slot|%>
-            <div class="homepage-appointment homepage-appointment-img">
-              <div class="d-flex">
-                <%= image_tag("time.svg") %>
-                <span> <%=slot.date.strftime("%d.%m.%y")%> at </span>
-                <span> <%=slot.hour%>h - <%=(slot.hour + 1)%>h</span>
-              </div>
-              <div class="d-flex">
-                <% if current_user.sick_status == true %>
-                  <%= cl_image_tag(User.find(slot.booker_id).photo,width: 20, height:20, class:"appointment-avatar") %>
-                  <span><%=User.find(slot.booker_id).first_name%></span>
-                <% end %>
+
+              <div class="homepage-slot-visitor">
+                <%= cl_image_tag(User.find(slot.booker_id).photo, width: 250, crop: "scale", class:"appointment-avatar") %>
+                <p><%= User.find(slot.booker_id).first_name%></p>
               </div>
             </div>
+
+          <% else %>
+
+            <div class="homepage-slot">
+
+              <div class="homepage-slot-date">
+                <div class="homepage-slot-day">
+                  <%= image_tag("time-darkgrey.svg") %>
+                  <p> <%=slot.date.strftime("%d.%m.%y")%></p>
+                </div>
+
+                <div class="homepage-slot-time">
+                <%= image_tag("calendar-darkgrey.svg") %>
+                <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
+                </div>
+              </div>
+
+              <div class="homepage-slot-visitor">
+                <%= cl_image_tag(User.find(slot.user_id).photo,width: 20, height:20, class:"appointment-avatar") %>
+                <p><%= User.find(slot.user_id).first_name%></p>
+              </div>
+            </div>
+
           <% end %>
-          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+      <div class= "homepage-updates animated slideInUp delay-0.5s">
         <h2>Latest update</h2>
           <div>
             <% unless @update.nil? %>
@@ -122,6 +133,7 @@
           </div>
         </div>
       </div>
+    </div>
 
   </div>
 </div>

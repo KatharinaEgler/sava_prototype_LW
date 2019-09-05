@@ -1,4 +1,7 @@
 
+#conversation-body-container {
+  margin-left: 10px;
+}
 
 .conversations-container {
   // padding-left: 16px;
@@ -29,7 +32,7 @@
   .multiple-avatars img:first-child {
     position: absolute;
     top: 8px;
-    right: 6px;
+    left: 28px;
   }
 
   .multiple-avatars img:last-child {
@@ -40,6 +43,7 @@
 
   .conversation-content {
     flex-grow: 1;
+    flex: 0 0 70%;
     .name {
       margin-bottom: 2px;
     }
