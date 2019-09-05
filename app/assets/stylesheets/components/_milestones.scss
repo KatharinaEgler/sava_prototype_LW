@@ -1,0 +1,70 @@
+.milestones {
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.milestones-table {
+  display: flex;
+}
+
+.milestones-stages-1 {
+  margin-left: 10px;
+  background: white;
+  display:flex;
+  border-radius: 10px;
+  padding: 6px;
+  margin-bottom: 10px;
+}
+
+.milestones-stages-2 {
+  margin-left: 10px;
+  background: white;
+  display:flex;
+  border-radius: 10px;
+  padding: 6px;
+  margin-bottom: 10px;
+}
+
+.milestones-stages-3 {
+  margin-left: 10px;
+  background: white;
+  display:flex;
+  border-radius: 10px;
+  padding: 6px;
+  margin-bottom: 10px;
+  border-style: solid;
+  border-color: $green;
+  border-width: 2px;
+  .date {
+    color: $green;
+  }
+  .stage {
+    color: $green;
+  }
+}
+
+.milestones-stages-4 {
+  margin-left: 10px;
+  background: white;
+  display:flex;
+  border-radius: 10px;
+  padding: 6px;
+  margin-bottom: 10px;
+    .date {
+    color: $grey;
+  }
+  .stage {
+    color: $grey;
+  }
+}
+
+.date {
+  margin: 0px 10px;
+}
+
+.stage {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 0px;
+  padding-right: 10px;
+}
