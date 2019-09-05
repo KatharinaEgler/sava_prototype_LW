@@ -1,7 +1,11 @@
 .body-container {
   margin-top: 90px;
   padding: 8px 16px;
-  height: 80vh; //Richard added this for the animatecss on conversation index
+}
+
+.body-container-conversation-page {
+  /* Richard added this for the animateCss on the conversation index */
+  height: 80vh;
 }
 
 .circles-title {
