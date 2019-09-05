@@ -22,7 +22,7 @@ chloe = User.new(first_name: "Chloe", last_name: "Leroux", email: "chloe@email.c
 chloe.save!
 
 # Members of conversations & circles
-tom = User.new(first_name: "Tom", last_name: "Fischer", email: "tom@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567030877/sava/josh-howard-6BI7fVlw_BA-unsplash_giluqv.jpg", sick_status: false)
+tom = User.new(first_name: "Tom", last_name: "Leroux", email: "tom@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567030877/sava/josh-howard-6BI7fVlw_BA-unsplash_giluqv.jpg", sick_status: false)
 tom.save!
 marta = User.new(first_name: "Marta", last_name: "Thompson", email: "marta@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567037714/sava/daniil-kuzelev-AkGd_YB6Q2c-unsplash_pvtgst.jpg", sick_status: false)
 marta.save!
@@ -53,32 +53,50 @@ rita.save!
 sophie = User.new(first_name: "Sophie", last_name: "McSimons", email: "sophie@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567037701/sava/marcelo-matarazzo-WKxWQg7tZoU-unsplash_ugi0am.jpg", sick_status: false)
 sophie.save!
 
+# additional seeds
+
+linn = User.new(first_name: "Linn", last_name: "Beaulieu", email: "linn@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567037700/sava/jeshoots-com--2vD8lIhdnw-unsplash_rhacax.jpg", sick_status: false)
+linn.save!
+alexandre = User.new(first_name: "Alexandre", last_name: "Caron", email: "alexandre@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567657748/sava/bill-rpiO3N3Tp7o-unsplash_gwpu4p.jpg", sick_status: false)
+alexandre.save!
+
+wen = User.new(first_name: "Wen", last_name: "Lachance", email: "wen@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567657806/sava/lau-keith-dcZsxUAAJXs-unsplash_umbmcx.jpg", sick_status: false)
+wen.save!
+gustave = User.new(first_name: "Gustave", last_name: "Schuhman", email: "gustave@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567657841/sava/humphrey-muleba-cjWREdFXn90-unsplash_sflrfp.jpg", sick_status: false)
+gustave.save!
+maria = User.new(first_name: "Maria", last_name: "Kirkman", email: "maria@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567657853/sava/jessica-to-oto-o--eO4eTRkDok-unsplash_eldkvu.jpg", sick_status: false)
+maria.save!
+
+
+
 grandma = User.new(first_name: "Grandma", last_name: "Leroux", email: "grandma@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567193591/sava/tiago-muraro-pwMds57bapI-unsplash_q8k9wq.jpg", sick_status: false)
 grandma.save!
+
+
 
 conversation_1 = Conversation.new(name: "Conversation between Chloe & Sandra")
 conversation_1.save!
 
-conversation_2 = Conversation.new(name: "Conversation between Chloe & Denise")
+conversation_2 = Conversation.new(name: "Conversation between Chloe & Denise", updated_at: "Tue, 03 Sep 2019 13:45:56 UTC +00:00")
 conversation_2.save!
 
 # Group message
 
-conversation_3 = Conversation.new(name: "Conversation between Chloe & Family")
+conversation_3 = Conversation.new(name: "Conversation between Chloe & Family", updated_at: "Mon, 02 Sep 2019 9:31:22 UTC +00:00")
 conversation_3.save!
 
 # ----
 
-conversation_4 = Conversation.new(name: "Conversation between Chloe & Tom")
+conversation_4 = Conversation.new(name: "Conversation between Chloe & Tom", updated_at: "Sun, 01 Sep 2019 11:37:56 UTC +00:00")
 conversation_4.save!
 
-conversation_5 = Conversation.new(name: "Conversation between Chloe & Philippe")
+conversation_5 = Conversation.new(name: "Conversation between Chloe & Philippe", updated_at: "Tue, 03 Sep 2019 21:35:16 UTC +00:00")
 conversation_5.save!
 
-conversation_6 = Conversation.new(name: "Conversation between Chloe & Marta")
+conversation_6 = Conversation.new(name: "Conversation between Chloe & Marta", updated_at: "Thu, 05 Sep 2019 10:56:56 UTC +00:00")
 conversation_6.save!
 
-conversation_7 = Conversation.new(name: "Conversation between Chloe & Sophie")
+conversation_7 = Conversation.new(name: "Conversation between Chloe & Sophie", updated_at: "Fri, 30 Aug 2019 17:17:56 UTC +00:00")
 conversation_7.save!
 
 conversation_8 = Conversation.new(name: "Conversation between Chloe & Grandma")
@@ -95,19 +113,19 @@ message_3.save!
 message_4 = Message.new(content: "Hey! I will have quite some free time next week. I can easily visit you again? That would be so great.", user_id: sandra.id, conversation_id: conversation_1.id, created_at: "Fri, 06 Sep 2019 18:57:11 UTC +00:00" )
 message_4.save!
 
-message_5 = Message.new(content: "We miss you at work. We are thinking about you a lot.", user_id: denise.id, conversation_id: conversation_2.id)
+message_5 = Message.new(content: "We miss you at work. We are thinking about you a lot.", user_id: denise.id, conversation_id: conversation_2.id, created_at: "Sat, 31 Aug 2019 11:57:11 UTC +00:00" )
 message_5.save!
 
-message_6 = Message.new(content: "Dear family, thanks again for your visit and your kind works. I'm so lucky to have you in my life.", user_id: chloe.id, conversation_id: conversation_3.id)
+message_6 = Message.new(content: "Dear family, thanks again for your visit and your kind works. I'm so lucky to have you in my life.", user_id: chloe.id, conversation_id: conversation_3.id, created_at: "Mon, 02 Sep 2019 15:11:11 UTC +00:00")
 message_6.save!
 
-message_7 = Message.new(content: "🤗 have you met any handsome doctors yet? 😍 love you sweety 😍😍😍 🤕🤕🤕", user_id: grandma.id, conversation_id: conversation_8.id)
+message_7 = Message.new(content: "🤗 have you met any handsome doctors yet? 😍 love you sweety 😍😍😍 🤕🤕🤕", user_id: grandma.id, conversation_id: conversation_8.id, created_at: "Fri, 06 Sep 2019 21:45:00 UTC +00:00")
 message_7.save!
 
-message_8 = Message.new(content: "Thanks you so much for the nice presents! 🤗 ", user_id: chloe.id, conversation_id: conversation_4.id)
+message_8 = Message.new(content: "Thanks you so much for the nice presents! 🤗 ", user_id: chloe.id, conversation_id: conversation_4.id, created_at: "Fri, 30 Aug 2019 23:57:11 UTC +00:00")
 message_8.save!
 
-message_8 = Message.new(content: "Your last update is so intense. I wish, I could have been there for you.", user_id: sophie.id, conversation_id: conversation_7.id)
+message_8 = Message.new(content: "Your last update is so intense. I wish, I could have been there for you.", user_id: sophie.id, conversation_id: conversation_7.id, created_at: "Thu, 29 Aug 2019 14:22:11 UTC +00:00")
 message_8.save!
 
 
@@ -257,6 +275,8 @@ family_member_5 = CircleMember.new(circle_id: family.id, email: michaela.email)
 family_member_5.save!
 family_member_6 = CircleMember.new(circle_id: family.id, email: tom.email)
 family_member_6.save!
+family_member_7 = CircleMember.new(circle_id: family.id, email: alexandre.email)
+family_member_7.save!
 
 friends_member_1 = CircleMember.new(circle_id: friends.id, email: leonie.email)
 friends_member_1.save!
@@ -270,11 +290,19 @@ friends_member_5 = CircleMember.new(circle_id: friends.id, email: rita.email)
 friends_member_5.save!
 friends_member_6 = CircleMember.new(circle_id: friends.id, email: sophie.email)
 friends_member_6.save!
+friends_member_7 = CircleMember.new(circle_id: friends.id, email: maria.email)
+friends_member_7.save!
+friends_member_8 = CircleMember.new(circle_id: friends.id, email: wen.email)
+friends_member_8.save!
 
 colleagues_member_1 = CircleMember.new(circle_id: colleagues.id, email: denise.email)
 colleagues_member_1.save!
 colleagues_member_2 = CircleMember.new(circle_id: colleagues.id, email: simon.email)
 colleagues_member_2.save!
+colleagues_member_3 = CircleMember.new(circle_id: colleagues.id, email: linn.email)
+colleagues_member_3.save!
+colleagues_member_4 = CircleMember.new(circle_id: colleagues.id, email: gustave.email)
+colleagues_member_4.save!
 
 
 p "Seeds created"
