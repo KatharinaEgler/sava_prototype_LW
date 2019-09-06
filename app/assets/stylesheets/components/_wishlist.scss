@@ -1,8 +1,43 @@
-.wishlistitem-card {
+.wishlistitem-card-1 {
   background: white;
   border-radius: 10px;
   box-shadow: 0px 4px 2px rgba(157, 157, 157, 0.2);
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  animation-delay: 0.1s
+
+}
+
+.wishlistitem-card-2 {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 2px rgba(157, 157, 157, 0.2);
+  margin-bottom: 15px;
+  animation-delay: 0.2s
+}
+
+.wishlistitem-card-3 {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 2px rgba(157, 157, 157, 0.2);
+  margin-bottom: 15px;
+  animation-delay: 0.3s
+}
+
+.wishlistitem-card-4 {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 2px rgba(157, 157, 157, 0.2);
+  margin-bottom: 15px;
+  animation-delay: 0.4s
+}
+
+.wishlistitem-card-5 {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 2px rgba(157, 157, 157, 0.2);
+  margin-bottom: 15px;
+  animation-delay: 0.5s
+
 }
 
 .wishlistitem-card-top {
@@ -10,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 30px;
+  height: 50px;
 }
 
 .wishlistitem-card-type {
@@ -69,7 +104,7 @@
 }
 
 .wishlistitem-cards-bottom {
-  height: 120px;
+  height: auto;
   display: flex;
 }
 
@@ -90,7 +125,7 @@
 
 .wishlistitem-card-text p {
   margin-bottom: 0px;
-  font-size: 12px;
+  font-size: 14px;
   color: $dark-grey;
   margin-bottom: 8px;
 }
@@ -112,7 +147,7 @@
 }
 
 .wishlistitem-card-day p {
-  font-size: 12px;
+  font-size: 14px;
   color: $grey;
   margin-bottom: 0px;
   margin-left: 10px;
@@ -131,7 +166,7 @@
 }
 
 .wishlistitem-card-time p {
-  font-size: 12px;
+  font-size: 14px;
   color: $grey;
   margin-bottom: 0px;
   margin-left: 10px;
@@ -147,7 +182,7 @@
 }
 
 .wishlistitem-card-place p {
-  font-size: 12px;
+  font-size: 14px;
   color: $grey;
   margin-bottom: 0px;
   margin-left: 10px;
@@ -172,4 +207,7 @@
 .wishlistitem-card-bottom-right {
   padding: 10px 10px;
   align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
 }
