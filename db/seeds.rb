@@ -239,10 +239,10 @@ slot_04.save!
 
 slot_1 = Slot.new(date: "09.09.2019", hour: 9, booked: true, user_id: chloe.id, booker_id: grandma.id, location: "3801 Rue Université, Montréal")
 slot_1.save!
-slot_4 = Slot.new(date: "10.09.2019", hour: 10, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
-slot_4.save!
-slot_2 = Slot.new(date: "09.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
-slot_2.save!
+# slot_4 = Slot.new(date: "10.09.2019", hour: 10, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+# slot_4.save!
+# slot_2 = Slot.new(date: "09.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+# slot_2.save!
 slot_3 = Slot.new(date: "09.09.2019", hour: 15, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_3.save!
 slot_5 = Slot.new(date: "10.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
