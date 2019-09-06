@@ -8,12 +8,12 @@
 
     <%= simple_form_for @status_updates do |f| %>
       <%= f.input :title, wrapper_html: {class: "xxx"}  %>
-      <%= f.input :content, wrapper_html: {class: "xxx"} %>
+      <%= f.input :content, wrapper_html: {class: "xxx"}, as: :text %>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
       <%= f.input :circles, as: :select, collection: @circles %>
 
-      <%= f.button :submit, value: "Post update", class: 'btn btn-lg btn-primary big-btn-form' %>
+      <%= f.button :submit, value: "Post update", class: 'add-button' %>
     <% end %>
 
   </div>
