@@ -140,6 +140,9 @@ message_10.save!
 message_10 = Message.new(content: "Thank you so much for all your support. Let's crap a coffee sometime soon.", user_id: tina.id, conversation_id: conversation_10.id, created_at: "Wed, 04 Sep 2019 22:05:11 UTC +00:00")
 message_10.save!
 
+message_11 = Message.new(content: "The cake you baked was delicious! Not too sweet. Loved it!", user_id: chloe.id, conversation_id: conversation_1.id, created_at: "Tue, 27 Aug 2019 16:05:11 UTC +00:00")
+message_11.save!
+
 
 conversation_member_1 = ConversationMember.new(conversation_id: conversation_1.id, user_id: chloe.id)
 conversation_member_1.save!
@@ -222,7 +225,7 @@ slot_01.save!
 # slot_02 = Slot.new(date: "06.09.2019", hour: 20, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 # slot_02.save!
 
-slot_03 = Slot.new(date: "07.09.2019", hour: 10, booked: true, user_id: chloe.id, booker_id: grandma.id, location: "3801 Rue Université, Montréal")
+slot_03 = Slot.new(date: "07.09.2019", hour: 10, booked: true, user_id: chloe.id, booker_id: michaela.id, location: "3801 Rue Université, Montréal")
 slot_03.save!
 slot_04 = Slot.new(date: "07.09.2019", hour: 14, booked: true, user_id: chloe.id, booker_id: tina.id, location: "3801 Rue Université, Montréal")
 slot_04.save!
@@ -234,7 +237,7 @@ slot_04.save!
 
 
 
-slot_1 = Slot.new(date: "09.09.2019", hour: 9, booked: true, user_id: chloe.id, booker_id: michaela.id, location: "3801 Rue Université, Montréal")
+slot_1 = Slot.new(date: "09.09.2019", hour: 9, booked: true, user_id: chloe.id, booker_id: grandma.id, location: "3801 Rue Université, Montréal")
 slot_1.save!
 slot_4 = Slot.new(date: "10.09.2019", hour: 10, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_4.save!
