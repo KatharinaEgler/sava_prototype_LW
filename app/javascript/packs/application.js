@@ -20,5 +20,28 @@ const addEventBtn = ()=> {
   }
 };
 
+const youROnIt = () => {
+  const takeBtns = document.querySelectorAll(".wishlistitem-card-button");
 
+  if (takeBtns) {
+    takeBtns.forEach((takeBtn) => {
+      takeBtn.addEventListener("click", (event) => {
+        console.log(document.getElementById("popup-take").innerText);
+        event.target.parentElement.style.backgroundColor = "#645959";
+        event.target.innerText = "Taken";
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("popup-take").style.display= "block";
+
+        setTimeout(() => {
+          document.getElementById("overlay").style.display = "none";
+          document.getElementById("popup-take").classList.add("fadeOutDown");
+        }, 2000);
+      });
+    });
+  }
+
+};
+
+
+youROnIt();
 addEventBtn();
