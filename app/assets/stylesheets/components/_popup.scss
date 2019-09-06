@@ -9,6 +9,11 @@
   z-index: 5;
 }
 
+#popup-take{
+  position: absolute;
+  bottom: 0;
+}
+
 .form-control-label {
   color: $dark-grey;
 }
