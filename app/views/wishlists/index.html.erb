@@ -248,9 +248,15 @@
 
   <% if current_user.sick_status == true %>
     <div class="add-button-green">
-      <a href= <%= new_slot_path %> >
+      <a href="<%= new_slot_path %>"></a>
       <p> + </p>
     </div>
   <% end %>
+
+
+</div>
+<div class="popup animated fadeInUp" id="popup-take" style="display: none;">
+
+    <h2 class= "popup-title">You'r on it!</h2>
 
 </div>
