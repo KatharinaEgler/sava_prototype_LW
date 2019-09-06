@@ -116,8 +116,8 @@ message_2.save!
 message_3 = Message.new(content: "Yes, the doctor is still waiting for the test results. Maybe I'll arrive an update this afternoon. I will post an update to my family and friends as soon as possible.", user_id: chloe.id, conversation_id: conversation_1.id, created_at: "Tue, 03 Sep 2019 14:45:56 UTC +00:00")
 message_3.save!
 
-message_4 = Message.new(content: "Hey! I will have quite some free time next week. I can easily visit you again? That would be so great.", user_id: sandra.id, conversation_id: conversation_1.id, created_at: "Fri, 06 Sep 2019 18:57:11 UTC +00:00" )
-message_4.save!
+#message_4 = Message.new(content: "Hey! I will have quite some free time next week. I can easily visit you again? That would be so great.", user_id: sandra.id, conversation_id: conversation_1.id, created_at: "Fri, 06 Sep 2019 18:57:11 UTC +00:00" )
+#message_4.save!
 
 message_5 = Message.new(content: "We miss you at work. We are thinking about you a lot.", user_id: denise.id, conversation_id: conversation_2.id, created_at: "Sat, 31 Aug 2019 11:57:11 UTC +00:00" )
 message_5.save!
@@ -194,9 +194,11 @@ conversation_member_18.save!
 
 notification_1 = Notification.new(conversation_id: conversation_8.id, user_id: chloe.id)
 notification_1.save!
-notification_2 = Notification.new(conversation_id: conversation_1.id, user_id: chloe.id)
-notification_2.save!
+# notification_2 = Notification.new(conversation_id: conversation_1.id, user_id: chloe.id)
+# notification_2.save!
 
+statusupdate_link = StatusUpdate.new(user_id: chloe.id, title: "Next Surgery", content: "Hi all, as most of you know. I have a big sugery coming up. Keep your fingers crossed next Friday!! You probably have a lot of questions, which I try to answer in this update. A <a href='#' id='showcase-link'>splenectomy</a> is surgery to remove the entire spleen. The spleen is an important part of the body's defense (immune) system. It contains special white blood cells that destroy bacteria and help the body fight infections when you are sick. It also helps remove, or filter, old red blood cells from the body's circulation. If only part of the spleen is removed, the procedure is called a partial <a href='#' id='showcase-link'>splenectomy</a>. Unlike some other organs, like the liver, the spleen does not grow back (regenerate) after it is removed.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567725630/sava/photo-1514416309827-bfb0cf433a2d_eavcjn.jpg", created_at: "Fri, 06 Sep 2019 09:40:56 UTC +00:00")
+statusupdate_link.save!
 
 statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg", created_at: "Mon, 02 Sep 2019 12:40:56 UTC +00:00")
 statusupdate_1.save!
@@ -217,18 +219,18 @@ statusupdate_8.save!
 
 slot_01 = Slot.new(date: "06.09.2019", hour: 19, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_01.save!
-slot_02 = Slot.new(date: "06.09.2019", hour: 20, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
-slot_02.save!
+# slot_02 = Slot.new(date: "06.09.2019", hour: 20, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+# slot_02.save!
 
-slot_03 = Slot.new(date: "07.09.2019", hour: 10, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_03 = Slot.new(date: "07.09.2019", hour: 10, booked: true, user_id: chloe.id, booker_id: grandma.id, location: "3801 Rue Université, Montréal")
 slot_03.save!
-slot_04 = Slot.new(date: "07.09.2019", hour: 14, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_04 = Slot.new(date: "07.09.2019", hour: 14, booked: true, user_id: chloe.id, booker_id: tina.id, location: "3801 Rue Université, Montréal")
 slot_04.save!
 
-slot_05 = Slot.new(date: "08.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
-slot_05.save!
-slot_06 = Slot.new(date: "08.09.2019", hour: 13, booked: true, user_id: chloe.id, booker_id: tina.id, location: "3801 Rue Université, Montréal")
-slot_06.save!
+#slot_05 = Slot.new(date: "08.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+#slot_05.save!
+#slot_06 = Slot.new(date: "08.09.2019", hour: 13, booked: true, user_id: chloe.id, booker_id: tina.id, location: "3801 Rue Université, Montréal")
+#slot_06.save!
 
 
 
@@ -258,6 +260,9 @@ friends = Circle.new(user_id: chloe.id, name: "Friends")
 friends.save!
 colleagues = Circle.new(user_id: chloe.id, name: "Colleagues")
 colleagues.save!
+
+circleupdate_link = CircleUpdate.new(circle_id: friends.id, status_update_id: statusupdate_link.id)
+circleupdate_link.save!
 
 circleupdate_1 = CircleUpdate.new(circle_id: family.id, status_update_id: statusupdate_1.id)
 circleupdate_1.save!
