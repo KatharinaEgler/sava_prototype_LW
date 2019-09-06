@@ -102,12 +102,14 @@ conversation_7.save!
 conversation_8 = Conversation.new(name: "Conversation between Chloe & Grandma")
 conversation_8.save!
 
-conversation_9 = Conversation.new(name: "Conversation between Sandra & Father Chloe", created_at: "Fri, 06 Sep 2019 18:55:56 UTC +00:00")
+conversation_9 = Conversation.new(name: "Conversation between Sandra & Father Chloe", created_at: "Fri, 30 Aug 2019 18:55:56 UTC +00:00")
 conversation_9.save!
 
 conversation_10 = Conversation.new(name: "Conversation between Sandra & Sister Chloe", created_at: "Thu, 05 Sep 2019 22:02:56 UTC +00:00")
 conversation_10.save!
 
+message_11 = Message.new(content: "The cake you baked was delicious! Not too sweet. Loved it!", user_id: chloe.id, conversation_id: conversation_1.id, created_at: "Tue, 27 Aug 2019 16:05:11 UTC +00:00")
+message_11.save!
 
 message_1 = Message.new(content: "It was so great seeing you. I want to see you as soon as possible again. I'll book a slot with sava then. The application is great.", user_id: sandra.id, conversation_id: conversation_1.id, created_at: "Mon, 02 Sep 2019 21:05:56 UTC +00:00")
 message_1.save!
@@ -140,8 +142,6 @@ message_10.save!
 message_10 = Message.new(content: "Thank you so much for all your support. Let's crap a coffee sometime soon.", user_id: tina.id, conversation_id: conversation_10.id, created_at: "Wed, 04 Sep 2019 22:05:11 UTC +00:00")
 message_10.save!
 
-message_11 = Message.new(content: "The cake you baked was delicious! Not too sweet. Loved it!", user_id: chloe.id, conversation_id: conversation_1.id, created_at: "Tue, 27 Aug 2019 16:05:11 UTC +00:00")
-message_11.save!
 
 
 conversation_member_1 = ConversationMember.new(conversation_id: conversation_1.id, user_id: chloe.id)
@@ -200,7 +200,7 @@ notification_1.save!
 # notification_2 = Notification.new(conversation_id: conversation_1.id, user_id: chloe.id)
 # notification_2.save!
 
-statusupdate_link = StatusUpdate.new(user_id: chloe.id, title: "Next Surgery", content: "Hi all, as most of you know. I have a big sugery coming up. Keep your fingers crossed next Friday!! You probably have a lot of questions, which I try to answer in this update. A <a href='#' id='showcase-link'>splenectomy</a> is surgery to remove the entire spleen. The spleen is an important part of the body's defense (immune) system. It contains special white blood cells that destroy bacteria and help the body fight infections when you are sick. It also helps remove, or filter, old red blood cells from the body's circulation. If only part of the spleen is removed, the procedure is called a partial <a href='#' id='showcase-link'>splenectomy</a>. Unlike some other organs, like the liver, the spleen does not grow back (regenerate) after it is removed.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567725630/sava/photo-1514416309827-bfb0cf433a2d_eavcjn.jpg", created_at: "Fri, 06 Sep 2019 09:40:56 UTC +00:00")
+statusupdate_link = StatusUpdate.new(user_id: chloe.id, title: "Next Surgery", content: "Hi all, as most of you know. I have a big sugery coming up. Keep your fingers crossed next Friday!! You probably have a lot of questions, which I try to answer in this update. A <a href='#' id='showcase-link'>splenectomy</a> is a surgery to remove the entire spleen. The spleen is an important part of the body's defense (immune) system. It contains special white blood cells that destroy bacteria and help the body fight infections when you are sick. It also helps remove, or filter, old red blood cells from the body's circulation. If only part of the spleen is removed, the procedure is called a partial <a href='#' id='showcase-link'>splenectomy</a>. Unlike some other organs, like the liver, the spleen does not grow back (regenerate) after it is removed.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567725630/sava/photo-1514416309827-bfb0cf433a2d_eavcjn.jpg", created_at: "Fri, 06 Sep 2019 09:40:56 UTC +00:00")
 statusupdate_link.save!
 
 statusupdate_1 = StatusUpdate.new(user_id: chloe.id, title: "New doctor, new hospital", content: "I am at the other hospital now. The new doctor is also really nice and seems to be really good. Also, the nurses are very friendly. The room is ok, the old one was better though.", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567044667/sava/martha-dominguez-de-gouveia-ShJUYkshceY-unsplash_wkiz0n.jpg", created_at: "Mon, 02 Sep 2019 12:40:56 UTC +00:00")
@@ -222,16 +222,16 @@ statusupdate_8.save!
 
 slot_01 = Slot.new(date: "06.09.2019", hour: 19, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
 slot_01.save!
-# slot_02 = Slot.new(date: "06.09.2019", hour: 20, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
-# slot_02.save!
+slot_02 = Slot.new(date: "06.09.2019", hour: 20, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_02.save!
 
 slot_03 = Slot.new(date: "07.09.2019", hour: 10, booked: true, user_id: chloe.id, booker_id: michaela.id, location: "3801 Rue Université, Montréal")
 slot_03.save!
 slot_04 = Slot.new(date: "07.09.2019", hour: 14, booked: true, user_id: chloe.id, booker_id: tina.id, location: "3801 Rue Université, Montréal")
 slot_04.save!
 
-#slot_05 = Slot.new(date: "08.09.2019", hour: 11, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
-#slot_05.save!
+slot_05 = Slot.new(date: "07.09.2019", hour: 15, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_05.save!
 #slot_06 = Slot.new(date: "08.09.2019", hour: 13, booked: true, user_id: chloe.id, booker_id: tina.id, location: "3801 Rue Université, Montréal")
 #slot_06.save!
 
@@ -255,6 +255,8 @@ slot_8 = Slot.new(date: "12.09.2019", hour: 15, booked: true, user_id: chloe.id,
 slot_8.save!
 slot_9 = Slot.new(date: "12.09.2019", hour: 16, booked: true, user_id: chloe.id, booker_id: philippe.id, location: "3801 Rue Université, Montréal")
 slot_9.save!
+slot_10 = Slot.new(date: "12.09.2019", hour: 17, booked: false, user_id: chloe.id, location: "3801 Rue Université, Montréal")
+slot_10.save!
 
 
 family = Circle.new(user_id: chloe.id, name: "Family")
