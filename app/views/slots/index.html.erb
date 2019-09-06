@@ -78,12 +78,11 @@
                     <div class='time-slot-time'>
                       <%= image_tag("time-darkgrey.svg") %>
                       <p class='slot-time d-flex'><%= slot.get_start_time.strftime('%l:%M %p') %> - <%= slot.get_end_time.strftime('%l:%M %p') %></p>
-                      <span>
                     </div>
-                      <div class='time-slot-visitor'>
+                    <div class='time-slot-visitor'>
                       <%= cl_image_tag(User.find(slot.booker_id).photo,width: 250, crop: "scale", class:"appointment-avatar") %>
                       <p><%= User.find(slot.booker_id).first_name%></p>
-                      </div>
+                    </div>
                   </div>
 
                 <% else %>
@@ -106,14 +105,15 @@
               <% end %>
             <% end %>
 
-          <% end %>
-        </div>
+          </div>
 
+        <% end %>
       </div>
+
     </div>
   </div>
 </div>
-</div>
+
 
   <% if current_user.sick_status == true %>
     <div class="add-button-green">

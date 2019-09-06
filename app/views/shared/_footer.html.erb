@@ -1,79 +1,84 @@
-<div class="footer">
-  <ul class="footer-icons">
-    <li class="footer-item">
-      <%= link_to root_path, class: "footer-home-link" do %>
-        <% if params[:controller] == "pages" %>
-          <div class="footer-link-on">
-            <%= image_tag "home-on.svg" %>
-            <p>HOME</p>
-          </div>
-        <% else %>
-          <div class="footer-link-off">
-            <%= image_tag "home.svg" %>
-            <p>HOME</p>
-          </div>
+<% if params[:controller] == "devise/sessions" %>
+
+<% else %>
+
+  <div class="footer">
+    <ul class="footer-icons">
+      <li class="footer-item">
+        <%= link_to root_path, class: "footer-home-link" do %>
+          <% if params[:controller] == "pages" %>
+            <div class="footer-link-on">
+              <%= image_tag "home-on.svg" %>
+              <p>HOME</p>
+            </div>
+          <% else %>
+            <div class="footer-link-off">
+              <%= image_tag "home.svg" %>
+              <p>HOME</p>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </li>
-    <li class="footer-item">
-      <%= link_to status_updates_path, class: "footer-updates-link" do %>
-        <% if params[:controller] == "status_updates" %>
-          <div class="footer-link-on">
-            <%= image_tag "updates-on.svg" %>
-            <p>UPDATES</p>
-          </div>
-        <% else %>
-          <div class="footer-link-off">
-            <%= image_tag "updates.svg" %>
-            <p>UPDATES</p>
-          </div>
+      </li>
+      <li class="footer-item">
+        <%= link_to status_updates_path, class: "footer-updates-link" do %>
+          <% if params[:controller] == "status_updates" %>
+            <div class="footer-link-on">
+              <%= image_tag "updates-on.svg" %>
+              <p>UPDATES</p>
+            </div>
+          <% else %>
+            <div class="footer-link-off">
+              <%= image_tag "updates.svg" %>
+              <p>UPDATES</p>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </li>
-    <li class="footer-item">
-      <%= link_to slots_path, class: "footer-calendar-link" do %>
-        <% if params[:controller] == "slots" %>
-          <div class="footer-link-on">
-            <%= image_tag "calendar-on.svg" %>
-            <p>CALENDAR</p>
-          </div>
-        <% else %>
-          <div class="footer-link-off">
-            <%= image_tag "calendar.svg" %>
-            <p>CALENDAR</p>
-          </div>
+      </li>
+      <li class="footer-item">
+        <%= link_to slots_path, class: "footer-calendar-link" do %>
+          <% if params[:controller] == "slots" %>
+            <div class="footer-link-on">
+              <%= image_tag "calendar-on.svg" %>
+              <p>CALENDAR</p>
+            </div>
+          <% else %>
+            <div class="footer-link-off">
+              <%= image_tag "calendar.svg" %>
+              <p>CALENDAR</p>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </li>
-    <li class="footer-item">
-      <%= link_to wishlists_path, class: "footer-wishlist-link" do %>
-        <% if params[:controller] == "wishlists" %>
-          <div class="footer-link-on">
-            <%= image_tag "wishlist-on.svg" %>
-            <p>WISHLIST</p>
-          </div>
-        <% else %>
-          <div class="footer-link-off">
-            <%= image_tag "wishlist.svg" %>
-            <p>WISHLIST</p>
-          </div>
+      </li>
+      <li class="footer-item">
+        <%= link_to wishlists_path, class: "footer-wishlist-link" do %>
+          <% if params[:controller] == "wishlists" %>
+            <div class="footer-link-on">
+              <%= image_tag "wishlist-on.svg" %>
+              <p>WISHLIST</p>
+            </div>
+          <% else %>
+            <div class="footer-link-off">
+              <%= image_tag "wishlist.svg" %>
+              <p>WISHLIST</p>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </li>
-    <li class="footer-item">
-      <%= link_to features_path, class: "footer-more-link" do %>
-        <% if params[:controller] == "features" %>
-          <div class="footer-link-on">
-            <%= image_tag "more-on.svg" %>
-            <p>MORE</p>
-          </div>
-        <% else %>
-          <div class="footer-link-off">
-            <%= image_tag "more.svg" %>
-            <p>MORE</p>
-          </div>
+      </li>
+      <li class="footer-item">
+        <%= link_to features_path, class: "footer-more-link" do %>
+          <% if params[:controller] == "features" %>
+            <div class="footer-link-on">
+              <%= image_tag "more-on.svg" %>
+              <p>MORE</p>
+            </div>
+          <% else %>
+            <div class="footer-link-off">
+              <%= image_tag "more.svg" %>
+              <p>MORE</p>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </li>
-  </ul>
-</div>
+      </li>
+    </ul>
+  </div>
+<% end %>

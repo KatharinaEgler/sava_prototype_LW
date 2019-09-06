@@ -1,0 +1,89 @@
+.main-container-login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: $red;
+  h1 {
+    color: white;
+    font-size: 80px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: lighter;
+    text-align: center;
+  }
+  p {
+    color: white;
+    font-size: 15px;
+    font-weight: regular;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+.login-sava-label {
+  color: white;
+  border-color: white;
+  font-family: $body-font;
+}
+
+.login-sava-password {
+  color: white;
+  border-color: white;
+}
+.login-sava {
+  border-color: white;
+  background: white;
+}
+
+.main-container-login-box {
+  text-align: center;
+  justify-content: center;
+  margin: 20px 40px;
+}
+
+.form-control {
+  color: $dark-grey;
+}
+
+.logup {
+  margin-top: 40px;
+  background: $red;
+  border: $red;
+  a {
+    color: white;
+    font-size: 15px;
+    font-family: $body-font;
+  }
+}
+
+.forgot {
+  background: $red;
+  border: $red;
+  a {
+    color: white;
+    font-size: 15px;
+    font-family: $body-font;
+
+  }
+}
+
+.form-actions .btn {
+  margin-top: 20px;
+  background: white;
+  color: $red;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: lighter;
+  height: 40px;
+  width: 120px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
