@@ -13,7 +13,7 @@ gem 'nokogiri', '~> 1.10', '>= 1.10.5'
 # new GEMS end
 
 gem 'bootsnap', require: false
-gem "devise", ">= 4.7.1"
+gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
