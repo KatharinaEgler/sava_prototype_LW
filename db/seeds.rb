@@ -72,8 +72,8 @@ maria.save!
 grandma = User.new(first_name: "Grandma", last_name: "Leroux", email: "grandma@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1567193591/sava/tiago-muraro-pwMds57bapI-unsplash_q8k9wq.jpg", sick_status: false)
 grandma.save!
 
-grandma = User.new(first_name: "Grandpa", last_name: "Leroux", email: "grandpa@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1573416471/sava/johnny-cohen-OxOxqLAWvE0-unsplash_gjf5nl.jpg", sick_status: false)
-grandpa.save!
+#grandma = User.new(first_name: "Grandpa", last_name: "Leroux", email: "grandpa@email.com", password: "hospital", remote_photo_url: "https://res.cloudinary.com/dd9qabk1u/image/upload/v1573416471/sava/johnny-cohen-OxOxqLAWvE0-unsplash_gjf5nl.jpg", sick_status: false)
+#grandpa.save!
 
 
 
