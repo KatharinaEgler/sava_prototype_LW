@@ -8,7 +8,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'pundit'
 gem 'dotenv-rails', groups: [:development, :test]
 gem "cocoon"
-gem 'nokogiri', '~> 1.10', '>= 1.10.5'
+gem 'nokogiri', '~> 1.11'
 
 # new GEMS end
 
